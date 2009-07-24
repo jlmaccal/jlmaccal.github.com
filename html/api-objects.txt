@@ -176,7 +176,6 @@ zam.gromacs.__package__	zam.gromacs-module.html#__package__
 zam.gromacs.PDB2GMX_FF_NUMBER	zam.gromacs-module.html#PDB2GMX_FF_NUMBER
 zam.gromacs.gmx_minimize_template	zam.gromacs-module.html#gmx_minimize_template
 zam.gromacs.Logger	zam.gromacs-module.html#Logger
-zam.gromacs.Property	zam.gromacs-module.html#Property
 zam.imageconf	zam.imageconf-module.html
 zam.imageconf._PrepPdb	zam.imageconf-module.html#_PrepPdb
 zam.imageconf._SetupColors	zam.imageconf-module.html#_SetupColors

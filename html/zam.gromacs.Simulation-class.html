@@ -213,7 +213,8 @@ Main data members:
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="_RunMdrun"></a><span class="summary-sig-name">_RunMdrun</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">template</span>)</span></td>
+        <span class="summary-sig-arg">template</span>)</span><br />
+      Does setup and then calls mdrun.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="zam.gromacs-pysrc.html#Simulation._RunMdrun">source&nbsp;code</a></span>
             
@@ -229,7 +230,8 @@ Main data members:
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="DoMD"></a><span class="summary-sig-name">DoMD</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="DoMD"></a><span class="summary-sig-name">DoMD</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Run MD simulation based on current Simulation object.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="zam.gromacs-pysrc.html#Simulation.DoMD">source&nbsp;code</a></span>
             
@@ -245,7 +247,8 @@ Main data members:
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="DoMin"></a><span class="summary-sig-name">DoMin</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="DoMin"></a><span class="summary-sig-name">DoMin</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Run minimization based on current Simulation object.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="zam.gromacs-pysrc.html#Simulation.DoMin">source&nbsp;code</a></span>
             
@@ -267,8 +270,8 @@ Main data members:
         <span class="summary-sig-arg">k</span>,
         <span class="summary-sig-arg">l</span>,
         <span class="summary-sig-arg">theta_equil</span>,
-        <span class="summary-sig-arg">theta_flat</span>,
-        <span class="summary-sig-arg">factor</span>,
+        <span class="summary-sig-arg">theta_flat</span>=<span class="summary-sig-default">0.0</span>,
+        <span class="summary-sig-arg">factor</span>=<span class="summary-sig-default">1</span>,
         <span class="summary-sig-arg">power</span>=<span class="summary-sig-default">2</span>)</span><br />
       Add a torsion restraint to the topology.</td>
           <td align="right" valign="top">
@@ -286,7 +289,8 @@ Main data members:
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="ClearTorsionRestraints"></a><span class="summary-sig-name">ClearTorsionRestraints</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="ClearTorsionRestraints"></a><span class="summary-sig-name">ClearTorsionRestraints</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Remove all torsion restraints.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="zam.gromacs-pysrc.html#Simulation.ClearTorsionRestraints">source&nbsp;code</a></span>
             
@@ -324,7 +328,8 @@ Main data members:
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="ClearDistanceRestraints"></a><span class="summary-sig-name">ClearDistanceRestraints</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="ClearDistanceRestraints"></a><span class="summary-sig-name">ClearDistanceRestraints</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Remove all distance restraints</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="zam.gromacs-pysrc.html#Simulation.ClearDistanceRestraints">source&nbsp;code</a></span>
             
@@ -376,7 +381,8 @@ Main data members:
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="_WriteInputFile"></a><span class="summary-sig-name">_WriteInputFile</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">template</span>)</span></td>
+        <span class="summary-sig-arg">template</span>)</span><br />
+      Substitute parameters into template and then write run.mdp.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="zam.gromacs-pysrc.html#Simulation._WriteInputFile">source&nbsp;code</a></span>
             
@@ -478,7 +484,7 @@ Main data members:
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a href="zam.gromacs.Simulation-class.html#structure" class="summary-name">structure</a><br />
-      Get the current structure
+      Current structure
     </td>
   </tr>
   <tr>
@@ -584,7 +590,7 @@ Main data members:
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <h3 class="epydoc">structure</h3>
-  <p>Get the current structure</p>
+  <p>Current structure</p>
   <dl class="fields">
     <dt>Get Method:</dt>
     <dd class="value"><span class="summary-sig"><a href="zam.gromacs.Simulation-class.html#_GetStructure" class="summary-sig-name" onclick="show_private();">_GetStructure</a>(<span class="summary-sig-arg">self</span>)</span>
@@ -625,7 +631,7 @@ Main data members:
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu Jul 23 17:49:55 2009
+    Generated by Epydoc 3.0.1 on Thu Jul 23 18:16:35 2009
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
