@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.zamdata.FragDataClass</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        <a href="zam.zamdata-module.html">Module&nbsp;zamdata</a> ::
+        Class&nbsp;FragDataClass
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.zamdata.FragDataClass-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class FragDataClass</h1><p class="nomargin-top"><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">FragDataClass</strong>
+</pre>
+
+<hr />
+<p>Fragment data</p>
+  <p>This class contains much of the information from a zam run. This is 
+  the most complex data structure in all of zam. It represents almost all 
+  of the information known about a fragment from the sequence, run 
+  parameters, to the analyzed results of the REMD simulations.</p>
+  <p>Much of ZAM revolves around creating or modifying Frags, or performing
+  simulation or analysis on them.</p>
+
+<hr />
+<div class="fields">      <p><strong>Note:</strong>
+        By convention instances of FragDataClass are usually named Frag or 
+        some other name containing Frag, such as NewFrag. Frags is usually 
+        a list of FragDataClass instances.
+      </p>
+      <p><strong>To Do:</strong>
+        This class is frighteningly big, we should refactor to make it more 
+    manageable.
+      </p>
+</div><!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">StartRes</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">StopRes</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">Seq</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Parents</span>=<span class="summary-sig-default">None</span>)</span><br />
+      x.__init__(...) initializes x; see x.__class__.__doc__ for signature</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__len__"></a><span class="summary-sig-name">__len__</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.__len__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#__repr__" class="summary-sig-name">__repr__</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      repr(x)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.__repr__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#__setattr__" class="summary-sig-name">__setattr__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>,
+        <span class="summary-sig-arg">val</span>)</span><br />
+      Sets a class attribute.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.__setattr__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">dictionary</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#GetAttributes" class="summary-sig-name">GetAttributes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">DataKeys</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">HideKeys</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Get a list of attribute values.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.GetAttributes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#Name" class="summary-sig-name">Name</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns a string name of the fragment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.Name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#UpdateVer" class="summary-sig-name">UpdateVer</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Updates old versions to the latest FragDataClass.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.UpdateVer">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of (int, int)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#GetPairList" class="summary-sig-name">GetPairList</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">MinCO</span>=<span class="summary-sig-default">PairMinCO</span>,
+        <span class="summary-sig-arg">MaxCO</span>=<span class="summary-sig-default">PairMaxCO</span>,
+        <span class="summary-sig-arg">MinECO</span>=<span class="summary-sig-default">PairMinECO</span>)</span><br />
+      Get a list of pairs.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.GetPairList">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+<tr bgcolor="#e8f0f8" >
+  <th colspan="2" class="group-header"
+    >&nbsp;&nbsp;&nbsp;&nbsp;Parents/Children</th></tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="UpdateParents"></a><span class="summary-sig-name">UpdateParents</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Updates the parent fragments to reflect the current child.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.UpdateParents">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Unlink"></a><span class="summary-sig-name">Unlink</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Unlinks from parent and child fragments.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.Unlink">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetAllChildren"></a><span class="summary-sig-name">GetAllChildren</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns a list of all child fragments.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.GetAllChildren">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetAllParents"></a><span class="summary-sig-name">GetAllParents</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns a list of all parent fragmentss.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.GetAllParents">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#ParentsIn" class="summary-sig-name">ParentsIn</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Parents</span>)</span><br />
+      Returns True if Parents contains all the parents of self.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.ParentsIn">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="NResAdd"></a><span class="summary-sig-name">NResAdd</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Tells the number of residues added relative to the parents.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.NResAdd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr bgcolor="#e8f0f8" >
+  <th colspan="2" class="group-header"
+    >&nbsp;&nbsp;&nbsp;&nbsp;Disk/Paths</th></tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#MakePath" class="summary-sig-name">MakePath</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">MainPath</span>=<span class="summary-sig-default">&quot;.&quot;</span>,
+        <span class="summary-sig-arg">AllPaths</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Make the directory for this fragment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.MakePath">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="DelPath"></a><span class="summary-sig-name">DelPath</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Remove the path and all data for this fragment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.DelPath">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="DelAnalysis"></a><span class="summary-sig-name">DelAnalysis</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Remove all the analysis files.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.DelAnalysis">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#DelData" class="summary-sig-name">DelData</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Work</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">Data</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">Conf</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Remove data, work, and initial configuration files.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.DelData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr bgcolor="#e8f0f8" >
+  <th colspan="2" class="group-header"
+    >&nbsp;&nbsp;&nbsp;&nbsp;Restraints</th></tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#AddSS" class="summary-sig-name">AddSS</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ResList</span>,
+        <span class="summary-sig-arg">SS</span>)</span><br />
+      Gives residues in ResList secondary structure restraints for SS.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.AddSS">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="RestInRange"></a><span class="summary-sig-name">RestInRange</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Indicates whether or not the restraint (a,b) is within the fragment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.RestInRange">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="AddRest"></a><span class="summary-sig-name">AddRest</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">RestList</span>)</span><br />
+      Adds relevant restraints to a fragment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.AddRest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="InPropRest"></a><span class="summary-sig-name">InPropRest</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Tells whether or not a restraint (a,b) is among those proposed.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.InPropRest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ResConnected"></a><span class="summary-sig-name">ResConnected</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>,
+        <span class="summary-sig-arg">OtherRest</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Tells if residues a and b are connected on backbone or by restraint.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.ResConnected">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr bgcolor="#e8f0f8" >
+  <th colspan="2" class="group-header"
+    >&nbsp;&nbsp;&nbsp;&nbsp;Contact Order</th></tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ResECO"></a><span class="summary-sig-name">ResECO</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>,
+        <span class="summary-sig-arg">OtherRest</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">MaxECO</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">MaxDepth</span>=<span class="summary-sig-default">10</span>)</span><br />
+      Returns the shortest route from residue nums a to b, incl restraints.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.ResECO">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ResWithinECO"></a><span class="summary-sig-name">ResWithinECO</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>,
+        <span class="summary-sig-arg">OtherRest</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">MaxECO</span>=<span class="summary-sig-default">PairMinECO-1</span>,
+        <span class="summary-sig-arg">MaxDepth</span>=<span class="summary-sig-default">1</span>)</span><br />
+      Tells if a pair of residues is retrained within an ECO.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.ResWithinECO">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ResDOF"></a><span class="summary-sig-name">ResDOF</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns approx number of backbone degrees of freedom, incl 
+      restraints.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.ResDOF">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr bgcolor="#e8f0f8" >
+  <th colspan="2" class="group-header"
+    >&nbsp;&nbsp;&nbsp;&nbsp;Overlap/Seq/Contains</th></tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetOverlapRes"></a><span class="summary-sig-name">GetOverlapRes</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ResList</span>)</span><br />
+      Returns residues in ResList that are in the current fragment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.GetOverlapRes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ContainsSeg"></a><span class="summary-sig-name">ContainsSeg</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Tells if a residue segment is contained within the current fragment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.ContainsSeg">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ContainsFrag"></a><span class="summary-sig-name">ContainsFrag</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Frag</span>)</span><br />
+      Tells if another fragment is contained within the current one.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.ContainsFrag">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="OverlapsSeg"></a><span class="summary-sig-name">OverlapsSeg</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Tells if a residue segment overlaps with the current fragment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.OverlapsSeg">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="OverlapsFrag"></a><span class="summary-sig-name">OverlapsFrag</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Frag</span>)</span><br />
+      Tells if another fragment overlaps with the current fragment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.OverlapsFrag">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="SegDist"></a><span class="summary-sig-name">SegDist</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Returns the number of residues between self and a segment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.SegDist">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="FragDist"></a><span class="summary-sig-name">FragDist</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Frag</span>)</span><br />
+      Returns the number of residues between self and Frag.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.FragDist">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="LoopLength"></a><span class="summary-sig-name">LoopLength</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Frag</span>)</span><br />
+      Returns the length of the loop between self and Frag.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.LoopLength">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="NResOverlap"></a><span class="summary-sig-name">NResOverlap</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Tells the number of overlapping residues with the segment a,b.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.NResOverlap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr bgcolor="#e8f0f8" >
+  <th colspan="2" class="group-header"
+    >&nbsp;&nbsp;&nbsp;&nbsp;Data Packing</th></tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__getstate__"></a><span class="summary-sig-name">__getstate__</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns a dictionary for pickling.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.__getstate__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="DumpsData"></a><span class="summary-sig-name">DumpsData</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Exclude</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Puts all data except linked fragments into a pickle string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.DumpsData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="LoadsData"></a><span class="summary-sig-name">LoadsData</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">s</span>)</span><br />
+      Updates data with data from a pickled string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.LoadsData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="SaveAnalData"></a><span class="summary-sig-name">SaveAnalData</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Saves all analysis data into a pickled file for easy retrieval.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.SaveAnalData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="LoadAnalData"></a><span class="summary-sig-name">LoadAnalData</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Loads all analysis data from a pickled file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.LoadAnalData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ClearAnalData"></a><span class="summary-sig-name">ClearAnalData</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Clears all analysis data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.ClearAnalData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.zamdata.FragDataClass-class.html#AnalysisVars" class="summary-name">AnalysisVars</a> = <code title="[&quot;MesoEntropy&quot;, &quot;MesoGroundPop&quot;, &quot;PunchStabTot&quot;, &quot;PunchCoopTot&quot;, &quot;Pair\
+List&quot;, &quot;CutProb&quot;, &quot;Pmf&quot;, &quot;PmfDist&quot;, &quot;PmfScore&quot;, &quot;BestnCont&quot;, &quot;PunchSta\
+b&quot;, &quot;PunchCoop&quot;, &quot;ClustPop&quot;]">[&quot;MesoEntropy&quot;, &quot;MesoGroundPop&quot;, &quot;PunchStabTot&quot;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PickleExcludeVars"></a><span class="summary-name">PickleExcludeVars</span> = <code title="[&quot;rx&quot;, &quot;Task&quot;]">[&quot;rx&quot;, &quot;Task&quot;]</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="DataExcludeVars"></a><span class="summary-name">DataExcludeVars</span> = <code title="[&quot;Parents&quot;, &quot;Children&quot;]">[&quot;Parents&quot;, &quot;Children&quot;]</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">StartRes</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">StopRes</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">Seq</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Parents</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x.__init__(...) initializes x; see x.__class__.__doc__ for 
+  signature</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__repr__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__repr__</span>(<span class="sig-arg">self</span>)</span>
+    <br /><em class="fname">(Representation operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.__repr__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>repr(x)</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__repr__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__setattr__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__setattr__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">key</span>,
+        <span class="sig-arg">val</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.__setattr__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets a class attribute.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__setattr__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetAttributes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetAttributes</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">DataKeys</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">HideKeys</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.GetAttributes">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get a list of attribute values.</p>
+  <p>Gets values for all attributes in DataKeys, while ignoring those in 
+  HideKeys. If DataKeys is None, then all keys will be returned by 
+  default</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>DataKeys</code></strong> (a list of string) - keys to return string values for</li>
+        <li><strong class="pname"><code>HideKeys</code></strong> (a list of string) - keys to ignore</li>
+    </ul></dd>
+    <dt>Returns: dictionary</dt>
+        <dd>a dictionary of attribute:value mappings</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Name"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">Name</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.Name">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a string name of the fragment. Version 0 has no suffix, all 
+  other have alpha suffices.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="UpdateVer"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">UpdateVer</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.UpdateVer">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Updates old versions to the latest FragDataClass.</p>
+  <p>This corrects for the fact that members of RexData and AnalData were 
+  once members of FragDataClass. If a copy of the old class was pickled, 
+  this code will copy these values into RexData and AnalData.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="ParentsIn"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ParentsIn</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">Parents</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.ParentsIn">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns True if Parents contains all the parents of self. False is 
+  returned if self has no parents.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="MakePath"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">MakePath</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">MainPath</span>=<span class="sig-default">&quot;.&quot;</span>,
+        <span class="sig-arg">AllPaths</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.MakePath">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Make the directory for this fragment.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>MainPath</code></strong> (string) - path of main directory for the fragment</li>
+        <li><strong class="pname"><code>AllPaths</code></strong> (bool) - if True then create anal, conf, and data directories</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="DelData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">DelData</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">Work</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">Data</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">Conf</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.DelData">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove data, work, and initial configuration files.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>Work</code></strong> - remove work directory?</li>
+        <li><strong class="pname"><code>Data</code></strong> - remove data directory?</li>
+        <li><strong class="pname"><code>Conf</code></strong> - remove files from conf directory?</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="AddSS"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">AddSS</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">ResList</span>,
+        <span class="sig-arg">SS</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.AddSS">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gives residues in ResList secondary structure restraints for SS.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ResList</code></strong> (list of int) - list of residues</li>
+        <li><strong class="pname"><code>SS</code></strong> (string) - secondary structure</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetPairList"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetPairList</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">MinCO</span>=<span class="sig-default">PairMinCO</span>,
+        <span class="sig-arg">MaxCO</span>=<span class="sig-default">PairMaxCO</span>,
+        <span class="sig-arg">MinECO</span>=<span class="sig-default">PairMinECO</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.GetPairList">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get a list of pairs.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>MinCO</code></strong> (int) - minimum contact order</li>
+        <li><strong class="pname"><code>MaxCO</code></strong> (int) - maximum contact order</li>
+        <li><strong class="pname"><code>MinECO</code></strong> (float) - minimum effective contact order</li>
+    </ul></dd>
+    <dt>Returns: list of (int, int)</dt>
+        <dd>list of pairs satisfying contact order restraints</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="AnalysisVars"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">AnalysisVars</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[&quot;MesoEntropy&quot;, &quot;MesoGroundPop&quot;, &quot;PunchStabTot&quot;, &quot;PunchCoopTot&quot;, &quot;Pair<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+List&quot;, &quot;CutProb&quot;, &quot;Pmf&quot;, &quot;PmfDist&quot;, &quot;PmfScore&quot;, &quot;BestnCont&quot;, &quot;PunchSta<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+b&quot;, &quot;PunchCoop&quot;, &quot;ClustPop&quot;]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:22 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

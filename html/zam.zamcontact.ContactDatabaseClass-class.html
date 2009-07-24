@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.zamcontact.ContactDatabaseClass</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        <a href="zam.zamcontact-module.html">Module&nbsp;zamcontact</a> ::
+        Class&nbsp;ContactDatabaseClass
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.zamcontact.ContactDatabaseClass-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ContactDatabaseClass</h1><p class="nomargin-top"><span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">ContactDatabaseClass</strong>
+</pre>
+
+<hr />
+<p>Class to build and maintain a database of contact scores based on 
+  logistic regression model.</p>
+  <p>The most common usage is to initialize a new ContactDatabaseClass with
+  a zd:</p>
+<pre class="literalblock">
+   cd = ContactDatabaseClass(zd)
+</pre>
+  <p>This will create a new contact database, loop over all of the 
+  fragments in zd and build a logit table, which can then be accessed 
+  through:</p>
+<pre class="literalblock">
+   cd.Scores[x,y]
+   cd.Counts[x,y]
+</pre>
+  <p>You can also build helix and hairpin propensity profiles based on 
+  applying kernels to the logit map. See <a 
+  href="zam.kernel.kernel-module.html" 
+  class="link">zam.kernel.kernel</a>.:</p>
+<pre class="literalblock">
+   cd.HelixPropensity[index]
+   cd.HairpinPropensity[index]        
+</pre>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamcontact.ContactDatabaseClass-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">zd</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Update</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Initializes the class using a particular protein sequence.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Clear"></a><span class="summary-sig-name">Clear</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Clears all stored data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.Clear">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamcontact.ContactDatabaseClass-class.html#UpdateContact" class="summary-sig-name">UpdateContact</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>,
+        <span class="summary-sig-arg">Logit</span>)</span><br />
+      Updates contact probability ratio for a contact based on log P(Nat).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.UpdateContact">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="UpdateScores"></a><span class="summary-sig-name">UpdateScores</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Updates all scores and propensity profiles from contact probability 
+      data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.UpdateScores">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__GetHelixPropensity"></a><span class="summary-sig-name">__GetHelixPropensity</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Calculate helix propensity based on kernel</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.__GetHelixPropensity">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__GetHairpinPropensity"></a><span class="summary-sig-name">__GetHairpinPropensity</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Calculate hairpin propensity based on kernel</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.__GetHairpinPropensity">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__GetNCapPropensity"></a><span class="summary-sig-name">__GetNCapPropensity</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Calculate hairpin propensity based on kernel</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.__GetNCapPropensity">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__GetCCapPropensity"></a><span class="summary-sig-name">__GetCCapPropensity</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Calculate hairpin propensity based on kernel</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.__GetCCapPropensity">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__GetExtendedPropensity"></a><span class="summary-sig-name">__GetExtendedPropensity</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Calculate extendedpin propensity based on kernel</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.__GetExtendedPropensity">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamcontact.ContactDatabaseClass-class.html#UpdateFrag" class="summary-sig-name">UpdateFrag</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Frag</span>)</span><br />
+      Updates contact data, proposed restraints, and fragment score.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.UpdateFrag">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamcontact.ContactDatabaseClass-class.html#UpdateFrags" class="summary-sig-name">UpdateFrags</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">FragList</span>)</span><br />
+      Updates scores based on a list of fragments.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.UpdateFrags">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamcontact.ContactDatabaseClass-class.html#WriteScores" class="summary-sig-name">WriteScores</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Filename</span>)</span><br />
+      Writes scores to a file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.WriteScores">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamcontact.ContactDatabaseClass-class.html#WriteHtml" class="summary-sig-name">WriteHtml</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Filename</span>)</span><br />
+      Writes scores to an html file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.WriteHtml">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">zd</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Update</span>=<span class="sig-default">True</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initializes the class using a particular protein sequence.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>zd</code></strong> (ZamDataClass) - zam database</li>
+        <li><strong class="pname"><code>Update</code></strong> (bool) - update the scores upon creation</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="UpdateContact"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">UpdateContact</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>,
+        <span class="sig-arg">Logit</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.UpdateContact">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Updates contact probability ratio for a contact based on log 
+  P(Nat).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - index of atom a</li>
+        <li><strong class="pname"><code>b</code></strong> - index of atom b</li>
+        <li><strong class="pname"><code>Logit</code></strong> - logit score of contact</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="UpdateFrag"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">UpdateFrag</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">Frag</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.UpdateFrag">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Updates contact data, proposed restraints, and fragment score.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>Frag</code></strong> (zam.zamdata.FragDataClass) - update based on data from Frag</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="UpdateFrags"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">UpdateFrags</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">FragList</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.UpdateFrags">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Updates scores based on a list of fragments.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>FragList</code></strong> (list of zam.zamdata.FragDataClass) - list of fragments to update</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="WriteScores"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">WriteScores</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">Filename</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.WriteScores">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Writes scores to a file.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>Filename</code></strong> - name of file to write</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="WriteHtml"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">WriteHtml</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">Filename</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamcontact-pysrc.html#ContactDatabaseClass.WriteHtml">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Writes scores to an html file.</p>
+  <p>Uses Cheetah to process LogitHtmlTemplate. Formatting and layout 
+  changes can mostly be accomplished by editing this template. To change 
+  the content, both the template and this function must be changed.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>Filename</code></strong> - name of file to write</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:22 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

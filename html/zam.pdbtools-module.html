@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.pdbtools</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;pdbtools
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.pdbtools-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module pdbtools</h1><p class="nomargin-top"><span class="codelink"><a href="zam.pdbtools-pysrc.html">source&nbsp;code</a></span></p>
+<p>Tools to deal with pdb files</p>
+  <p>CONVENTION: Any command that takes Pdb as an argument can use either 
+  the pdb filename or the actual pdb data</p>
+  <p>CONVENTION: Residue and atom numbers start as 1 as in the Pdb file</p>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="IsFileName"></a><span class="summary-sig-name">IsFileName</span>(<span class="summary-sig-arg">PdbString</span>)</span><br />
+      Returns True if PdbString is a filename, False if it is the data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#IsFileName">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="IsData"></a><span class="summary-sig-name">IsData</span>(<span class="summary-sig-arg">PdbString</span>)</span><br />
+      Returns True if PdbString is the Pdb data, False if it is the 
+      filename.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#IsData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ReturnPdbData"></a><span class="summary-sig-name">ReturnPdbData</span>(<span class="summary-sig-arg">PdbString</span>)</span><br />
+      PdbString can be a pdb filename or the actual file contents.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#ReturnPdbData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="SavePdbData"></a><span class="summary-sig-name">SavePdbData</span>(<span class="summary-sig-arg">PdbString</span>,
+        <span class="summary-sig-arg">PdbFile</span>)</span><br />
+      Saves a pdb string to a file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#SavePdbData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Atoms"></a><span class="summary-sig-name">Atoms</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Returns an array of atom names.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Atoms">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="AtomRes"></a><span class="summary-sig-name">AtomRes</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Returns an array of residue names for each atom.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#AtomRes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="AtomNum"></a><span class="summary-sig-name">AtomNum</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Returns an array of atom numbers for each atom.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#AtomNum">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="AtomPos"></a><span class="summary-sig-name">AtomPos</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Returns an array of atom coordinates.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#AtomPos">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="AtomResNums"></a><span class="summary-sig-name">AtomResNums</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Returns the numbers of the residues for each atom the pdb file data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#AtomResNums">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Seq"></a><span class="summary-sig-name">Seq</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Returns an array of residue names for the sequence.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Seq">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ResLen"></a><span class="summary-sig-name">ResLen</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Returns the number of residues.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#ResLen">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="AtomLen"></a><span class="summary-sig-name">AtomLen</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Returns the number of atoms.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#AtomLen">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ResNums"></a><span class="summary-sig-name">ResNums</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Returns the numbers of the residues in the pdb file data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#ResNums">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetCoords"></a><span class="summary-sig-name">GetCoords</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Returns the Pdb coordinates.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#GetCoords">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.pdbtools-module.html#GetOverlaps" class="summary-sig-name">GetOverlaps</a>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">MinDist</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">FirstOnly</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Returns a list of tuples (a,b) of overlaps between atoms a and b.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#GetOverlaps">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="HasOverlap"></a><span class="summary-sig-name">HasOverlap</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">MinDist</span>=<span class="summary-sig-default">0.65</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#HasOverlap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="HasHydrogens"></a><span class="summary-sig-name">HasHydrogens</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Indicates whether or not there are hydrogens.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#HasHydrogens">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="HasCaps"></a><span class="summary-sig-name">HasCaps</span>(<span class="summary-sig-arg">Pdb</span>)</span><br />
+      Indicates if there are cap residues in a pdb file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#HasCaps">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Renumber"></a><span class="summary-sig-name">Renumber</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">StartAtom</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">StartRes</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">StartChain</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"> </code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Renumbers pdb residues and atoms starting at StartRes and StartAtoms,
+      and starting the chain at no specification.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Renumber">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Dehydrogen"></a><span class="summary-sig-name">Dehydrogen</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Removes hydrogens from a pdb file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Dehydrogen">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Decap"></a><span class="summary-sig-name">Decap</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Removes caps and terminal atoms from a pdb file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Decap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Cap"></a><span class="summary-sig-name">Cap</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Adds caps ACE and NME to a pdb file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Cap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="CapN"></a><span class="summary-sig-name">CapN</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Adds n-terminal ACE cap to a pdb file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#CapN">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="CapC"></a><span class="summary-sig-name">CapC</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Adds c-terminal NME cap to a pdb file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#CapC">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Splice"></a><span class="summary-sig-name">Splice</span>(<span class="summary-sig-arg">Pdb1</span>,
+        <span class="summary-sig-arg">Pdb2</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Joins two pdb files together.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Splice">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Generate"></a><span class="summary-sig-name">Generate</span>(<span class="summary-sig-arg">Seq</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Generates a pdb file of extended sequence Seq.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Generate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Extend"></a><span class="summary-sig-name">Extend</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">SeqBefore</span>,
+        <span class="summary-sig-arg">SeqAfter</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Opt</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">N</span>=<span class="summary-sig-default">5</span>)</span><br />
+      Extends a pdbfile in either or both directions with given sequences.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Extend">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Extract"></a><span class="summary-sig-name">Extract</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">StartRes</span>,
+        <span class="summary-sig-arg">StopRes</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Extracts a portion of a pdb file between specified residue nums.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Extract">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.pdbtools-module.html#Trim" class="summary-sig-name">Trim</a>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">Chains</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="summary-sig-arg">ResNums</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Selects out specific chains or residue numbers from a pdb file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Trim">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Rotate"></a><span class="summary-sig-name">Rotate</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">ResNum</span>,
+        <span class="summary-sig-arg">Phi</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Psi</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Rotates a residue to specified phi, psi.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Rotate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="SpliceOpt"></a><span class="summary-sig-name">SpliceOpt</span>(<span class="summary-sig-arg">Pdb1</span>,
+        <span class="summary-sig-arg">Pdb2</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">N</span>=<span class="summary-sig-default">5</span>)</span><br />
+      Splices two pdbs together and rotates to optimize for non-overlap.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#SpliceOpt">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="RandDihedrals"></a><span class="summary-sig-name">RandDihedrals</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">DeltaAng</span>=<span class="summary-sig-default">5.0</span>)</span><br />
+      Adds a random angle to the torsions along the backbone.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#RandDihedrals">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Standardize"></a><span class="summary-sig-name">Standardize</span>(<span class="summary-sig-arg">Pdb</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Formats to standard residue and atom names, etc.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Standardize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="Download"></a><span class="summary-sig-name">Download</span>(<span class="summary-sig-arg">Id</span>,
+        <span class="summary-sig-arg">OutPdbFile</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Downloads a pdb file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#Download">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__Uncompress"></a><span class="summary-sig-name">__Uncompress</span>(<span class="summary-sig-arg">Data</span>)</span><br />
+      Accessory for uncompressing downloaded pdb.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#__Uncompress">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetPdbFilenames"></a><span class="summary-sig-name">GetPdbFilenames</span>(<span class="summary-sig-arg">argv</span>,
+        <span class="summary-sig-arg">NArg</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.pdbtools-pysrc.html#GetPdbFilenames">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Logger"></a><span class="summary-name">Logger</span> = <code title="zam.utility.SetupLogging(__name__)">zam.utility.SetupLogging(__name__)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.pdbtools-module.html#Usage" class="summary-name">Usage</a> = <code title="'''Modifies pdb files.
+
+Usage     : pdbtools.py cap INPUTPDB [OUTPUTPDB]
+   OR     : pdbtools.py decap INPUTPDB [OUTPUTPDB]
+   OR     : pdbtools.py dehydrogen INPUTPDB [OUTPUTPDB]
+   OR     : pdbtools.py extendc INPUTPDB SEQ [OUTPUTPDB]
+   OR     : pdbtools.py extendn INPUTPDB SEQ [OUTPUTPDB]
+   OR     : pdbtools.py extend INPUTPDB SEQBEFORE SEQAFTER [OUTPUTPDB]
+..."><code class="variable-quote">'</code><code class="variable-string">Modifies pdb files.\n\nUsage     : pdbtools.py cap IN</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Caps"></a><span class="summary-name">Caps</span> = <code title="['ACE', 'NHE', 'NME']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">ACE</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">NHE</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">NME</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TerminiAtoms"></a><span class="summary-name">TerminiAtoms</span> = <code title="['OXT', 'H2', 'H3']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">OXT</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">H2</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">H3</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OverlapDist"></a><span class="summary-name">OverlapDist</span> = <code title="0.65">0.65</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'zam'"><code class="variable-quote">'</code><code class="variable-string">zam</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="GetOverlaps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetOverlaps</span>(<span class="sig-arg">Pdb</span>,
+        <span class="sig-arg">MinDist</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">FirstOnly</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.pdbtools-pysrc.html#GetOverlaps">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a list of tuples (a,b) of overlaps between atoms a and b. a 
+  and b start at zero and increment consecutively and are not taken from 
+  the pdb data.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="Trim"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">Trim</span>(<span class="sig-arg">Pdb</span>,
+        <span class="sig-arg">Chains</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="sig-arg">ResNums</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="sig-arg">OutPdbFile</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.pdbtools-pysrc.html#Trim">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Selects out specific chains or residue numbers from a pdb file. Here, 
+  residue nums are those in the file, and not necessarily in sequential 
+  order starting at 1.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Warning:</strong>
+        this might be broken as lastres and lastresnum are used before 
+        assignment.
+      </p>
+      <p><strong>To Do:</strong>
+        fix this
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="Usage"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Usage</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">Modifies pdb files.</code>
+<code class="variable-string"></code>
+<code class="variable-string">Usage     : pdbtools.py cap INPUTPDB [OUTPUTPDB]</code>
+<code class="variable-string">   OR     : pdbtools.py decap INPUTPDB [OUTPUTPDB]</code>
+<code class="variable-string">   OR     : pdbtools.py dehydrogen INPUTPDB [OUTPUTPDB]</code>
+<code class="variable-string">   OR     : pdbtools.py extendc INPUTPDB SEQ [OUTPUTPDB]</code>
+<code class="variable-string">   OR     : pdbtools.py extendn INPUTPDB SEQ [OUTPUTPDB]</code>
+<code class="variable-string">   OR     : pdbtools.py extend INPUTPDB SEQBEFORE SEQAFTER [OUTPUTPDB]</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:21 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

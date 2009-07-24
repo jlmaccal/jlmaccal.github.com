@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.zamdata</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;zamdata
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.zamdata-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module zamdata</h1><p class="nomargin-top"><span class="codelink"><a href="zam.zamdata-pysrc.html">source&nbsp;code</a></span></p>
+<p>Major ZAM data structures.</p>
+  <p>This module implements three major ZAM data structures:</p>
+  <ul>
+    <li>
+      <a href="zam.zamdata.ZamDataClass-class.html" 
+      class="link">ZamDataClass</a> (master ZAM database)
+    </li>
+    <li>
+      <a href="zam.zamdata.FragDataClass-class.html" 
+      class="link">FragDataClass</a> (structure describing a ZAM fragment)
+    </li>
+    <li>
+      <a href="zam.zamdata.SnapDatabaseClass-class.html" 
+      class="link">SnapDatabaseClass</a> (database of snapshots or 
+      structures)
+    </li>
+  </ul>
+  <p>The ZamDataClass is the master ZAM datastructure and contains 
+  information such as the sequence of the target and the current stage of 
+  the ZAM run. It also maintains a list of fragments. There is usually only
+  one instance of the class at a time and it is usually named 
+  <code>zd</code> by convention. <code>zd</code> is also the object that is
+  cPickled to disk as 'restart.dat'.</p>
+  <p>The FragDataClass represents a ZAM fragment. It is the most 
+  complicated data structure in ZAM and represents a fragment. It contains 
+  information such as the sequence, length, and parents, as well as run 
+  parameters, analysis results, and much more. Much of ZAM revolves around 
+  creating or manipulating the fragments stored in <code>zd</code>, or 
+  performing simulations based on a fragment and then storing the results 
+  of analysis back in the fragment. By convention fragments are usually 
+  called Frag and a list of fragments is usually called Frags.</p>
+
+<hr />
+<div class="fields">      <strong>Notes:</strong>
+      <ul class="nomargin-top">
+        <li>
+        Values for Frag.Stage:
+        <ul>
+          <li>
+            &quot;grow&quot;: frag is new or has been grown from a previous
+            frag and is flagged for simulation
+          </li>
+          <li>
+            &quot;assem&quot;: frag has been assembled from previous frags 
+            and is flagged for simulation
+          </li>
+          <li>
+            &quot;done&quot;: frag has finished being simulated; may be 
+            used for future growth/assembly
+          </li>
+        </ul>
+        </li>
+        <li>
+        Conventions:
+        <ul>
+          <li>
+            Note that all FragDataClass member functions return information
+            based on fragment prior restraints only (not global 
+            restraints), whereas corresponding functions in zamDataClass 
+            return information based on purely global restraints
+          </li>
+          <li>
+            Internally, all atom numbers and residue numbers start at 0, 
+            but these are changed for output to base 1
+          </li>
+        </ul>
+        </li>
+      </ul>
+      <p><strong>To Do:</strong>
+        we should probably break this file into three pieces, one for each 
+    class and associated functions.
+      </p>
+</div><!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.zamdata.SnapClass-class.html" class="summary-name">SnapClass</a><br />
+      Class that represents a snapshot.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.zamdata.SnapDatabaseClass-class.html" class="summary-name">SnapDatabaseClass</a><br />
+      Database of snapshots.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.zamdata.FragDataClass-class.html" class="summary-name">FragDataClass</a><br />
+      Fragment data
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.zamdata.ZamDataClass-class.html" class="summary-name">ZamDataClass</a><br />
+      Main ZAM database
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata-module.html#NumToAlpha" class="summary-sig-name">NumToAlpha</a>(<span class="summary-sig-arg">Num</span>)</span><br />
+      Converts a number to an alpha string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#NumToAlpha">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata-module.html#CalcECO" class="summary-sig-name">CalcECO</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>,
+        <span class="summary-sig-arg">RestList</span>,
+        <span class="summary-sig-arg">MaxECO</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">MaxDepth</span>=<span class="summary-sig-default">3</span>,
+        <span class="summary-sig-arg">CurDepth</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">Choices</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns the shortest route from residue nums a to b, incl restraints.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#CalcECO">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata-module.html#CalcResWithinECO" class="summary-sig-name">CalcResWithinECO</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>,
+        <span class="summary-sig-arg">RestList</span>,
+        <span class="summary-sig-arg">MaxECO</span>,
+        <span class="summary-sig-arg">MaxDepth</span>=<span class="summary-sig-default">1</span>)</span><br />
+      Determine if a two residues are within maximum effective contact 
+      order.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#CalcResWithinECO">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata-module.html#ParentStr" class="summary-sig-name">ParentStr</a>(<span class="summary-sig-arg">Parent</span>)</span><br />
+      Makes a string representation of a parent</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#ParentStr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata-module.html#ParentsStr" class="summary-sig-name">ParentsStr</a>(<span class="summary-sig-arg">Parents</span>)</span><br />
+      Makes a string reprentation of a list of parents</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#ParentsStr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata-module.html#SnapPairScore" class="summary-sig-name">SnapPairScore</a>(<span class="summary-sig-arg">Snap1</span>,
+        <span class="summary-sig-arg">Snap2</span>,
+        <span class="summary-sig-arg">ContactScores</span>,
+        <span class="summary-sig-arg">COWeight</span>=<span class="summary-sig-default">1.</span>)</span><br />
+      Returns the sum scores of Snap1 and Snap2, where contacts in regions 
+      of overlap are averaged.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#SnapPairScore">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata-module.html#GetFragsWithParents" class="summary-sig-name">GetFragsWithParents</a>(<span class="summary-sig-arg">Parents</span>)</span><br />
+      Returns fragments whose parents are contained in Parents.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#GetFragsWithParents">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Logger"></a><span class="summary-name">Logger</span> = <code title="zam.utility.SetupLogging(__name__)">zam.utility.SetupLogging(__name__)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ZAM_DB_VERSION"></a><span class="summary-name">ZAM_DB_VERSION</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PairMinCO"></a><span class="summary-name">PairMinCO</span> = <code title="3">3</code><br />
+      Minimum CO for pair analyses
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PairMaxCO"></a><span class="summary-name">PairMaxCO</span> = <code title="1000">1000</code><br />
+      Maximum CO for pair analyses
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PairMinECO"></a><span class="summary-name">PairMinECO</span> = <code title="3">3</code><br />
+      Minimum ECO for considering a pair for analysis
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="AllPairsDflt"></a><span class="summary-name">AllPairsDflt</span> = <code title="True">True</code><br />
+      Analyze all (true) or just hydrophobic (false) pairs
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MinScore"></a><span class="summary-name">MinScore</span> = <code title="-1.e200">-1.e200</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="NumToAlpha"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">NumToAlpha</span>(<span class="sig-arg">Num</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#NumToAlpha">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts a number to an alpha string.</p>
+  <p>This function is used to name fragment directories when more than one 
+  fragment has the same sequence. The first fragment would be, e.g. r1-8a, 
+  the second r1-8b, etc.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>Num</code></strong> (int) - a number to convert</li>
+    </ul></dd>
+    <dt>Returns: string</dt>
+        <dd>a letter from a-z</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="CalcECO"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">CalcECO</span>(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>,
+        <span class="sig-arg">RestList</span>,
+        <span class="sig-arg">MaxECO</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">MaxDepth</span>=<span class="sig-default">3</span>,
+        <span class="sig-arg">CurDepth</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">Choices</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#CalcECO">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the shortest route from residue nums a to b, incl 
+  restraints.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - index of residue a</li>
+        <li><strong class="pname"><code>b</code></strong> - index of resiude b</li>
+        <li><strong class="pname"><code>RestList</code></strong> (list of (x,y)) - list of restraints</li>
+        <li><strong class="pname"><code>MaxECO</code></strong> - maximum effective contact order</li>
+        <li><strong class="pname"><code>MaxDepth</code></strong> - maximum depth to search</li>
+        <li><strong class="pname"><code>CurDepth</code></strong> - current depth</li>
+        <li><strong class="pname"><code>Choices</code></strong> - list of current choices</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>minimum distance between a and b</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        This function calls itself recursively.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="CalcResWithinECO"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">CalcResWithinECO</span>(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>,
+        <span class="sig-arg">RestList</span>,
+        <span class="sig-arg">MaxECO</span>,
+        <span class="sig-arg">MaxDepth</span>=<span class="sig-default">1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#CalcResWithinECO">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Determine if a two residues are within maximum effective contact 
+  order.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - index of residue a</li>
+        <li><strong class="pname"><code>b</code></strong> - index of residue b</li>
+        <li><strong class="pname"><code>RestList</code></strong> (list of (x,y)) - list of restraints</li>
+        <li><strong class="pname"><code>MaxECO</code></strong> - maximum effective contact order</li>
+        <li><strong class="pname"><code>MaxDepth</code></strong> - maximum depth to search</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>true if a and b are within MaxECO</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ParentStr"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ParentStr</span>(<span class="sig-arg">Parent</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#ParentStr">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Makes a string representation of a parent</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>Parent</code></strong> ((Frag, index))</li>
+    </ul></dd>
+    <dt>Returns: string</dt>
+        <dd>string describing parent</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ParentsStr"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ParentsStr</span>(<span class="sig-arg">Parents</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#ParentsStr">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Makes a string reprentation of a list of parents</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>Parents</code></strong> (list of (Frag, index)) - list of parents</li>
+    </ul></dd>
+    <dt>Returns: string</dt>
+        <dd>string describing parents</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SnapPairScore"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">SnapPairScore</span>(<span class="sig-arg">Snap1</span>,
+        <span class="sig-arg">Snap2</span>,
+        <span class="sig-arg">ContactScores</span>,
+        <span class="sig-arg">COWeight</span>=<span class="sig-default">1.</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#SnapPairScore">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the sum scores of Snap1 and Snap2, where contacts in regions 
+  of overlap are averaged.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>Snap1</code></strong> - snapshot 1</li>
+        <li><strong class="pname"><code>Snap2</code></strong> - snapshot 2</li>
+        <li><strong class="pname"><code>ContactScores</code></strong> (numpy.array) - logit map</li>
+        <li><strong class="pname"><code>COWeight</code></strong> - weight for contact order</li>
+    </ul></dd>
+    <dt>Returns: float</dt>
+        <dd>score</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetFragsWithParents"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetFragsWithParents</span>(<span class="sig-arg">Parents</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#GetFragsWithParents">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns fragments whose parents are contained in Parents.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>Parents</code></strong> ((Frag, Index)) - list of parents</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Warning:</strong>
+        type of Parents might not be documented correctly
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:22 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.rexanalysis</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;rexanalysis
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.rexanalysis-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module rexanalysis</h1><p class="nomargin-top"><span class="codelink"><a href="zam.rexanalysis-pysrc.html">source&nbsp;code</a></span></p>
+<p>Perform ZAM analysis as part of a replica exchange run.</p>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetTrjFiles"></a><span class="summary-sig-name">GetTrjFiles</span>(<span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">Ind</span>)</span><br />
+      Returns the names of the trajectory files.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#GetTrjFiles">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetStats"></a><span class="summary-sig-name">GetStats</span>(<span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">MinTemp</span>=<span class="summary-sig-default">-1.0</span>,
+        <span class="summary-sig-arg">MaxTemp</span>=<span class="summary-sig-default">1e+100</span>)</span><br />
+      Reads temperatures and gets data length from a REX simulation.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#GetStats">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="CheckFrames"></a><span class="summary-sig-name">CheckFrames</span>(<span class="summary-sig-arg">NFrame</span>,
+        <span class="summary-sig-arg">NFrameSkip</span>,
+        <span class="summary-sig-arg">NFrameRead</span>)</span><br />
+      Returns new NFrameSkip and NFrameRead calculated to fit into the 
+      total number of frames.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#CheckFrames">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetNReplica"></a><span class="summary-sig-name">GetNReplica</span>(<span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">ReplicaInd</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns the nuber of replicas to use.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#GetNReplica">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetEnergies"></a><span class="summary-sig-name">GetEnergies</span>(<span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">ReplicaInd</span>,
+        <span class="summary-sig-arg">Vars</span>,
+        <span class="summary-sig-arg">NFrameSkip</span>,
+        <span class="summary-sig-arg">NFrameRead</span>)</span><br />
+      Returns arrays of energies corresponding to the terms specified.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#GetEnergies">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetRestEnergies"></a><span class="summary-sig-name">GetRestEnergies</span>(<span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">ReplicaInd</span>,
+        <span class="summary-sig-arg">RestGroups</span>,
+        <span class="summary-sig-arg">NFrameSkip</span>,
+        <span class="summary-sig-arg">NFrameRead</span>)</span><br />
+      Returns computed components of the restraint energy function.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#GetRestEnergies">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetRestWeights"></a><span class="summary-sig-name">GetRestWeights</span>(<span class="summary-sig-arg">AllRest</span>)</span><br />
+      Groups restraints into common parts with scale factors for replicas.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#GetRestWeights">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetRestGroups"></a><span class="summary-sig-name">GetRestGroups</span>(<span class="summary-sig-arg">RestWeights</span>)</span><br />
+      Puts restraint scales into common groups.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#GetRestGroups">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ParseRestTerms"></a><span class="summary-sig-name">ParseRestTerms</span>(<span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">ReplicaInd</span>)</span><br />
+      Returns RestGroups and Weights from replica exchange data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#ParseRestTerms">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.rexanalysis-module.html#RunWham" class="summary-sig-name">RunWham</a>(<span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">NFrameSkip</span>,
+        <span class="summary-sig-arg">NFrameRead</span>,
+        <span class="summary-sig-arg">TargetTemp</span>=<span class="summary-sig-default">270.0</span>,
+        <span class="summary-sig-arg">DeltaTemp</span>=<span class="summary-sig-default">10000000000.0</span>,
+        <span class="summary-sig-arg">RemoveRest</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">Verbose</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Returns FK, LogwKN.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#RunWham">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.rexanalysis-module.html#LibWham" class="summary-sig-name">LibWham</a>(<span class="summary-sig-arg">TempK</span>,
+        <span class="summary-sig-arg">EIKN</span>,
+        <span class="summary-sig-arg">TargetTemp</span>,
+        <span class="summary-sig-arg">WeightIK</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">TargetWeightI</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">kB</span>=<span class="summary-sig-default">0.00198770921128</span>,
+        <span class="summary-sig-arg">MaxIter</span>=<span class="summary-sig-default">5000</span>,
+        <span class="summary-sig-arg">RelTol</span>=<span class="summary-sig-default">1e-08</span>,
+        <span class="summary-sig-arg">Verbose</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Computes WHAM free energies using compiled Fortran lib.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#LibWham">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="PyWham"></a><span class="summary-sig-name">PyWham</span>(<span class="summary-sig-arg">TempK</span>,
+        <span class="summary-sig-arg">EKN</span>,
+        <span class="summary-sig-arg">ERestKN</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">TargetTemp</span>=<span class="summary-sig-default">270.0</span>,
+        <span class="summary-sig-arg">NBin</span>=<span class="summary-sig-default">1000</span>,
+        <span class="summary-sig-arg">NIter</span>=<span class="summary-sig-default">50</span>,
+        <span class="summary-sig-arg">Verbose</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Computes WHAM free energies using a binning method, completely within
+      Python.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#PyWham">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.rexanalysis-module.html#ReweightProbs" class="summary-sig-name">ReweightProbs</a>(<span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">FileName</span>,
+        <span class="summary-sig-arg">NBin</span>,
+        <span class="summary-sig-arg">VarMin</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">VarMax</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">IndFunc</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">NVar</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">NFrameSkip</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">NFrameRead</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ReplicaInd</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">LogwKN</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">HeadRow</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">HeadCol</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">VarNames</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">OutFile</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">AsLog</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">MultFactor</span>=<span class="summary-sig-default">1.0</span>,
+        <span class="summary-sig-arg">Verbose</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Reweights a distribution of variable values taken from files at each 
+      temp.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#ReweightProbs">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="WriteProbs"></a><span class="summary-sig-name">WriteProbs</span>(<span class="summary-sig-arg">OutFile</span>,
+        <span class="summary-sig-arg">VarNames</span>,
+        <span class="summary-sig-arg">ValOfInd</span>,
+        <span class="summary-sig-arg">Prob</span>,
+        <span class="summary-sig-arg">ValFloat</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Writes reweighted probabilities to files.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#WriteProbs">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="WriteProbsTranspose"></a><span class="summary-sig-name">WriteProbsTranspose</span>(<span class="summary-sig-arg">OutFile</span>,
+        <span class="summary-sig-arg">VarNames</span>,
+        <span class="summary-sig-arg">ValOfInd</span>,
+        <span class="summary-sig-arg">Prob</span>,
+        <span class="summary-sig-arg">ValFloat</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Writes reweighted probabilities to files, transposed to old-style 
+      format.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#WriteProbsTranspose">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="CalcDistProbs"></a><span class="summary-sig-name">CalcDistProbs</span>(<span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">OutputPath</span>,
+        <span class="summary-sig-arg">NFrameSkip</span>,
+        <span class="summary-sig-arg">NFrameRead</span>,
+        <span class="summary-sig-arg">PairList</span>,
+        <span class="summary-sig-arg">DistMethod</span>,
+        <span class="summary-sig-arg">NBin</span>,
+        <span class="summary-sig-arg">MinR</span>,
+        <span class="summary-sig-arg">MaxR</span>,
+        <span class="summary-sig-arg">Cut</span>,
+        <span class="summary-sig-arg">TargetTemp</span>=<span class="summary-sig-default">270.0</span>,
+        <span class="summary-sig-arg">TrjFile</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PrmtopFile</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ReplicaInd</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">NFrame</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">LogwKN</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">StartRes</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">Prefix</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">Verbose</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">KeepDist</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Calculates PMFs and contact probabilities from either a single file 
+      or from REX/WHAM results, for a list of residue pairs.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#CalcDistProbs">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="CalcAtomDistProbs"></a><span class="summary-sig-name">CalcAtomDistProbs</span>(<span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">OutputPath</span>,
+        <span class="summary-sig-arg">NFrameSkip</span>,
+        <span class="summary-sig-arg">NFrameRead</span>,
+        <span class="summary-sig-arg">PairAtoms</span>,
+        <span class="summary-sig-arg">NBin</span>,
+        <span class="summary-sig-arg">MinR</span>,
+        <span class="summary-sig-arg">MaxR</span>,
+        <span class="summary-sig-arg">TargetTemp</span>=<span class="summary-sig-default">270.0</span>,
+        <span class="summary-sig-arg">TrjFile</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PrmtopFile</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ReplicaInd</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">NFrame</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">LogwKN</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">PairLabels</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Prefix</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">Verbose</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">KeepDist</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Calculates PMFs and contact probabilities from either a single file 
+      or from REX/WHAM results, for a list of residue pairs.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#CalcAtomDistProbs">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="TestWham"></a><span class="summary-sig-name">TestWham</span>()</span><br />
+      Runs tests for wham routines.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.rexanalysis-pysrc.html#TestWham">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Logger"></a><span class="summary-name">Logger</span> = <code title="logging.getLogger(&quot;zam.rexanalysis&quot;)">logging.getLogger(&quot;zam.rexanalysis&quot;)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="logger"></a><span class="summary-name">logger</span> = <code title="logging.getLogger(&quot;zam.rexanalysis&quot;)">logging.getLogger(&quot;zam.rexanalysis&quot;)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="kB"></a><span class="summary-name">kB</span> = <code title="0.00198770921128">0.00198770921128</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TargetTempDflt"></a><span class="summary-name">TargetTempDflt</span> = <code title="270.0">270.0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="DeltaTempDflt"></a><span class="summary-name">DeltaTempDflt</span> = <code title="10000000000.0">10000000000.0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PmfMax"></a><span class="summary-name">PmfMax</span> = <code title="10000.0">10000.0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="VerboseDflt"></a><span class="summary-name">VerboseDflt</span> = <code title="False">False</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'zam'"><code class="variable-quote">'</code><code class="variable-string">zam</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="RunWham"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">RunWham</span>(<span class="sig-arg">DataPath</span>,
+        <span class="sig-arg">NFrameSkip</span>,
+        <span class="sig-arg">NFrameRead</span>,
+        <span class="sig-arg">TargetTemp</span>=<span class="sig-default">270.0</span>,
+        <span class="sig-arg">DeltaTemp</span>=<span class="sig-default">10000000000.0</span>,
+        <span class="sig-arg">RemoveRest</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">Verbose</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.rexanalysis-pysrc.html#RunWham">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns FK, LogwKN. DataPath: where the replica exchange files are 
+  NFrameSkip: number of frames to skip over NFrameRead: number of frames to
+  read TargetTemp: target temperature for reweighting DeltaTemp: maximum 
+  temperature range to use from replicas around TargetTemp RemoveRest: True
+  to remove the restraints in the weighting Verbose: True to print 
+  messages</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="LibWham"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">LibWham</span>(<span class="sig-arg">TempK</span>,
+        <span class="sig-arg">EIKN</span>,
+        <span class="sig-arg">TargetTemp</span>,
+        <span class="sig-arg">WeightIK</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">TargetWeightI</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">kB</span>=<span class="sig-default">0.00198770921128</span>,
+        <span class="sig-arg">MaxIter</span>=<span class="sig-default">5000</span>,
+        <span class="sig-arg">RelTol</span>=<span class="sig-default">1e-08</span>,
+        <span class="sig-arg">Verbose</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.rexanalysis-pysrc.html#LibWham">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+Computes WHAM free energies using compiled Fortran lib. Returns FK, logwKN.
+TempK: array of NReplica temperatures
+EIKN: energy array for different components of the energy func;
+      either dimen (N_replicas, N_frames) or (N_components, N_replicas, N_frames)
+TargetTemp: target temperature
+Weights: list of weight arrays for corresponding terms in energy function,
+         each with dimension (NReplica). Note that it is assumed Energies gives the
+         full energies, not the effective energies (multiplied by weights) in each
+         of the replica Hamiltonians.
+TargetWeights: list of target weights for the returned distribution
+FK: dimensionless free energies (-F/kT) for each replica
+logwKN: log weights of each configuration at target temp and weights
+kN: different boltzmann constant, if desired
+MaxIter: maximum number of wham iterations
+AbsTol: stop wham iterations when difference between successive free energies
+        is less than this value
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="ReweightProbs"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ReweightProbs</span>(<span class="sig-arg">DataPath</span>,
+        <span class="sig-arg">FileName</span>,
+        <span class="sig-arg">NBin</span>,
+        <span class="sig-arg">VarMin</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">VarMax</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">IndFunc</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">NVar</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">NFrameSkip</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">NFrameRead</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">ReplicaInd</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">LogwKN</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">HeadRow</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">HeadCol</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">VarNames</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">OutFile</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">AsLog</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">MultFactor</span>=<span class="sig-default">1.0</span>,
+        <span class="sig-arg">Verbose</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.rexanalysis-pysrc.html#ReweightProbs">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Reweights a distribution of variable values taken from files at each 
+  temp. FileName will be added a prefix of &quot;0.&quot;, &quot;1.&quot;, 
+  ... for each temperature. ReplicaInd = None means that the file in 
+  FileName will be analyzed alone. IndFunc is an optional function of a 
+  string read from the variable files that returns the indices 
+  corresponding to the variables.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:22 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

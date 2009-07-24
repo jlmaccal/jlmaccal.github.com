@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.zamdata.SnapDatabaseClass</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        <a href="zam.zamdata-module.html">Module&nbsp;zamdata</a> ::
+        Class&nbsp;SnapDatabaseClass
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.zamdata.SnapDatabaseClass-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SnapDatabaseClass</h1><p class="nomargin-top"><span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">SnapDatabaseClass</strong>
+</pre>
+
+<hr />
+<p>Database of snapshots.</p>
+  <p>This is a database of <a href="zam.zamdata.SnapClass-class.html" 
+  class="link">SnapClass</a>. When initialized with a zd, SnapDatabaseClass
+  finds all of the snapshots of the Frags in zd and adds them to self. Each
+  fragment is scored based on the logit map and redundant fragments can 
+  optionally be removed. The logit map is obtained by initializing a <a 
+  href="zam.zamcontact.ContactDatabaseClass-class.html" 
+  class="link">zam.zamcontact.ContactDatabaseClass</a> object with the 
+  zd.</p>
+  <p>Typical usage:</p>
+<pre class="literalblock">
+   cd = zamcontact.ContactDatabaseClass(zd)
+   sd = SnapDatabaseClass(zd, cd.Scores)
+
+   for Snap in sd.Snaps:
+       do_something_cool(Snap)
+</pre>
+
+<hr />
+<div class="fields">      <p><strong>Note:</strong>
+        by convention the snapshot database is usually called sd.
+      </p>
+</div><!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.SnapDatabaseClass-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">zd</span>,
+        <span class="summary-sig-arg">ContactScores</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">RemoveRedundant</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Initialize database.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__len__"></a><span class="summary-sig-name">__len__</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.__len__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.SnapDatabaseClass-class.html#AddSnaps" class="summary-sig-name">AddSnaps</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">Frag</span>)</span><br />
+      Adds a fragment's snaps to the database.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.AddSnaps">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of <a href="zam.zamdata.SnapClass-class.html" 
+      class="link">zam.zamdata.SnapClass</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.SnapDatabaseClass-class.html#GetSnaps" class="summary-sig-name">GetSnaps</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ParentFrag</span>)</span><br />
+      Get snaps with a given parent fragment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.GetSnaps">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.SnapDatabaseClass-class.html#UpdateScores" class="summary-sig-name">UpdateScores</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ContactScores</span>)</span><br />
+      Update the snapshot scores based on contact scores.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.UpdateScores">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.zamdata.SnapDatabaseClass-class.html#RemoveRedundant" class="summary-sig-name">RemoveRedundant</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Remove redundant snapshots.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.RemoveRedundant">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">zd</span>,
+        <span class="sig-arg">ContactScores</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">RemoveRedundant</span>=<span class="sig-default">False</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize database.</p>
+  <p>Searches through all fragments and gets snaps. Contact scores are 
+  calculated if required and redundant snapshots are optionally 
+  removed.</p>
+  <p>ContactScores usually comes from cd.Scores, where cd is a <a 
+  href="zam.zamcontact.ContactDatabaseClass-class.html" 
+  class="link">zam.zamcontact.ContactDatabaseClass</a> that has been 
+  initialized with the zd.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>zd</code></strong> (<a href="zam.zamdata.ZamDataClass-class.html" 
+          class="link">zam.zamdata.ZamDataClass</a>) - zam database</li>
+        <li><strong class="pname"><code>ContactScores</code></strong> (numpy.array) - logit map</li>
+        <li><strong class="pname"><code>RemoveRedundant</code></strong> (bool) - remove redundant snapshots</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="AddSnaps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">AddSnaps</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">Frag</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.AddSnaps">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Adds a fragment's snaps to the database.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>Frag</code></strong> (<a href="zam.zamdata.FragDataClass-class.html" 
+          class="link">zam.zamdata.FragDataClass</a>) - fragment to add to database</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetSnaps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetSnaps</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">ParentFrag</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.GetSnaps">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get snaps with a given parent fragment.</p>
+  <p>ParentFrag is a tuple of (Frag, index) as is the convention for 
+  parents.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ParentFrag</code></strong> ((Frag, index)) - parent fragment</li>
+    </ul></dd>
+    <dt>Returns: list of <a href="zam.zamdata.SnapClass-class.html" 
+      class="link">zam.zamdata.SnapClass</a></dt>
+        <dd>snapshots that have ParentFrag as a parent</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="UpdateScores"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">UpdateScores</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">ContactScores</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.UpdateScores">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Update the snapshot scores based on contact scores.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ContactScores</code></strong> (numpy.array) - logit map</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RemoveRedundant"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">RemoveRedundant</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.zamdata-pysrc.html#SnapDatabaseClass.RemoveRedundant">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove redundant snapshots.</p>
+  <p>Snapshots are redundant if they share the same contacts.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:22 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

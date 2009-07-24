@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.backup</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;backup
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.backup-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="zam.backup-module.html">Module zam.backup</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">"""This module provides a versioned output file.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">When you write to such a file, it saves a versioned backup of any</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">existing file contents. </tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">For usage examples see main().</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring">Blatently stolen from python cookbook: </tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-docstring">http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/52277</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package zam=zam-module.html"><a title="zam" class="py-name" href="#" onclick="return doclink('link-0', 'zam', 'link-0');">zam</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module zam.utility=zam.utility-module.html"><a title="zam.utility" class="py-name" href="#" onclick="return doclink('link-1', 'utility', 'link-1');">utility</a></tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable zam.LocalPairDistanceDeviation.Logger=zam.LocalPairDistanceDeviation-module.html#Logger,Variable zam.assemble.Logger=zam.assemble-module.html#Logger,Variable zam.assemblechains.Logger=zam.assemblechains-module.html#Logger,Variable zam.backup.Logger=zam.backup-module.html#Logger,Variable zam.cluster.Logger=zam.cluster-module.html#Logger,Variable zam.coords.Logger=zam.coords-module.html#Logger,Variable zam.dssp.Logger=zam.dssp-module.html#Logger,Variable zam.geometry.Logger=zam.geometry-module.html#Logger,Variable zam.gromacs.Logger=zam.gromacs-module.html#Logger,Variable zam.imageconf.Logger=zam.imageconf-module.html#Logger,Variable zam.loop_closure.Logger=zam.loop_closure-module.html#Logger,Variable zam.loop_closure.bridge_loop.Logger=zam.loop_closure.bridge_loop-module.html#Logger,Variable zam.loop_closure.rama.Logger=zam.loop_closure.rama-module.html#Logger,Variable zam.makeconf.Logger=zam.makeconf-module.html#Logger,Variable zam.mdsim.Logger=zam.mdsim-module.html#Logger,Variable zam.mdtrj.Logger=zam.mdtrj-module.html#Logger,Variable zam.mesoanalysis.Logger=zam.mesoanalysis-module.html#Logger,Variable zam.myrex.Logger=zam.myrex-module.html#Logger,Variable zam.pca.Logger=zam.pca-module.html#Logger,Variable zam.pdbtools.Logger=zam.pdbtools-module.html#Logger,Variable zam.protein.Logger=zam.protein-module.html#Logger,Variable zam.proteinalg.Logger=zam.proteinalg-module.html#Logger,Variable zam.proteinconst.Logger=zam.proteinconst-module.html#Logger,Variable zam.proteinfunc.Logger=zam.proteinfunc-module.html#Logger,Variable zam.punchanalysis.Logger=zam.punchanalysis-module.html#Logger,Variable zam.rexanalysis.Logger=zam.rexanalysis-module.html#Logger,Variable zam.rexsock.Logger=zam.rexsock-module.html#Logger,Variable zam.rigidbody.Logger=zam.rigidbody-module.html#Logger,Variable zam.rmsd.Logger=zam.rmsd-module.html#Logger,Variable zam.scripttools.Logger=zam.scripttools-module.html#Logger,Variable zam.sequence.Logger=zam.sequence-module.html#Logger,Variable zam.socketring.Logger=zam.socketring-module.html#Logger,Variable zam.zamanal.Logger=zam.zamanal-module.html#Logger,Variable zam.zamchoice.Logger=zam.zamchoice-module.html#Logger,Variable zam.zamcontact.Logger=zam.zamcontact-module.html#Logger,Variable zam.zamdata.Logger=zam.zamdata-module.html#Logger,Variable zam.zamrex.Logger=zam.zamrex-module.html#Logger,Variable zam.zamrun.Logger=zam.zamrun-module.html#Logger"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-2', 'Logger', 'link-2');">Logger</a></tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name"><a title="zam" class="py-name" href="#" onclick="return doclink('link-3', 'zam', 'link-0');">zam</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="zam.utility" class="py-name" href="#" onclick="return doclink('link-4', 'utility', 'link-1');">utility</a></tt><tt class="py-op">.</tt><tt class="py-name">SetupLogging</tt><tt class="py-op">(</tt><tt class="py-name">__name__</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">glob</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">string</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="VersionedOutputFile"></a><div id="VersionedOutputFile-def"><a name="L21"></a><tt class="py-lineno"> 21</tt> <a class="py-toggle" href="#" id="VersionedOutputFile-toggle" onclick="return toggle('VersionedOutputFile');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html">VersionedOutputFile</a><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="VersionedOutputFile-expanded"><a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt class="py-docstring">"""This is like a file object opened for output, but it makes</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">    versioned backups of anything it might otherwise overwrite."""</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="VersionedOutputFile.__init__"></a><div id="VersionedOutputFile.__init__-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="VersionedOutputFile.__init__-toggle" onclick="return toggle('VersionedOutputFile.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">pathname</tt><tt class="py-op">,</tt> <tt class="py-param">numSavedVersions</tt><tt class="py-op">=</tt><tt class="py-number">3</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile.__init__-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-docstring">"""Create a new output file.</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">        `pathname' is the name of the file to [over]write.</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">        `numSavedVersions' tells how many of the most recent versions</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">        of `pathname' to save."""</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">         </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pathname</tt> <tt class="py-op">=</tt> <tt class="py-name">pathname</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_tmpPathname</tt> <tt class="py-op">=</tt> <tt class="py-string">"%s.~new~"</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pathname</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_numSavedVersions</tt> <tt class="py-op">=</tt> <tt class="py-name">numSavedVersions</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_outf</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_tmpPathname</tt><tt class="py-op">,</tt> <tt class="py-string">"wb"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="VersionedOutputFile.__del__"></a><div id="VersionedOutputFile.__del__-def"><a name="L37"></a><tt class="py-lineno"> 37</tt> <a class="py-toggle" href="#" id="VersionedOutputFile.__del__-toggle" onclick="return toggle('VersionedOutputFile.__del__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#__del__">__del__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile.__del__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile.__del__-expanded"><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method zam.backup.VersionedOutputFile.close()=zam.backup.VersionedOutputFile-class.html#close,Method zam.mdsim.myFile.close()=zam.mdsim.myFile-class.html#close"><a title="zam.backup.VersionedOutputFile.close
+zam.mdsim.myFile.close" class="py-name" href="#" onclick="return doclink('link-5', 'close', 'link-5');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="VersionedOutputFile.close"></a><div id="VersionedOutputFile.close-def"><a name="L40"></a><tt class="py-lineno"> 40</tt> <a class="py-toggle" href="#" id="VersionedOutputFile.close-toggle" onclick="return toggle('VersionedOutputFile.close');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#close">close</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile.close-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile.close-expanded"><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_outf</tt><tt class="py-op">:</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_outf</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="zam.backup.VersionedOutputFile.close
+zam.mdsim.myFile.close" class="py-name" href="#" onclick="return doclink('link-6', 'close', 'link-5');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method zam.backup.VersionedOutputFile._replaceCurrentFile()=zam.backup.VersionedOutputFile-class.html#_replaceCurrentFile"><a title="zam.backup.VersionedOutputFile._replaceCurrentFile" class="py-name" href="#" onclick="return doclink('link-7', '_replaceCurrentFile', 'link-7');">_replaceCurrentFile</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_outf</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="VersionedOutputFile.asFile"></a><div id="VersionedOutputFile.asFile-def"><a name="L46"></a><tt class="py-lineno"> 46</tt> <a class="py-toggle" href="#" id="VersionedOutputFile.asFile-toggle" onclick="return toggle('VersionedOutputFile.asFile');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#asFile">asFile</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile.asFile-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile.asFile-expanded"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-docstring">"""Return self's shadowed file object, since marshal is</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">        pretty insistent on working w. pure file objects."""</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_outf</tt> </tt>
+</div><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="VersionedOutputFile.__getattr__"></a><div id="VersionedOutputFile.__getattr__-def"><a name="L51"></a><tt class="py-lineno"> 51</tt> <a class="py-toggle" href="#" id="VersionedOutputFile.__getattr__-toggle" onclick="return toggle('VersionedOutputFile.__getattr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#__getattr__">__getattr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">attr</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile.__getattr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile.__getattr__-expanded"><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-docstring">"""Delegate most operations to self's open file object."""</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt class="py-string">'_outf'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">attr</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">     </tt>
+<a name="VersionedOutputFile._replaceCurrentFile"></a><div id="VersionedOutputFile._replaceCurrentFile-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="VersionedOutputFile._replaceCurrentFile-toggle" onclick="return toggle('VersionedOutputFile._replaceCurrentFile');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#_replaceCurrentFile">_replaceCurrentFile</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile._replaceCurrentFile-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile._replaceCurrentFile-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-docstring">"""Replace the current contents of self's named file."""</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method zam.backup.VersionedOutputFile._backupCurrentFile()=zam.backup.VersionedOutputFile-class.html#_backupCurrentFile"><a title="zam.backup.VersionedOutputFile._backupCurrentFile" class="py-name" href="#" onclick="return doclink('link-8', '_backupCurrentFile', 'link-8');">_backupCurrentFile</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">rename</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_tmpPathname</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pathname</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="VersionedOutputFile._backupCurrentFile"></a><div id="VersionedOutputFile._backupCurrentFile-def"><a name="L60"></a><tt class="py-lineno"> 60</tt> <a class="py-toggle" href="#" id="VersionedOutputFile._backupCurrentFile-toggle" onclick="return toggle('VersionedOutputFile._backupCurrentFile');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#_backupCurrentFile">_backupCurrentFile</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile._backupCurrentFile-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile._backupCurrentFile-expanded"><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-docstring">"""Save a numbered backup of self's named file."""</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-comment"># If the file doesn't already exist, there's nothing to do.</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pathname</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">            <tt class="py-name">newName</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method zam.backup.VersionedOutputFile._versionedName()=zam.backup.VersionedOutputFile-class.html#_versionedName"><a title="zam.backup.VersionedOutputFile._versionedName" class="py-name" href="#" onclick="return doclink('link-9', '_versionedName', 'link-9');">_versionedName</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method zam.backup.VersionedOutputFile._currentRevision()=zam.backup.VersionedOutputFile-class.html#_currentRevision"><a title="zam.backup.VersionedOutputFile._currentRevision" class="py-name" href="#" onclick="return doclink('link-10', '_currentRevision', 'link-10');">_currentRevision</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">rename</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pathname</tt><tt class="py-op">,</tt> <tt class="py-name">newName</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">            <tt class="py-comment"># Maybe get rid of old versions.</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_numSavedVersions</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_numSavedVersions</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method zam.backup.VersionedOutputFile._deleteOldRevisions()=zam.backup.VersionedOutputFile-class.html#_deleteOldRevisions"><a title="zam.backup.VersionedOutputFile._deleteOldRevisions" class="py-name" href="#" onclick="return doclink('link-11', '_deleteOldRevisions', 'link-11');">_deleteOldRevisions</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="VersionedOutputFile._versionedName"></a><div id="VersionedOutputFile._versionedName-def"><a name="L72"></a><tt class="py-lineno"> 72</tt> <a class="py-toggle" href="#" id="VersionedOutputFile._versionedName-toggle" onclick="return toggle('VersionedOutputFile._versionedName');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#_versionedName">_versionedName</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">revision</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile._versionedName-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile._versionedName-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get self's pathname with a revision number appended."""</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">"%s.~%s~"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pathname</tt><tt class="py-op">,</tt> <tt class="py-name">revision</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">     </tt>
+<a name="VersionedOutputFile._currentRevision"></a><div id="VersionedOutputFile._currentRevision-def"><a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="VersionedOutputFile._currentRevision-toggle" onclick="return toggle('VersionedOutputFile._currentRevision');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#_currentRevision">_currentRevision</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile._currentRevision-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile._currentRevision-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the revision number of self's largest existing backup."""</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-name">revisions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method zam.backup.VersionedOutputFile._revisions()=zam.backup.VersionedOutputFile-class.html#_revisions"><a title="zam.backup.VersionedOutputFile._revisions" class="py-name" href="#" onclick="return doclink('link-12', '_revisions', 'link-12');">_revisions</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">max</tt><tt class="py-op">(</tt><tt class="py-name">revisions</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"> </tt>
+<a name="VersionedOutputFile._revisions"></a><div id="VersionedOutputFile._revisions-def"><a name="L81"></a><tt class="py-lineno"> 81</tt> <a class="py-toggle" href="#" id="VersionedOutputFile._revisions-toggle" onclick="return toggle('VersionedOutputFile._revisions');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#_revisions">_revisions</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile._revisions-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile._revisions-expanded"><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-docstring">"""Get the revision numbers of all of self's backups."""</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">         </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">revisions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-name">backupNames</tt> <tt class="py-op">=</tt> <tt class="py-name">glob</tt><tt class="py-op">.</tt><tt class="py-name">glob</tt><tt class="py-op">(</tt><tt class="py-string">"%s.~[0-9]*~"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pathname</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">name</tt> <tt class="py-keyword">in</tt> <tt class="py-name">backupNames</tt><tt class="py-op">:</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                <tt class="py-name">revision</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">string</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-name">name</tt><tt class="py-op">,</tt> <tt class="py-string">"~"</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                <tt class="py-name">revisions</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">revision</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">ValueError</tt><tt class="py-op">:</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                <tt class="py-comment"># Some ~[0-9]*~ extensions may not be wholly numeric.</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                <tt class="py-keyword">pass</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-name">revisions</tt><tt class="py-op">.</tt><tt class="py-name">sort</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">revisions</tt> </tt>
+</div><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
+<a name="VersionedOutputFile._deleteOldRevisions"></a><div id="VersionedOutputFile._deleteOldRevisions-def"><a name="L96"></a><tt class="py-lineno"> 96</tt> <a class="py-toggle" href="#" id="VersionedOutputFile._deleteOldRevisions-toggle" onclick="return toggle('VersionedOutputFile._deleteOldRevisions');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup.VersionedOutputFile-class.html#_deleteOldRevisions">_deleteOldRevisions</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="VersionedOutputFile._deleteOldRevisions-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="VersionedOutputFile._deleteOldRevisions-expanded"><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-docstring">"""Delete old versions of self's file, so that at most</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">        self._numSavedVersions versions are retained."""</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">         </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-name">revisions</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="zam.backup.VersionedOutputFile._revisions" class="py-name" href="#" onclick="return doclink('link-13', '_revisions', 'link-12');">_revisions</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">revisionsToDelete</tt> <tt class="py-op">=</tt> <tt class="py-name">revisions</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_numSavedVersions</tt><tt class="py-op">]</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">revision</tt> <tt class="py-keyword">in</tt> <tt class="py-name">revisionsToDelete</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt class="py-name">pathname</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="zam.backup.VersionedOutputFile._versionedName" class="py-name" href="#" onclick="return doclink('link-14', '_versionedName', 'link-9');">_versionedName</a></tt><tt class="py-op">(</tt><tt class="py-name">revision</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">pathname</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">pathname</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                 </tt>
+<a name="main"></a><div id="main-def"><a name="L107"></a><tt class="py-lineno">107</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.backup-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="main-expanded"><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">    <tt class="py-docstring">"""Module mainline (for isolation testing)"""</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">    <tt class="py-name">basename</tt> <tt class="py-op">=</tt> <tt class="py-string">"TestFile.txt"</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">basename</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">basename</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">10</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-name">outf</tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name" targets="Class zam.backup.VersionedOutputFile=zam.backup.VersionedOutputFile-class.html"><a title="zam.backup.VersionedOutputFile" class="py-name" href="#" onclick="return doclink('link-15', 'VersionedOutputFile', 'link-15');">VersionedOutputFile</a></tt><tt class="py-op">(</tt><tt class="py-name">basename</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">outf</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method zam.kernel.kernel.Kernel.write()=zam.kernel.kernel.Kernel-class.html#write,Method zam.mdsim.myFile.write()=zam.mdsim.myFile-class.html#write"><a title="zam.kernel.kernel.Kernel.write
+zam.mdsim.myFile.write" class="py-name" href="#" onclick="return doclink('link-16', 'write', 'link-16');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">"This is version %s.\n"</tt> <tt class="py-op">%</tt> <tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">outf</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="zam.backup.VersionedOutputFile.close
+zam.mdsim.myFile.close" class="py-name" href="#" onclick="return doclink('link-17', 'close', 'link-5');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt class="py-comment"># Now there should be just four versions of TestFile.txt:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt class="py-name">expectedSuffixes</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">""</tt><tt class="py-op">,</tt> <tt class="py-string">".~7~"</tt><tt class="py-op">,</tt> <tt class="py-string">".~8~"</tt><tt class="py-op">,</tt> <tt class="py-string">".~9~"</tt><tt class="py-op">]</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-name">expectedVersions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">suffix</tt> <tt class="py-keyword">in</tt> <tt class="py-name">expectedSuffixes</tt><tt class="py-op">:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">expectedVersions</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">"%s%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">basename</tt><tt class="py-op">,</tt> <tt class="py-name">suffix</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">    <tt class="py-name">matchingFiles</tt> <tt class="py-op">=</tt> <tt class="py-name">glob</tt><tt class="py-op">.</tt><tt class="py-name">glob</tt><tt class="py-op">(</tt><tt class="py-string">"%s*"</tt> <tt class="py-op">%</tt> <tt class="py-name">basename</tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">filename</tt> <tt class="py-keyword">in</tt> <tt class="py-name">matchingFiles</tt><tt class="py-op">:</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">filename</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">expectedVersions</tt><tt class="py-op">:</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">            <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stderr</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="zam.kernel.kernel.Kernel.write
+zam.mdsim.myFile.write" class="py-name" href="#" onclick="return doclink('link-18', 'write', 'link-16');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">"Found unexpected file %s.\n"</tt> <tt class="py-op">%</tt> <tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">            <tt class="py-comment"># Unit tests should clean up after themselves...</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-comment"># Finally, here's an example of how to use versioned</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">    <tt class="py-comment"># output files in concert with marshal.</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">marshal</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt class="py-name">outf</tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="zam.backup.VersionedOutputFile" class="py-name" href="#" onclick="return doclink('link-19', 'VersionedOutputFile', 'link-15');">VersionedOutputFile</a></tt><tt class="py-op">(</tt><tt class="py-string">"marshal.dat"</tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">    <tt class="py-comment"># Marshal out a sequence:</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt class="py-name">marshal</tt><tt class="py-op">.</tt><tt class="py-name">dump</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-number">3</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">outf</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method zam.backup.VersionedOutputFile.asFile()=zam.backup.VersionedOutputFile-class.html#asFile"><a title="zam.backup.VersionedOutputFile.asFile" class="py-name" href="#" onclick="return doclink('link-20', 'asFile', 'link-20');">asFile</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">    <tt class="py-name">outf</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="zam.backup.VersionedOutputFile.close
+zam.mdsim.myFile.close" class="py-name" href="#" onclick="return doclink('link-21', 'close', 'link-5');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">    <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-string">"marshal.dat"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt id="link-22" class="py-name" targets="Function zam.backup.main()=zam.backup-module.html#main"><a title="zam.backup.main" class="py-name" href="#" onclick="return doclink('link-22', 'main', 'link-22');">main</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:28 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

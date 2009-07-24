@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.myrex</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;myrex
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.myrex-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="zam.myrex-module.html">Module zam.myrex</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">Standalone replica exchange.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package zam=zam-module.html"><a title="zam" class="py-name" href="#" onclick="return doclink('link-0', 'zam', 'link-0');">zam</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module zam.utility=zam.utility-module.html"><a title="zam.utility" class="py-name" href="#" onclick="return doclink('link-1', 'utility', 'link-1');">utility</a></tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable zam.LocalPairDistanceDeviation.Logger=zam.LocalPairDistanceDeviation-module.html#Logger,Variable zam.assemble.Logger=zam.assemble-module.html#Logger,Variable zam.assemblechains.Logger=zam.assemblechains-module.html#Logger,Variable zam.backup.Logger=zam.backup-module.html#Logger,Variable zam.cluster.Logger=zam.cluster-module.html#Logger,Variable zam.coords.Logger=zam.coords-module.html#Logger,Variable zam.dssp.Logger=zam.dssp-module.html#Logger,Variable zam.geometry.Logger=zam.geometry-module.html#Logger,Variable zam.gromacs.Logger=zam.gromacs-module.html#Logger,Variable zam.imageconf.Logger=zam.imageconf-module.html#Logger,Variable zam.loop_closure.Logger=zam.loop_closure-module.html#Logger,Variable zam.loop_closure.bridge_loop.Logger=zam.loop_closure.bridge_loop-module.html#Logger,Variable zam.loop_closure.rama.Logger=zam.loop_closure.rama-module.html#Logger,Variable zam.makeconf.Logger=zam.makeconf-module.html#Logger,Variable zam.mdsim.Logger=zam.mdsim-module.html#Logger,Variable zam.mdtrj.Logger=zam.mdtrj-module.html#Logger,Variable zam.mesoanalysis.Logger=zam.mesoanalysis-module.html#Logger,Variable zam.myrex.Logger=zam.myrex-module.html#Logger,Variable zam.pca.Logger=zam.pca-module.html#Logger,Variable zam.pdbtools.Logger=zam.pdbtools-module.html#Logger,Variable zam.protein.Logger=zam.protein-module.html#Logger,Variable zam.proteinalg.Logger=zam.proteinalg-module.html#Logger,Variable zam.proteinconst.Logger=zam.proteinconst-module.html#Logger,Variable zam.proteinfunc.Logger=zam.proteinfunc-module.html#Logger,Variable zam.punchanalysis.Logger=zam.punchanalysis-module.html#Logger,Variable zam.rexanalysis.Logger=zam.rexanalysis-module.html#Logger,Variable zam.rexsock.Logger=zam.rexsock-module.html#Logger,Variable zam.rigidbody.Logger=zam.rigidbody-module.html#Logger,Variable zam.rmsd.Logger=zam.rmsd-module.html#Logger,Variable zam.scripttools.Logger=zam.scripttools-module.html#Logger,Variable zam.sequence.Logger=zam.sequence-module.html#Logger,Variable zam.socketring.Logger=zam.socketring-module.html#Logger,Variable zam.zamanal.Logger=zam.zamanal-module.html#Logger,Variable zam.zamchoice.Logger=zam.zamchoice-module.html#Logger,Variable zam.zamcontact.Logger=zam.zamcontact-module.html#Logger,Variable zam.zamdata.Logger=zam.zamdata-module.html#Logger,Variable zam.zamrex.Logger=zam.zamrex-module.html#Logger,Variable zam.zamrun.Logger=zam.zamrun-module.html#Logger"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-2', 'Logger', 'link-2');">Logger</a></tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name"><a title="zam" class="py-name" href="#" onclick="return doclink('link-3', 'zam', 'link-0');">zam</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="zam.utility" class="py-name" href="#" onclick="return doclink('link-4', 'utility', 'link-1');">utility</a></tt><tt class="py-op">.</tt><tt class="py-name">SetupLogging</tt><tt class="py-op">(</tt><tt class="py-name">__name__</tt><tt class="py-op">)</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">math</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-5" class="py-name" targets="Module zam.socketring=zam.socketring-module.html"><a title="zam.socketring" class="py-name" href="#" onclick="return doclink('link-5', 'socketring', 'link-5');">socketring</a></tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-6" class="py-name" targets="Module zam.sequence=zam.sequence-module.html"><a title="zam.sequence" class="py-name" href="#" onclick="return doclink('link-6', 'sequence', 'link-6');">sequence</a></tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Module zam.rexsock=zam.rexsock-module.html"><a title="zam.rexsock" class="py-name" href="#" onclick="return doclink('link-7', 'rexsock', 'link-7');">rexsock</a></tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment">#SHORTCUT SETTINGS:</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment">#Modify these variables without having to change code below:</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt id="link-8" class="py-name" targets="Variable zam.myrex.Seq=zam.myrex-module.html#Seq,Function zam.pdbtools.Seq()=zam.pdbtools-module.html#Seq,Method zam.protein.ProteinClass.Seq()=zam.protein.ProteinClass-class.html#Seq"><a title="zam.myrex.Seq
+zam.pdbtools.Seq
+zam.protein.ProteinClass.Seq" class="py-name" href="#" onclick="return doclink('link-8', 'Seq', 'link-8');">Seq</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"ACE GLY GLY GLY NHE"</tt>  <tt class="py-comment">#capped sequence</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt id="link-9" class="py-name" targets="Variable zam.myrex.MinTemp=zam.myrex-module.html#MinTemp"><a title="zam.myrex.MinTemp" class="py-name" href="#" onclick="return doclink('link-9', 'MinTemp', 'link-9');">MinTemp</a></tt> <tt class="py-op">=</tt> <tt class="py-number">270.0</tt>    <tt class="py-comment">#minimum replica temperature </tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt id="link-10" class="py-name" targets="Variable zam.myrex.MaxTemp=zam.myrex-module.html#MaxTemp"><a title="zam.myrex.MaxTemp" class="py-name" href="#" onclick="return doclink('link-10', 'MaxTemp', 'link-10');">MaxTemp</a></tt> <tt class="py-op">=</tt> <tt class="py-number">700.0</tt>    <tt class="py-comment">#maximum replica temperature</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt id="link-11" class="py-name" targets="Variable zam.myrex.NCycle=zam.myrex-module.html#NCycle"><a title="zam.myrex.NCycle" class="py-name" href="#" onclick="return doclink('link-11', 'NCycle', 'link-11');">NCycle</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1000</tt>      <tt class="py-comment">#total number of md/exchange cycles</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt id="link-12" class="py-name" targets="Variable zam.myrex.NSteps=zam.myrex-module.html#NSteps"><a title="zam.myrex.NSteps" class="py-name" href="#" onclick="return doclink('link-12', 'NSteps', 'link-12');">NSteps</a></tt> <tt class="py-op">=</tt> <tt class="py-number">5000</tt>      <tt class="py-comment">#number of md steps per cycle</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt id="link-13" class="py-name" targets="Variable zam.myrex.NRep=zam.myrex-module.html#NRep"><a title="zam.myrex.NRep" class="py-name" href="#" onclick="return doclink('link-13', 'NRep', 'link-13');">NRep</a></tt> <tt class="py-op">=</tt> <tt class="py-number">18</tt>          <tt class="py-comment">#total number of replicas</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt id="link-14" class="py-name" targets="Variable zam.myrex.CapSeq=zam.myrex-module.html#CapSeq"><a title="zam.myrex.CapSeq" class="py-name" href="#" onclick="return doclink('link-14', 'CapSeq', 'link-14');">CapSeq</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt>     <tt class="py-comment">#whether or not to cap the sequence with ACE and NME</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt id="link-15" class="py-name" targets="Variable zam.myrex.Restart=zam.myrex-module.html#Restart"><a title="zam.myrex.Restart" class="py-name" href="#" onclick="return doclink('link-15', 'Restart', 'link-15');">Restart</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt>     <tt class="py-comment">#False means ignore any restart data if it is there;</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">                   <tt class="py-comment">#True means load if found; otherwise, start anew</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-comment">#MAIN PROGRAM</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-comment">#program globals (don't change)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt id="link-16" class="py-name" targets="Variable zam.mdsim.kB=zam.mdsim-module.html#kB,Variable zam.myrex.kB=zam.myrex-module.html#kB,Variable zam.rexanalysis.kB=zam.rexanalysis-module.html#kB"><a title="zam.mdsim.kB
+zam.myrex.kB
+zam.rexanalysis.kB" class="py-name" href="#" onclick="return doclink('link-16', 'kB', 'link-16');">kB</a></tt><tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">1.381</tt> <tt class="py-op">*</tt> <tt class="py-number">6.02214</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-number">4184.0</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt id="link-17" class="py-name" targets="Variable zam.myrex.Temp=zam.myrex-module.html#Temp"><a title="zam.myrex.Temp" class="py-name" href="#" onclick="return doclink('link-17', 'Temp', 'link-17');">Temp</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-comment">#convert seq to a list</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt id="link-18" class="py-name"><a title="zam.myrex.Seq
+zam.pdbtools.Seq
+zam.protein.ProteinClass.Seq" class="py-name" href="#" onclick="return doclink('link-18', 'Seq', 'link-8');">Seq</a></tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="zam.sequence" class="py-name" href="#" onclick="return doclink('link-19', 'sequence', 'link-6');">sequence</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Function zam.sequence.SeqToList()=zam.sequence-module.html#SeqToList"><a title="zam.sequence.SeqToList" class="py-name" href="#" onclick="return doclink('link-20', 'SeqToList', 'link-20');">SeqToList</a></tt><tt class="py-op">(</tt><tt id="link-21" class="py-name"><a title="zam.myrex.Seq
+zam.pdbtools.Seq
+zam.protein.ProteinClass.Seq" class="py-name" href="#" onclick="return doclink('link-21', 'Seq', 'link-8');">Seq</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-comment">#This defines the acceptance function for swaps, used by the rexsock module.</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-comment">#a and b are the simulations of the individual "states" (e.g., temperatures).</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-comment">#The example's variables TEMPSET and EPOT are the setpoint temperature and</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-comment">#potential energy.  The suffixes "1" and "2" indicate those variables at the</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-comment">#beginning and end of the trajectory segment.  Other variables available are:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-comment">#EKIN (kinetic energy), EEL (electrostatic energy), EREST (restraint energy),</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-comment">#EVDW (van der Waals energy), ESURF (surface energy), EBOND (bond energy),</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-comment">#EANG (angle energy), EDIH (dihedral energy), TIME (simulation time), TEMP</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-comment">#(kinetic temperature), PRES (virial pressure), all of which have suffixes</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-comment">#of either "1" or "2".</tt> </tt>
+<a name="PaccFunc"></a><div id="PaccFunc-def"><a name="L48"></a><tt class="py-lineno"> 48</tt> <a class="py-toggle" href="#" id="PaccFunc-toggle" onclick="return toggle('PaccFunc');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.myrex-module.html#PaccFunc">PaccFunc</a><tt class="py-op">(</tt><tt class="py-param">a</tt><tt class="py-op">,</tt> <tt class="py-param">b</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="PaccFunc-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="PaccFunc-expanded"><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-name">dBeta</tt> <tt class="py-op">=</tt> <tt class="py-number">1.</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt id="link-22" class="py-name"><a title="zam.mdsim.kB
+zam.myrex.kB
+zam.rexanalysis.kB" class="py-name" href="#" onclick="return doclink('link-22', 'kB', 'link-16');">kB</a></tt> <tt class="py-op">*</tt> <tt class="py-name">a</tt><tt class="py-op">[</tt><tt class="py-string">"TEMPSET"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-number">1.</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt id="link-23" class="py-name"><a title="zam.mdsim.kB
+zam.myrex.kB
+zam.rexanalysis.kB" class="py-name" href="#" onclick="return doclink('link-23', 'kB', 'link-16');">kB</a></tt> <tt class="py-op">*</tt> <tt class="py-name">b</tt><tt class="py-op">[</tt><tt class="py-string">"TEMPSET"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-name">dE</tt> <tt class="py-op">=</tt> <tt class="py-name">a</tt><tt class="py-op">[</tt><tt class="py-string">"EPOT2"</tt><tt class="py-op">]</tt> <tt class="py-op">-</tt> <tt class="py-name">b</tt><tt class="py-op">[</tt><tt class="py-string">"EPOT2"</tt><tt class="py-op">]</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">math</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">(</tt> <tt class="py-name">min</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-number">0.</tt><tt class="py-op">,</tt> <tt class="py-name">dE</tt><tt class="py-op">*</tt><tt class="py-name">dBeta</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-comment">#This is the main loop of the program.</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt class="py-comment">#This creates a socket ring with a master server and clients; the</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt class="py-comment">#file containing ring descriptors is saved in path "."</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-name">sr</tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name"><a title="zam.socketring" class="py-name" href="#" onclick="return doclink('link-24', 'socketring', 'link-5');">socketring</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Class zam.socketring.RingClass=zam.socketring.RingClass-class.html"><a title="zam.socketring.RingClass" class="py-name" href="#" onclick="return doclink('link-25', 'RingClass', 'link-25');">RingClass</a></tt><tt class="py-op">(</tt><tt class="py-string">"."</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-comment">#See if we are the main server</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">sr</tt><tt class="py-op">.</tt><tt class="py-name">IsServer</tt><tt class="py-op">:</tt>   </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-comment">#This initializes the replica exchange program in the path "." and</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-comment">#designates the first computer to run the program as the main server</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-comment">#which will dole out job tasks.  If you want to monitor the values</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-comment">#of specific variables in each state (possibilities listed above), you</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-comment">#can add a third argument to the RexClass constructor which is a dict</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-comment">#of variable name (key) + file to save in (value) pairs, for example:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-comment">#rx = rexsock.RexClass(NRep, ".", {"TEMP":"temp.txt", "PRES":"pres.txt"})</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-name">rx</tt> <tt class="py-op">=</tt> <tt id="link-26" class="py-name"><a title="zam.rexsock" class="py-name" href="#" onclick="return doclink('link-26', 'rexsock', 'link-7');">rexsock</a></tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Class zam.rexsock.RexClass=zam.rexsock.RexClass-class.html"><a title="zam.rexsock.RexClass" class="py-name" href="#" onclick="return doclink('link-27', 'RexClass', 'link-27');">RexClass</a></tt><tt class="py-op">(</tt><tt class="py-name">SockRing</tt> <tt class="py-op">=</tt> <tt class="py-name">sr</tt><tt class="py-op">,</tt> <tt class="py-name">BasePath</tt> <tt class="py-op">=</tt> <tt class="py-string">"."</tt><tt class="py-op">,</tt> <tt class="py-name">N</tt> <tt class="py-op">=</tt> <tt id="link-28" class="py-name"><a title="zam.myrex.NRep" class="py-name" href="#" onclick="return doclink('link-28', 'NRep', 'link-13');">NRep</a></tt><tt class="py-op">,</tt> <tt id="link-29" class="py-name"><a title="zam.myrex.Restart" class="py-name" href="#" onclick="return doclink('link-29', 'Restart', 'link-15');">Restart</a></tt> <tt class="py-op">=</tt> <tt id="link-30" class="py-name"><a title="zam.myrex.Restart" class="py-name" href="#" onclick="return doclink('link-30', 'Restart', 'link-15');">Restart</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-comment">#tell the socket ring how many client processors we need</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-name">sr</tt><tt class="py-op">.</tt><tt class="py-name">MaxNeeded</tt> <tt class="py-op">=</tt> <tt id="link-31" class="py-name"><a title="zam.myrex.NRep" class="py-name" href="#" onclick="return doclink('link-31', 'NRep', 'link-13');">NRep</a></tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-comment">#Setup the progress.txt file</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-name">ProgFile</tt> <tt class="py-op">=</tt> <tt class="py-string">"progress.txt"</tt>     </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-name">file</tt><tt class="py-op">(</tt><tt class="py-name">ProgFile</tt><tt class="py-op">,</tt><tt class="py-string">"w"</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Method zam.kernel.kernel.Kernel.write()=zam.kernel.kernel.Kernel-class.html#write,Method zam.mdsim.myFile.write()=zam.mdsim.myFile-class.html#write"><a title="zam.kernel.kernel.Kernel.write
+zam.mdsim.myFile.write" class="py-name" href="#" onclick="return doclink('link-32', 'write', 'link-32');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">"starting up...\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-comment">#Setup the temperatures.</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">rx</tt><tt class="py-op">.</tt><tt class="py-name">NReplica</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">            <tt id="link-33" class="py-name"><a title="zam.myrex.Temp" class="py-name" href="#" onclick="return doclink('link-33', 'Temp', 'link-17');">Temp</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt id="link-34" class="py-name"><a title="zam.myrex.MinTemp" class="py-name" href="#" onclick="return doclink('link-34', 'MinTemp', 'link-9');">MinTemp</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-name">dlnT</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">math</tt><tt class="py-op">.</tt><tt class="py-name">log</tt><tt class="py-op">(</tt><tt id="link-35" class="py-name"><a title="zam.myrex.MaxTemp" class="py-name" href="#" onclick="return doclink('link-35', 'MaxTemp', 'link-10');">MaxTemp</a></tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-name">math</tt><tt class="py-op">.</tt><tt class="py-name">log</tt><tt class="py-op">(</tt><tt id="link-36" class="py-name"><a title="zam.myrex.MinTemp" class="py-name" href="#" onclick="return doclink('link-36', 'MinTemp', 'link-9');">MinTemp</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">rx</tt><tt class="py-op">.</tt><tt class="py-name">NReplica</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">            <tt id="link-37" class="py-name"><a title="zam.myrex.Temp" class="py-name" href="#" onclick="return doclink('link-37', 'Temp', 'link-17');">Temp</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt id="link-38" class="py-name"><a title="zam.myrex.MinTemp" class="py-name" href="#" onclick="return doclink('link-38', 'MinTemp', 'link-9');">MinTemp</a></tt><tt class="py-op">*</tt><tt class="py-name">math</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">(</tt><tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">)</tt><tt class="py-op">*</tt><tt class="py-name">dlnT</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-name">rx</tt><tt class="py-op">.</tt><tt class="py-name">NReplica</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-comment">#If a restart was not detected, build the systems up from scratch.</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-comment">#The function SimIter will iterate a function over each state</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-comment">#replica.  SimSetVar will set a simulation variable in each replica</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-comment">#using an array whose size is the number of replicas.  SimFarm will</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-comment">#iterate a function string over each replica by allocating the task</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-comment">#to the available processors.</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">rx</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="zam.myrex.Restart" class="py-name" href="#" onclick="return doclink('link-39', 'Restart', 'link-15');">Restart</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">            <tt class="py-name">rx</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Method zam.rexsock.RexClass.SimIter()=zam.rexsock.RexClass-class.html#SimIter"><a title="zam.rexsock.RexClass.SimIter" class="py-name" href="#" onclick="return doclink('link-40', 'SimIter', 'link-40');">SimIter</a></tt><tt class="py-op">(</tt><tt class="py-keyword">lambda</tt> <tt class="py-name">s</tt><tt class="py-op">:</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Method zam.mdsim.SimClass.SysInitSeq()=zam.mdsim.SimClass-class.html#SysInitSeq"><a title="zam.mdsim.SimClass.SysInitSeq" class="py-name" href="#" onclick="return doclink('link-41', 'SysInitSeq', 'link-41');">SysInitSeq</a></tt><tt class="py-op">(</tt><tt id="link-42" class="py-name"><a title="zam.myrex.Seq
+zam.pdbtools.Seq
+zam.protein.ProteinClass.Seq" class="py-name" href="#" onclick="return doclink('link-42', 'Seq', 'link-8');">Seq</a></tt><tt class="py-op">,</tt> <tt id="link-43" class="py-name" targets="Function zam.pdbtools.Cap()=zam.pdbtools-module.html#Cap,Method zam.protein.ProteinClass.Cap()=zam.protein.ProteinClass-class.html#Cap,Function zam.sequence.Cap()=zam.sequence-module.html#Cap"><a title="zam.pdbtools.Cap
+zam.protein.ProteinClass.Cap
+zam.sequence.Cap" class="py-name" href="#" onclick="return doclink('link-43', 'Cap', 'link-43');">Cap</a></tt> <tt class="py-op">=</tt> <tt id="link-44" class="py-name"><a title="zam.myrex.CapSeq" class="py-name" href="#" onclick="return doclink('link-44', 'CapSeq', 'link-14');">CapSeq</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">            <tt class="py-name">rx</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Method zam.rexsock.RexClass.SimSetVar()=zam.rexsock.RexClass-class.html#SimSetVar"><a title="zam.rexsock.RexClass.SimSetVar" class="py-name" href="#" onclick="return doclink('link-45', 'SimSetVar', 'link-45');">SimSetVar</a></tt><tt class="py-op">(</tt><tt class="py-string">"STEPSMD"</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt id="link-46" class="py-name"><a title="zam.myrex.NSteps" class="py-name" href="#" onclick="return doclink('link-46', 'NSteps', 'link-12');">NSteps</a></tt> <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-name">rx</tt><tt class="py-op">.</tt><tt class="py-name">NReplica</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt class="py-name">rx</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="zam.rexsock.RexClass.SimSetVar" class="py-name" href="#" onclick="return doclink('link-47', 'SimSetVar', 'link-45');">SimSetVar</a></tt><tt class="py-op">(</tt><tt class="py-string">"TEMPSET"</tt><tt class="py-op">,</tt> <tt id="link-48" class="py-name"><a title="zam.myrex.Temp" class="py-name" href="#" onclick="return doclink('link-48', 'Temp', 'link-17');">Temp</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-name">rx</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="zam.rexsock.RexClass.SimIter" class="py-name" href="#" onclick="return doclink('link-49', 'SimIter', 'link-40');">SimIter</a></tt><tt class="py-op">(</tt><tt class="py-keyword">lambda</tt> <tt class="py-name">s</tt><tt class="py-op">:</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Method zam.mdsim.SimClass.SysBuild()=zam.mdsim.SimClass-class.html#SysBuild"><a title="zam.mdsim.SimClass.SysBuild" class="py-name" href="#" onclick="return doclink('link-50', 'SysBuild', 'link-50');">SysBuild</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">            <tt class="py-name">rx</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name" targets="Method zam.rexsock.RexClass.SimFarm()=zam.rexsock.RexClass-class.html#SimFarm"><a title="zam.rexsock.RexClass.SimFarm" class="py-name" href="#" onclick="return doclink('link-51', 'SimFarm', 'link-51');">SimFarm</a></tt><tt class="py-op">(</tt><tt class="py-string">"SIM.RunMin()"</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-comment">#Run the cycles.  Labels is used to identify the states in</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-comment">#the progress file.  rx.StartRex sets up everything necessary</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-comment">#for the rex simulation.</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-name">Labels</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"%.1f K"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">t</tt><tt class="py-op">,</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">t</tt> <tt class="py-keyword">in</tt> <tt id="link-52" class="py-name"><a title="zam.myrex.Temp" class="py-name" href="#" onclick="return doclink('link-52', 'Temp', 'link-17');">Temp</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">rx</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name" targets="Method zam.rexsock.RexClass.StartRex()=zam.rexsock.RexClass-class.html#StartRex"><a title="zam.rexsock.RexClass.StartRex" class="py-name" href="#" onclick="return doclink('link-53', 'StartRex', 'link-53');">StartRex</a></tt><tt class="py-op">(</tt><tt id="link-54" class="py-name" targets="Function zam.myrex.PaccFunc()=zam.myrex-module.html#PaccFunc"><a title="zam.myrex.PaccFunc" class="py-name" href="#" onclick="return doclink('link-54', 'PaccFunc', 'link-54');">PaccFunc</a></tt><tt class="py-op">,</tt> <tt id="link-55" class="py-name"><a title="zam.myrex.NCycle" class="py-name" href="#" onclick="return doclink('link-55', 'NCycle', 'link-11');">NCycle</a></tt><tt class="py-op">,</tt> <tt class="py-name">Labels</tt><tt class="py-op">,</tt> <tt class="py-name">ProgFile</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-comment">#Continue running until the REX simulation is finished</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-keyword">not</tt> <tt class="py-name">rx</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name" targets="Method zam.rexsock.RexClass.RunRex()=zam.rexsock.RexClass-class.html#RunRex,Function zam.zamrex.RunRex()=zam.zamrex-module.html#RunRex"><a title="zam.rexsock.RexClass.RunRex
+zam.zamrex.RunRex" class="py-name" href="#" onclick="return doclink('link-56', 'RunRex', 'link-56');">RunRex</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">            <tt class="py-comment">#let the socket ring run tasks for 1 second</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">            <tt class="py-name">sr</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name" targets="Method zam.socketring.RingClass.RunTasks()=zam.socketring.RingClass-class.html#RunTasks"><a title="zam.socketring.RingClass.RunTasks" class="py-name" href="#" onclick="return doclink('link-57', 'RunTasks', 'link-57');">RunTasks</a></tt><tt class="py-op">(</tt><tt class="py-number">1.</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-comment">#Close down the socket ring and tell clients to go home.</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">sr</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name" targets="Method zam.socketring.RingClass.Finish()=zam.socketring.RingClass-class.html#Finish"><a title="zam.socketring.RingClass.Finish" class="py-name" href="#" onclick="return doclink('link-58', 'Finish', 'link-58');">Finish</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt class="py-comment">#If the current processor is not the main server, run as a client and</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt class="py-comment">#connect to the server.</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-name">sr</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name" targets="Method zam.socketring.RingClass.RunClient()=zam.socketring.RingClass-class.html#RunClient"><a title="zam.socketring.RingClass.RunClient" class="py-name" href="#" onclick="return doclink('link-59', 'RunClient', 'link-59');">RunClient</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:23 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

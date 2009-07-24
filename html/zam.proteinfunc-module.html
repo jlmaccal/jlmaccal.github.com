@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.proteinfunc</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;proteinfunc
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.proteinfunc-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module proteinfunc</h1><p class="nomargin-top"><span class="codelink"><a href="zam.proteinfunc-pysrc.html">source&nbsp;code</a></span></p>
+<p>Contains non-class functions for protein.py</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.proteinfunc.MCMoveClass-class.html" class="summary-name">MCMoveClass</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.proteinfunc.MCPhiPsiMoveClass-class.html" class="summary-name">MCPhiPsiMoveClass</a><br />
+      Makes a random phi or psi perturbation
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.proteinfunc.MCRamaMoveClass-class.html" class="summary-name">MCRamaMoveClass</a><br />
+      Makes a hop in the Ramachandran plot according to RamaProb 
+        probabilities.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.proteinfunc.MCChiMoveClass-class.html" class="summary-name">MCChiMoveClass</a><br />
+      Makes a random perturbation to a chi angle.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.proteinfunc.MCChainRotateClass-class.html" class="summary-name">MCChainRotateClass</a><br />
+      Rotates chains around a common point or their centroid.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.proteinfunc.MCChainTranslateClass-class.html" class="summary-name">MCChainTranslateClass</a><br />
+      Translates chains towards or away from a point.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.proteinfunc.MCFragInsertClass-class.html" class="summary-name">MCFragInsertClass</a><br />
+      Makes a random fragment insertion; this does not obey detailed 
+        balance.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetFFData"></a><span class="summary-sig-name">GetFFData</span>(<span class="summary-sig-arg">Element</span>,
+        <span class="summary-sig-arg">AtomName</span>,
+        <span class="summary-sig-arg">ResName</span>)</span><br />
+      Returns force field parameters (Sigma, SqrtEps, PCharge)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetFFData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetBonds"></a><span class="summary-sig-name">GetBonds</span>(<span class="summary-sig-arg">Bonds</span>)</span><br />
+      Returns lists of CO&lt;=2 (1-2 and 1-3) and CO=3 (1-4) bonds.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetBonds">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ConvertBonds"></a><span class="summary-sig-name">ConvertBonds</span>(<span class="summary-sig-arg">Bonds</span>,
+        <span class="summary-sig-arg">NAtom</span>)</span><br />
+      Returns a sortedlist of IDs for bonds, where ID = i*N - (i+1)(i+2)/2 
+      + j for i &lt; j.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#ConvertBonds">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetBondMasks"></a><span class="summary-sig-name">GetBondMasks</span>(<span class="summary-sig-arg">i</span>,
+        <span class="summary-sig-arg">N</span>,
+        <span class="summary-sig-arg">Bonds23</span>,
+        <span class="summary-sig-arg">Bonds4</span>)</span><br />
+      Returns an array of indices for bonds.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetBondMasks">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.proteinfunc-module.html#GetContactList" class="summary-sig-name">GetContactList</a>(<span class="summary-sig-arg">Pos1</span>,
+        <span class="summary-sig-arg">Ind1</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Pos2</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Ind2</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Radius</span>=<span class="summary-sig-default">8.0</span>,
+        <span class="summary-sig-arg">MinCO</span>=<span class="summary-sig-default">3</span>)</span><br />
+      Returns a list of contacts for one or two position matrices.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetContactList">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.proteinfunc-module.html#GetContactMap" class="summary-sig-name">GetContactMap</a>(<span class="summary-sig-arg">Pos1</span>,
+        <span class="summary-sig-arg">Ind1</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">NInd1</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Pos2</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Ind2</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">NInd2</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Radius</span>=<span class="summary-sig-default">8.0</span>,
+        <span class="summary-sig-arg">MinCO</span>=<span class="summary-sig-default">3</span>)</span><br />
+      Returns a contact map for one or two position matrices.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetContactMap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetInd"></a><span class="summary-sig-name">GetInd</span>(<span class="summary-sig-arg">Ind</span>,
+        <span class="summary-sig-arg">ResInd</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns new Ind where &gt; 0.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetInd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetCommonInd"></a><span class="summary-sig-name">GetCommonInd</span>(<span class="summary-sig-arg">Ind1</span>,
+        <span class="summary-sig-arg">Ind2</span>,
+        <span class="summary-sig-arg">ResInd</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns new Ind1 and Ind2 where both are &gt; 0.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetCommonInd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="IsHBond"></a><span class="summary-sig-name">IsHBond</span>(<span class="summary-sig-arg">PosN</span>,
+        <span class="summary-sig-arg">PosO</span>,
+        <span class="summary-sig-arg">PosC</span>,
+        <span class="summary-sig-arg">PosH</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns True if positions meet requirements for a backbone hydrogen 
+      bond.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#IsHBond">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetRamaProb"></a><span class="summary-sig-name">GetRamaProb</span>(<span class="summary-sig-arg">Phi</span>,
+        <span class="summary-sig-arg">Psi</span>,
+        <span class="summary-sig-arg">RamaProb</span>)</span><br />
+      Returns the probability associated with a Phi, Psi angle.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetRamaProb">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetRandomDih"></a><span class="summary-sig-name">GetRandomDih</span>(<span class="summary-sig-arg">RamaProb</span>)</span><br />
+      Returns a random dihedral pair and its probability.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetRandomDih">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.proteinfunc-module.html#GetRandomInd" class="summary-sig-name">GetRandomInd</a>(<span class="summary-sig-arg">Prob</span>)</span><br />
+      Returns a random index of 0 to len(Prob)-1, where the weight of each 
+      index is given by Prob[i].</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetRandomInd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="GetTargetAcc"></a><span class="summary-sig-name">GetTargetAcc</span>(<span class="summary-sig-arg">MCMoves</span>)</span><br />
+      Returns a target acceptance ratio for MC Moves.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetTargetAcc">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Logger"></a><span class="summary-name">Logger</span> = <code title="zam.utility.SetupLogging(__name__)">zam.utility.SetupLogging(__name__)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="USELIB"></a><span class="summary-name">USELIB</span> = <code title="True">True</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'zam'"><code class="variable-quote">'</code><code class="variable-string">zam</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="GetContactList"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetContactList</span>(<span class="sig-arg">Pos1</span>,
+        <span class="sig-arg">Ind1</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Pos2</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Ind2</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Radius</span>=<span class="sig-default">8.0</span>,
+        <span class="sig-arg">MinCO</span>=<span class="sig-default">3</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetContactList">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a list of contacts for one or two position matrices. Ind1, 
+  Ind2 are list of indices for positions in Pos1, Pos2. Pos1, Pos2 are 
+  arrays of positions.  Radius is the contact radius. MinCO is minimum 
+  contact order, only used when Pos2 is not present.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetContactMap"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetContactMap</span>(<span class="sig-arg">Pos1</span>,
+        <span class="sig-arg">Ind1</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">NInd1</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Pos2</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Ind2</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">NInd2</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Radius</span>=<span class="sig-default">8.0</span>,
+        <span class="sig-arg">MinCO</span>=<span class="sig-default">3</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetContactMap">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a contact map for one or two position matrices. Ind1, Ind2 are
+  list of indices for positions in Pos1, Pos2. Pos1, Pos2 are arrays of 
+  positions.  Radius is the contact radius. MinCO is minimum contact order,
+  only used when Pos2 is not present.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetRandomInd"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetRandomInd</span>(<span class="sig-arg">Prob</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.proteinfunc-pysrc.html#GetRandomInd">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a random index of 0 to len(Prob)-1, where the weight of each 
+  index is given by Prob[i].  sum(Prob) must equal 1.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:22 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

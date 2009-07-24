@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.dssp</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;dssp
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.dssp-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="zam.dssp-module.html">Module zam.dssp</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">Routines to interface with DSSP for secondary structure assignment.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">Main routines are GetSS and GetSSTraj</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"># Setup logger</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package zam=zam-module.html"><a title="zam" class="py-name" href="#" onclick="return doclink('link-0', 'zam', 'link-0');">zam</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module zam.utility=zam.utility-module.html"><a title="zam.utility" class="py-name" href="#" onclick="return doclink('link-1', 'utility', 'link-1');">utility</a></tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable zam.LocalPairDistanceDeviation.Logger=zam.LocalPairDistanceDeviation-module.html#Logger,Variable zam.assemble.Logger=zam.assemble-module.html#Logger,Variable zam.assemblechains.Logger=zam.assemblechains-module.html#Logger,Variable zam.backup.Logger=zam.backup-module.html#Logger,Variable zam.cluster.Logger=zam.cluster-module.html#Logger,Variable zam.coords.Logger=zam.coords-module.html#Logger,Variable zam.dssp.Logger=zam.dssp-module.html#Logger,Variable zam.geometry.Logger=zam.geometry-module.html#Logger,Variable zam.gromacs.Logger=zam.gromacs-module.html#Logger,Variable zam.imageconf.Logger=zam.imageconf-module.html#Logger,Variable zam.loop_closure.Logger=zam.loop_closure-module.html#Logger,Variable zam.loop_closure.bridge_loop.Logger=zam.loop_closure.bridge_loop-module.html#Logger,Variable zam.loop_closure.rama.Logger=zam.loop_closure.rama-module.html#Logger,Variable zam.makeconf.Logger=zam.makeconf-module.html#Logger,Variable zam.mdsim.Logger=zam.mdsim-module.html#Logger,Variable zam.mdtrj.Logger=zam.mdtrj-module.html#Logger,Variable zam.mesoanalysis.Logger=zam.mesoanalysis-module.html#Logger,Variable zam.myrex.Logger=zam.myrex-module.html#Logger,Variable zam.pca.Logger=zam.pca-module.html#Logger,Variable zam.pdbtools.Logger=zam.pdbtools-module.html#Logger,Variable zam.protein.Logger=zam.protein-module.html#Logger,Variable zam.proteinalg.Logger=zam.proteinalg-module.html#Logger,Variable zam.proteinconst.Logger=zam.proteinconst-module.html#Logger,Variable zam.proteinfunc.Logger=zam.proteinfunc-module.html#Logger,Variable zam.punchanalysis.Logger=zam.punchanalysis-module.html#Logger,Variable zam.rexanalysis.Logger=zam.rexanalysis-module.html#Logger,Variable zam.rexsock.Logger=zam.rexsock-module.html#Logger,Variable zam.rigidbody.Logger=zam.rigidbody-module.html#Logger,Variable zam.rmsd.Logger=zam.rmsd-module.html#Logger,Variable zam.scripttools.Logger=zam.scripttools-module.html#Logger,Variable zam.sequence.Logger=zam.sequence-module.html#Logger,Variable zam.socketring.Logger=zam.socketring-module.html#Logger,Variable zam.zamanal.Logger=zam.zamanal-module.html#Logger,Variable zam.zamchoice.Logger=zam.zamchoice-module.html#Logger,Variable zam.zamcontact.Logger=zam.zamcontact-module.html#Logger,Variable zam.zamdata.Logger=zam.zamdata-module.html#Logger,Variable zam.zamrex.Logger=zam.zamrex-module.html#Logger,Variable zam.zamrun.Logger=zam.zamrun-module.html#Logger"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-2', 'Logger', 'link-2');">Logger</a></tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name"><a title="zam" class="py-name" href="#" onclick="return doclink('link-3', 'zam', 'link-0');">zam</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="zam.utility" class="py-name" href="#" onclick="return doclink('link-4', 'utility', 'link-1');">utility</a></tt><tt class="py-op">.</tt><tt class="py-name">SetupLogging</tt><tt class="py-op">(</tt><tt class="py-name">__name__</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">tempfile</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">subprocess</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">numpy</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-5" class="py-name" targets="Module zam.protein=zam.protein-module.html"><a title="zam.protein" class="py-name" href="#" onclick="return doclink('link-5', 'protein', 'link-5');">protein</a></tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="_SetupTempDir"></a><div id="_SetupTempDir-def"><a name="L22"></a><tt class="py-lineno"> 22</tt> <a class="py-toggle" href="#" id="_SetupTempDir-toggle" onclick="return toggle('_SetupTempDir');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.dssp-module.html#_SetupTempDir">_SetupTempDir</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_SetupTempDir-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_SetupTempDir-expanded"><a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">    <tt class="py-name">TempDir</tt> <tt class="py-op">=</tt> <tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">mkdtemp</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">    <tt class="py-name">TempPdb</tt> <tt class="py-op">=</tt> <tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">mktemp</tt><tt class="py-op">(</tt><tt class="py-name">suffix</tt><tt class="py-op">=</tt><tt class="py-string">".pdb"</tt><tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt class="py-name">TempDssp</tt> <tt class="py-op">=</tt> <tt class="py-name">tempfile</tt><tt class="py-op">.</tt><tt class="py-name">mktemp</tt><tt class="py-op">(</tt><tt class="py-name">suffix</tt><tt class="py-op">=</tt><tt class="py-string">".dssp"</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">     </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">    <tt class="py-name">TempPdb</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">TempDir</tt><tt class="py-op">,</tt> <tt class="py-name">TempPdb</tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt class="py-name">TempDssp</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">TempDir</tt><tt class="py-op">,</tt> <tt class="py-name">TempDssp</tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">     </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">TempDir</tt><tt class="py-op">,</tt> <tt class="py-name">TempPdb</tt><tt class="py-op">,</tt> <tt class="py-name">TempDssp</tt> </tt>
+</div><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="_CleanupTempDir"></a><div id="_CleanupTempDir-def"><a name="L33"></a><tt class="py-lineno"> 33</tt> <a class="py-toggle" href="#" id="_CleanupTempDir-toggle" onclick="return toggle('_CleanupTempDir');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.dssp-module.html#_CleanupTempDir">_CleanupTempDir</a><tt class="py-op">(</tt><tt class="py-param">TempDir</tt><tt class="py-op">,</tt> <tt class="py-param">TempPdb</tt><tt class="py-op">,</tt> <tt class="py-param">TempDssp</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_CleanupTempDir-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_CleanupTempDir-expanded"><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">    <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">TempPdb</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">TempDssp</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">rmdir</tt><tt class="py-op">(</tt><tt class="py-name">TempDir</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">     </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">     </tt>
+<a name="GetSS"></a><div id="GetSS-def"><a name="L39"></a><tt class="py-lineno"> 39</tt> <a class="py-toggle" href="#" id="GetSS-toggle" onclick="return toggle('GetSS');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.dssp-module.html#GetSS">GetSS</a><tt class="py-op">(</tt><tt class="py-param">Protein</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GetSS-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="GetSS-expanded"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">    Runs the command "dssp" to classify the secondary structure for</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">    a protein object.</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">    Returns a list of single character secondary structure codes:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">         H - alpha helix</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">         B - residue in isolated beta-bridge</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">         E - residue in extended strand</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">         G - 3 helix (3-10 helix)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">         I - 5 helix (pi helix)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">         T - hydrogen bonded turn</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">         S - bend</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">           - (space) indicates residue that doesn't fall into previous categories</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">     </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">    <tt class="py-name">TempDir</tt><tt class="py-op">,</tt> <tt class="py-name">TempPdb</tt><tt class="py-op">,</tt> <tt class="py-name">TempDssp</tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name" targets="Function zam.dssp._SetupTempDir()=zam.dssp-module.html#_SetupTempDir"><a title="zam.dssp._SetupTempDir" class="py-name" href="#" onclick="return doclink('link-6', '_SetupTempDir', 'link-6');">_SetupTempDir</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt>     </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-name">Protein</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method zam.mdsim.SimClass.WritePdb()=zam.mdsim.SimClass-class.html#WritePdb,Method zam.protein.ProteinClass.WritePdb()=zam.protein.ProteinClass-class.html#WritePdb"><a title="zam.mdsim.SimClass.WritePdb
+zam.protein.ProteinClass.WritePdb" class="py-name" href="#" onclick="return doclink('link-7', 'WritePdb', 'link-7');">WritePdb</a></tt><tt class="py-op">(</tt> <tt class="py-name">TempPdb</tt> <tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">     </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt id="link-8" class="py-name"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-8', 'Logger', 'link-2');">Logger</a></tt><tt class="py-op">.</tt><tt class="py-name">debug</tt><tt class="py-op">(</tt><tt class="py-string">"Calling DSSP"</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-name">subprocess</tt><tt class="py-op">.</tt><tt class="py-name">check_call</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-string">"dssp"</tt><tt class="py-op">,</tt><tt class="py-name">TempPdb</tt><tt class="py-op">,</tt> <tt class="py-name">TempDssp</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">stdin</tt><tt class="py-op">=</tt><tt class="py-name">subprocess</tt><tt class="py-op">.</tt><tt class="py-name">PIPE</tt><tt class="py-op">,</tt> <tt class="py-name">stdout</tt><tt class="py-op">=</tt><tt class="py-name">subprocess</tt><tt class="py-op">.</tt><tt class="py-name">PIPE</tt><tt class="py-op">,</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">                          <tt class="py-name">stderr</tt><tt class="py-op">=</tt><tt class="py-name">subprocess</tt><tt class="py-op">.</tt><tt class="py-name">PIPE</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-name">Results</tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name" targets="Function zam.dssp.ParseDssp()=zam.dssp-module.html#ParseDssp"><a title="zam.dssp.ParseDssp" class="py-name" href="#" onclick="return doclink('link-9', 'ParseDssp', 'link-9');">ParseDssp</a></tt><tt class="py-op">(</tt><tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">TempDssp</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">     </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt id="link-10" class="py-name" targets="Function zam.dssp._CleanupTempDir()=zam.dssp-module.html#_CleanupTempDir"><a title="zam.dssp._CleanupTempDir" class="py-name" href="#" onclick="return doclink('link-10', '_CleanupTempDir', 'link-10');">_CleanupTempDir</a></tt><tt class="py-op">(</tt><tt class="py-name">TempDir</tt><tt class="py-op">,</tt> <tt class="py-name">TempPdb</tt><tt class="py-op">,</tt> <tt class="py-name">TempDssp</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">     </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">Results</tt> </tt>
+</div><a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">     </tt>
+<a name="ParseDssp"></a><div id="ParseDssp-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="ParseDssp-toggle" onclick="return toggle('ParseDssp');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.dssp-module.html#ParseDssp">ParseDssp</a><tt class="py-op">(</tt><tt class="py-param">DsspFile</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ParseDssp-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ParseDssp-expanded"><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-name">RawResults</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">Line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">DsspFile</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-name">RawResults</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">Line</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">     </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-name">Results</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">Line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">RawResults</tt><tt class="py-op">[</tt><tt class="py-number">24</tt><tt class="py-op">:</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-name">Results</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt class="py-name">Line</tt><tt class="py-op">[</tt><tt class="py-number">16</tt><tt class="py-op">]</tt> <tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">     </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">Results</tt> </tt>
+</div><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="GetSSTraj"></a><div id="GetSSTraj-def"><a name="L79"></a><tt class="py-lineno"> 79</tt> <a class="py-toggle" href="#" id="GetSSTraj-toggle" onclick="return toggle('GetSSTraj');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.dssp-module.html#GetSSTraj">GetSSTraj</a><tt class="py-op">(</tt><tt class="py-param">Coords</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GetSSTraj-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="GetSSTraj-expanded"><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt class="py-comment"># Setup</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt class="py-name">Coords</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method zam.coords.PdbListClass.Reset()=zam.coords.PdbListClass-class.html#Reset,Method zam.coords.TrjClass.Reset()=zam.coords.TrjClass-class.html#Reset,Method zam.proteinfunc.MCMoveClass.Reset()=zam.proteinfunc.MCMoveClass-class.html#Reset"><a title="zam.coords.PdbListClass.Reset
+zam.coords.TrjClass.Reset
+zam.proteinfunc.MCMoveClass.Reset" class="py-name" href="#" onclick="return doclink('link-11', 'Reset', 'link-11');">Reset</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-name">pTraj</tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="zam.protein" class="py-name" href="#" onclick="return doclink('link-12', 'protein', 'link-5');">protein</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Class zam.protein.ProteinClass=zam.protein.ProteinClass-class.html"><a title="zam.protein.ProteinClass" class="py-name" href="#" onclick="return doclink('link-13', 'ProteinClass', 'link-13');">ProteinClass</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-name">pTraj</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method zam.protein.ProteinClass.LinkTrj()=zam.protein.ProteinClass-class.html#LinkTrj"><a title="zam.protein.ProteinClass.LinkTrj" class="py-name" href="#" onclick="return doclink('link-14', 'LinkTrj', 'link-14');">LinkTrj</a></tt><tt class="py-op">(</tt><tt class="py-name">Coords</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">     </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-name">SSTrajectory</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">Frame</tt> <tt class="py-keyword">in</tt> <tt class="py-name">Coords</tt><tt class="py-op">:</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-name">Results</tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name" targets="Function zam.dssp.GetSS()=zam.dssp-module.html#GetSS"><a title="zam.dssp.GetSS" class="py-name" href="#" onclick="return doclink('link-15', 'GetSS', 'link-15');">GetSS</a></tt><tt class="py-op">(</tt><tt class="py-name">pTraj</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">SSTrajectory</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">Results</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">         </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">SSTrajectory</tt> </tt>
+</div><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"> </tt>
+<a name="TabulateTrajectoryResults"></a><div id="TabulateTrajectoryResults-def"><a name="L93"></a><tt class="py-lineno"> 93</tt> <a class="py-toggle" href="#" id="TabulateTrajectoryResults-toggle" onclick="return toggle('TabulateTrajectoryResults');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.dssp-module.html#TabulateTrajectoryResults">TabulateTrajectoryResults</a><tt class="py-op">(</tt><tt class="py-param">RawResults</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TabulateTrajectoryResults-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="TabulateTrajectoryResults-expanded"><a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">    <tt class="py-name">ResultsArray</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt><tt class="py-name">RawResults</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt class="py-name">HelixArray</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">sum</tt><tt class="py-op">(</tt><tt class="py-name">ResultsArray</tt> <tt class="py-op">==</tt> <tt class="py-string">'H'</tt><tt class="py-op">,</tt> <tt class="py-name">axis</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-name">ExtendedArray</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">sum</tt><tt class="py-op">(</tt><tt class="py-name">ResultsArray</tt> <tt class="py-op">==</tt> <tt class="py-string">'E'</tt><tt class="py-op">,</tt> <tt class="py-name">axis</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt class="py-name">OtherArray</tt> <tt class="py-op">=</tt> <tt class="py-name">HelixArray</tt> <tt class="py-op">+</tt> <tt class="py-name">ExtendedArray</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt class="py-name">OtherArray</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">shape</tt><tt class="py-op">(</tt><tt class="py-name">ResultsArray</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">-</tt> <tt class="py-name">OtherArray</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">     </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">shape</tt><tt class="py-op">(</tt><tt class="py-name">ResultsArray</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">HelixArray</tt><tt class="py-op">,</tt> <tt class="py-name">ExtendedArray</tt><tt class="py-op">,</tt> <tt class="py-name">OtherArray</tt> </tt>
+</div><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:25 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

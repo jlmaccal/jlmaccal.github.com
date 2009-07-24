@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.proteinlib</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;proteinlib
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.proteinlib-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module proteinlib</h1><p class="nomargin-top"></p>
+<pre class="literalblock">
+This module 'proteinlib' is auto-generated with f2py (version:2_5972).
+Functions:
+  getbondid = getbondid(i,j,natom)
+  initbonditer(nextid,ind,bondid,natom,nbondid=len(bondid))
+  isbonditer = isbonditer(curid,nextid,ind,bondid,natom,nbondid=len(bondid))
+  respos = resposcentroid(pos,atomresnum,nres,natom=shape(pos,0),dim=shape(pos,1))
+  respos = resposcentroidind(pos,atomresnum,nres,resind,natom=shape(pos,0),dim=shape(pos,1),nresind=len(resind))
+  ret = centroidrange(pos,atom1,atom2,natom=shape(pos,0),dim=shape(pos,1))
+  ret = centroidall(pos,natom=shape(pos,0),dim=shape(pos,1))
+  newpos = center(pos,centroidpos,natom=shape(pos,0),dim=shape(pos,1))
+  overlapscore = overlapscore(pos,cutoff,natom=shape(pos,0),dim=shape(pos,1))
+  overlapscore2 = overlapscore2(pos1,pos2,cutoff,natom1=shape(pos1,0),natom2=shape(pos2,0),dim=shape(pos1,1))
+  rescontactscore = rescontactscore(pos,resid,epsmat,sigma,natom=shape(pos,0),dim=shape(pos,1),nepsmat=shape(epsmat,0))
+  stericscore = stericscore(pos,radius,cutoff,natom=shape(pos,0),dim=shape(pos,1))
+  stericscoreres = stericscoreres(pos,radius,cutoff,resnum,atomresnum,natom=shape(pos,0),dim=shape(pos,1))
+  stericscorebond = stericscorebond(pos,radius,cutoff,bond23,bond4,scale4,natom=shape(pos,0),dim=shape(pos,1),nbond23=len(bond23),nbond4=len(bond4))
+  stericscoreresbond = stericscoreresbond(pos,radius,cutoff,resnum,atomresnum,bond23,bond4,scale4,natom=shape(pos,0),dim=shape(pos,1),nbond23=len(bond23),nbond4=len(bond4))
+  stericscore2 = stericscore2(pos1,pos2,radius1,radius2,cutoff,natom1=shape(pos1,0),natom2=shape(pos2,0),dim=shape(pos1,1))
+  ljscore = ljscore(pos,radius,sqrteps,cutoff,natom=shape(pos,0),dim=shape(pos,1))
+  ljscoreres = ljscoreres(pos,radius,sqrteps,cutoff,resnum,atomresnum,natom=shape(pos,0),dim=shape(pos,1))
+  ljscorebond = ljscorebond(pos,radius,sqrteps,cutoff,bond23,bond4,scale4,natom=shape(pos,0),dim=shape(pos,1),nbond23=len(bond23),nbond4=len(bond4))
+  ljscoreresbond = ljscoreresbond(pos,radius,sqrteps,cutoff,resnum,atomresnum,bond23,bond4,scale4,natom=shape(pos,0),dim=shape(pos,1),nbond23=len(bond23),nbond4=len(bond4))
+  energy = energy(pos,radius,sqrteps,charge,ljcutoff,chargecutoff,coulfact,natom=shape(pos,0),dim=shape(pos,1))
+  energyres = energyres(pos,radius,sqrteps,charge,ljcutoff,chargecutoff,coulfact,resnum,atomresnum,natom=shape(pos,0),dim=shape(pos,1))
+  energybond = energybond(pos,radius,sqrteps,charge,ljcutoff,chargecutoff,coulfact,bond23,bond4,scale4lj,scale4charge,natom=shape(pos,0),dim=shape(pos,1),nbond23=len(bond23),nbond4=len(bond4))
+  energyresbond = energyresbond(pos,radius,sqrteps,charge,ljcutoff,chargecutoff,coulfact,resnum,atomresnum,bond23,bond4,scale4lj,scale4charge,natom=shape(pos,0),dim=shape(pos,1),nbond23=len(bond23),nbond4=len(bond4))
+  chargescore = chargescore(pos,charge,cutoff,natom=shape(pos,0),dim=shape(pos,1))
+  chargescoreres = chargescoreres(pos,charge,cutoff,resnum,atomresnum,natom=shape(pos,0),dim=shape(pos,1))
+  chargescorebond = chargescorebond(pos,charge,cutoff,bond23,bond4,scale4,nbond23=len(bond23),nbond4=len(bond4),natom=shape(pos,0),dim=shape(pos,1))
+  chargescoreresbond = chargescoreresbond(pos,charge,cutoff,resnum,atomresnum,bond23,bond4,scale4,natom=shape(pos,0),dim=shape(pos,1),nbond23=len(bond23),nbond4=len(bond4))
+  ret = crossprod3(r1,r2)
+  normrad = normrad(rad)
+  cliptrig = cliptrig(x)
+  dihedral3rad = dihedral3rad(pos1,pos2,pos3,pos4)
+  dihenergy = dihenergy(pos,nind,caind,cind,hasphi,haspsi,phiparams,psiparams,natom=shape(pos,0),dim=shape(pos,1),nres=len(nind),nphiparams=shape(phiparams,0),npsiparams=shape(psiparams,0))
+  hbondscore = hbondscore(pos,hind,accind,a,b,cutoff,minco,natom=shape(pos,0),dim=shape(pos,1),nh=len(hind),nacc=len(accind))
+  hbondscoreind = hbondscoreind(pos,hind,accind,a,b,cutoff,minco,resind,natom=shape(pos,0),dim=shape(pos,1),nh=len(hind),nacc=len(accind),nresind=len(resind))
+  hbondscore2 = hbondscore2(pos1,pos2,hind1,accind1,hind2,accind2,a,b,cutoff,natom1=shape(pos1,0),natom2=shape(pos2,0),dim=shape(pos1,1),nh1=len(hind1),nacc1=len(accind1),nh2=len(hind2),nacc2=len(accind2))
+  hbondljscore = hbondljscore(pos,nind,hind,oind,a,b,cutoff,cospower,minco,natom=shape(pos,0),dim=shape(pos,1),nres=len(nind))
+  hbondljscoreind = hbondljscoreind(pos,nind,hind,oind,a,b,cutoff,cospower,minco,resind,natom=shape(pos,0),dim=shape(pos,1),nres=len(nind),nresind=len(resind))
+  hbonddipolescore = hbonddipolescore(pos,nind,hind,cind,oind,cutoff,minco,natom=shape(pos,0),dim=shape(pos,1),nn=len(nind),nh=len(hind),nc=len(cind),no=len(oind))
+  hbonddipolescoreind = hbonddipolescoreind(pos,nind,hind,cind,oind,cutoff,minco,resind,natom=shape(pos,0),dim=shape(pos,1),nn=len(nind),nh=len(hind),nc=len(cind),no=len(oind),nresind=len(resind))
+  hbonddipolescore2 = hbonddipolescore2(pos1,pos2,nind1,hind1,cind1,oind1,nind2,hind2,cind2,oind2,cutoff,natom1=shape(pos1,0),natom2=shape(pos2,0),dim=shape(pos1,1),nn1=len(nind1),nh1=len(hind1),nc1=len(cind1),no1=len(oind1),nn2=len(nind2),nh2=len(hind2),nc2=len(cind2),no2=len(oind2))
+  hbondchargescore = hbondchargescore(pos,nind,hind,cind,oind,cutoff,cospower1,cospower2,coef,minco,natom=shape(pos,0),dim=shape(pos,1),nres=len(nind))
+  hbondchargescoreind = hbondchargescoreind(pos,nind,hind,cind,oind,cutoff,cospower1,cospower2,coef,minco,resind,natom=shape(pos,0),dim=shape(pos,1),nres=len(nind),nresind=len(resind))
+  rg = rg(pos,natom=shape(pos,0),dim=shape(pos,1))
+  rgweights = rgweights(pos,weights,natom=shape(pos,0),dim=shape(pos,1))
+  rgatomind = rgatomind(pos,atomind,natom=shape(pos,0),dim=shape(pos,1),nind=len(atomind))
+  rg2 = rg2(pos1,pos2,natom1=shape(pos1,0),natom2=shape(pos2,0),dim=shape(pos1,1))
+  rgweights2 = rgweights2(pos1,pos2,weights1,weights2,natom1=shape(pos1,0),natom2=shape(pos2,0),dim=shape(pos1,1))
+  rgatomind2 = rgatomind2(pos1,pos2,atomind1,atomind2,natom1=shape(pos1,0),natom2=shape(pos2,0),dim=shape(pos1,1),nind1=len(atomind1),nind2=len(atomind2))
+  isbond = isbond(pos1,pos2,pos3,distcut,angcut,dim=len(pos1))
+  ishbond = ishbond(npos,hpos,cpos,opos,ecutoff,dim=len(npos))
+  cm = bondcontactmap(pos,ind1,ind2,ind3,resind,distcut,angcut,natom=shape(pos,0),dim=shape(pos,1),nres=len(ind1),nresind=len(resind))
+  cm = hbondcontactmap(pos,nind,hind,cind,oind,resind,ecutoff,natom=shape(pos,0),dim=shape(pos,1),nres=len(nind),nresind=len(resind))
+  getrandomind = getrandomind(prob,rannum,n=len(prob))
+.
+
+</pre>
+
+<hr />
+<div class="fields">      <p><strong>Version:</strong>
+        $Revision: $
+      </p>
+</div><!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="bondcontactmap"></a><span class="summary-name">bondcontactmap</span> = <code title="&lt;fortran object at 0x154e410&gt;">&lt;fortran object at 0x154e410&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="center"></a><span class="summary-name">center</span> = <code title="&lt;fortran object at 0x1530f98&gt;">&lt;fortran object at 0x1530f98&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="centroidall"></a><span class="summary-name">centroidall</span> = <code title="&lt;fortran object at 0x1530e60&gt;">&lt;fortran object at 0x1530e60&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="centroidrange"></a><span class="summary-name">centroidrange</span> = <code title="&lt;fortran object at 0x1530e18&gt;">&lt;fortran object at 0x1530e18&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="chargescore"></a><span class="summary-name">chargescore</span> = <code title="&lt;fortran object at 0x154e188&gt;">&lt;fortran object at 0x154e188&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="chargescorebond"></a><span class="summary-name">chargescorebond</span> = <code title="&lt;fortran object at 0x154e1b8&gt;">&lt;fortran object at 0x154e1b8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="chargescoreres"></a><span class="summary-name">chargescoreres</span> = <code title="&lt;fortran object at 0x154e1a0&gt;">&lt;fortran object at 0x154e1a0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="chargescoreresbond"></a><span class="summary-name">chargescoreresbond</span> = <code title="&lt;fortran object at 0x154e1d0&gt;">&lt;fortran object at 0x154e1d0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="cliptrig"></a><span class="summary-name">cliptrig</span> = <code title="&lt;fortran object at 0x154e218&gt;">&lt;fortran object at 0x154e218&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="crossprod3"></a><span class="summary-name">crossprod3</span> = <code title="&lt;fortran object at 0x154e1e8&gt;">&lt;fortran object at 0x154e1e8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="dihedral3rad"></a><span class="summary-name">dihedral3rad</span> = <code title="&lt;fortran object at 0x154e230&gt;">&lt;fortran object at 0x154e230&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="dihenergy"></a><span class="summary-name">dihenergy</span> = <code title="&lt;fortran object at 0x154e248&gt;">&lt;fortran object at 0x154e248&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="energy"></a><span class="summary-name">energy</span> = <code title="&lt;fortran object at 0x154e128&gt;">&lt;fortran object at 0x154e128&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="energybond"></a><span class="summary-name">energybond</span> = <code title="&lt;fortran object at 0x154e158&gt;">&lt;fortran object at 0x154e158&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="energyres"></a><span class="summary-name">energyres</span> = <code title="&lt;fortran object at 0x154e140&gt;">&lt;fortran object at 0x154e140&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="energyresbond"></a><span class="summary-name">energyresbond</span> = <code title="&lt;fortran object at 0x154e170&gt;">&lt;fortran object at 0x154e170&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="getbondid"></a><span class="summary-name">getbondid</span> = <code title="&lt;fortran object at 0x1530f80&gt;">&lt;fortran object at 0x1530f80&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="getrandomind"></a><span class="summary-name">getrandomind</span> = <code title="&lt;fortran object at 0x154e440&gt;">&lt;fortran object at 0x154e440&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbondchargescore"></a><span class="summary-name">hbondchargescore</span> = <code title="&lt;fortran object at 0x154e320&gt;">&lt;fortran object at 0x154e320&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbondchargescoreind"></a><span class="summary-name">hbondchargescoreind</span> = <code title="&lt;fortran object at 0x154e338&gt;">&lt;fortran object at 0x154e338&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbondcontactmap"></a><span class="summary-name">hbondcontactmap</span> = <code title="&lt;fortran object at 0x154e428&gt;">&lt;fortran object at 0x154e428&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbonddipolescore"></a><span class="summary-name">hbonddipolescore</span> = <code title="&lt;fortran object at 0x154e2d8&gt;">&lt;fortran object at 0x154e2d8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbonddipolescore2"></a><span class="summary-name">hbonddipolescore2</span> = <code title="&lt;fortran object at 0x154e308&gt;">&lt;fortran object at 0x154e308&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbonddipolescoreind"></a><span class="summary-name">hbonddipolescoreind</span> = <code title="&lt;fortran object at 0x154e2f0&gt;">&lt;fortran object at 0x154e2f0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbondljscore"></a><span class="summary-name">hbondljscore</span> = <code title="&lt;fortran object at 0x154e2a8&gt;">&lt;fortran object at 0x154e2a8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbondljscoreind"></a><span class="summary-name">hbondljscoreind</span> = <code title="&lt;fortran object at 0x154e2c0&gt;">&lt;fortran object at 0x154e2c0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbondscore"></a><span class="summary-name">hbondscore</span> = <code title="&lt;fortran object at 0x154e260&gt;">&lt;fortran object at 0x154e260&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbondscore2"></a><span class="summary-name">hbondscore2</span> = <code title="&lt;fortran object at 0x154e290&gt;">&lt;fortran object at 0x154e290&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="hbondscoreind"></a><span class="summary-name">hbondscoreind</span> = <code title="&lt;fortran object at 0x154e278&gt;">&lt;fortran object at 0x154e278&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="initbonditer"></a><span class="summary-name">initbonditer</span> = <code title="&lt;fortran object at 0x1530fb0&gt;">&lt;fortran object at 0x1530fb0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="isbond"></a><span class="summary-name">isbond</span> = <code title="&lt;fortran object at 0x154e3e0&gt;">&lt;fortran object at 0x154e3e0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="isbonditer"></a><span class="summary-name">isbonditer</span> = <code title="&lt;fortran object at 0x1530fc8&gt;">&lt;fortran object at 0x1530fc8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ishbond"></a><span class="summary-name">ishbond</span> = <code title="&lt;fortran object at 0x154e3f8&gt;">&lt;fortran object at 0x154e3f8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ljscore"></a><span class="summary-name">ljscore</span> = <code title="&lt;fortran object at 0x154e0c8&gt;">&lt;fortran object at 0x154e0c8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ljscorebond"></a><span class="summary-name">ljscorebond</span> = <code title="&lt;fortran object at 0x154e0f8&gt;">&lt;fortran object at 0x154e0f8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ljscoreres"></a><span class="summary-name">ljscoreres</span> = <code title="&lt;fortran object at 0x154e0e0&gt;">&lt;fortran object at 0x154e0e0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ljscoreresbond"></a><span class="summary-name">ljscoreresbond</span> = <code title="&lt;fortran object at 0x154e110&gt;">&lt;fortran object at 0x154e110&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="normrad"></a><span class="summary-name">normrad</span> = <code title="&lt;fortran object at 0x154e200&gt;">&lt;fortran object at 0x154e200&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="overlapscore"></a><span class="summary-name">overlapscore</span> = <code title="&lt;fortran object at 0x1530e48&gt;">&lt;fortran object at 0x1530e48&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="overlapscore2"></a><span class="summary-name">overlapscore2</span> = <code title="&lt;fortran object at 0x154e020&gt;">&lt;fortran object at 0x154e020&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rescontactscore"></a><span class="summary-name">rescontactscore</span> = <code title="&lt;fortran object at 0x154e038&gt;">&lt;fortran object at 0x154e038&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="resposcentroid"></a><span class="summary-name">resposcentroid</span> = <code title="&lt;fortran object at 0x1530fe0&gt;">&lt;fortran object at 0x1530fe0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="resposcentroidind"></a><span class="summary-name">resposcentroidind</span> = <code title="&lt;fortran object at 0x1530e90&gt;">&lt;fortran object at 0x1530e90&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rg"></a><span class="summary-name">rg</span> = <code title="&lt;fortran object at 0x154e350&gt;">&lt;fortran object at 0x154e350&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rg2"></a><span class="summary-name">rg2</span> = <code title="&lt;fortran object at 0x154e398&gt;">&lt;fortran object at 0x154e398&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rgatomind"></a><span class="summary-name">rgatomind</span> = <code title="&lt;fortran object at 0x154e380&gt;">&lt;fortran object at 0x154e380&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rgatomind2"></a><span class="summary-name">rgatomind2</span> = <code title="&lt;fortran object at 0x154e3c8&gt;">&lt;fortran object at 0x154e3c8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rgweights"></a><span class="summary-name">rgweights</span> = <code title="&lt;fortran object at 0x154e368&gt;">&lt;fortran object at 0x154e368&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rgweights2"></a><span class="summary-name">rgweights2</span> = <code title="&lt;fortran object at 0x154e3b0&gt;">&lt;fortran object at 0x154e3b0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="stericscore"></a><span class="summary-name">stericscore</span> = <code title="&lt;fortran object at 0x154e050&gt;">&lt;fortran object at 0x154e050&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="stericscore2"></a><span class="summary-name">stericscore2</span> = <code title="&lt;fortran object at 0x154e0b0&gt;">&lt;fortran object at 0x154e0b0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="stericscorebond"></a><span class="summary-name">stericscorebond</span> = <code title="&lt;fortran object at 0x154e080&gt;">&lt;fortran object at 0x154e080&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="stericscoreres"></a><span class="summary-name">stericscoreres</span> = <code title="&lt;fortran object at 0x154e068&gt;">&lt;fortran object at 0x154e068&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="stericscoreresbond"></a><span class="summary-name">stericscoreresbond</span> = <code title="&lt;fortran object at 0x154e098&gt;">&lt;fortran object at 0x154e098&gt;</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:22 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

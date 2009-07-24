@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.LocalPairDistanceDeviation</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;LocalPairDistanceDeviation
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.LocalPairDistanceDeviation-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="zam.LocalPairDistanceDeviation-module.html">Module zam.LocalPairDistanceDeviation</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">LocalPairDistanceDeviation.py</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">This module allows for the calculation of local pairwise distance deviation</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">as a measure of spatially local structural quality.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package zam=zam-module.html"><a title="zam" class="py-name" href="#" onclick="return doclink('link-0', 'zam', 'link-0');">zam</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module zam.utility=zam.utility-module.html"><a title="zam.utility" class="py-name" href="#" onclick="return doclink('link-1', 'utility', 'link-1');">utility</a></tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable zam.LocalPairDistanceDeviation.Logger=zam.LocalPairDistanceDeviation-module.html#Logger,Variable zam.assemble.Logger=zam.assemble-module.html#Logger,Variable zam.assemblechains.Logger=zam.assemblechains-module.html#Logger,Variable zam.backup.Logger=zam.backup-module.html#Logger,Variable zam.cluster.Logger=zam.cluster-module.html#Logger,Variable zam.coords.Logger=zam.coords-module.html#Logger,Variable zam.dssp.Logger=zam.dssp-module.html#Logger,Variable zam.geometry.Logger=zam.geometry-module.html#Logger,Variable zam.gromacs.Logger=zam.gromacs-module.html#Logger,Variable zam.imageconf.Logger=zam.imageconf-module.html#Logger,Variable zam.loop_closure.Logger=zam.loop_closure-module.html#Logger,Variable zam.loop_closure.bridge_loop.Logger=zam.loop_closure.bridge_loop-module.html#Logger,Variable zam.loop_closure.rama.Logger=zam.loop_closure.rama-module.html#Logger,Variable zam.makeconf.Logger=zam.makeconf-module.html#Logger,Variable zam.mdsim.Logger=zam.mdsim-module.html#Logger,Variable zam.mdtrj.Logger=zam.mdtrj-module.html#Logger,Variable zam.mesoanalysis.Logger=zam.mesoanalysis-module.html#Logger,Variable zam.myrex.Logger=zam.myrex-module.html#Logger,Variable zam.pca.Logger=zam.pca-module.html#Logger,Variable zam.pdbtools.Logger=zam.pdbtools-module.html#Logger,Variable zam.protein.Logger=zam.protein-module.html#Logger,Variable zam.proteinalg.Logger=zam.proteinalg-module.html#Logger,Variable zam.proteinconst.Logger=zam.proteinconst-module.html#Logger,Variable zam.proteinfunc.Logger=zam.proteinfunc-module.html#Logger,Variable zam.punchanalysis.Logger=zam.punchanalysis-module.html#Logger,Variable zam.rexanalysis.Logger=zam.rexanalysis-module.html#Logger,Variable zam.rexsock.Logger=zam.rexsock-module.html#Logger,Variable zam.rigidbody.Logger=zam.rigidbody-module.html#Logger,Variable zam.rmsd.Logger=zam.rmsd-module.html#Logger,Variable zam.scripttools.Logger=zam.scripttools-module.html#Logger,Variable zam.sequence.Logger=zam.sequence-module.html#Logger,Variable zam.socketring.Logger=zam.socketring-module.html#Logger,Variable zam.zamanal.Logger=zam.zamanal-module.html#Logger,Variable zam.zamchoice.Logger=zam.zamchoice-module.html#Logger,Variable zam.zamcontact.Logger=zam.zamcontact-module.html#Logger,Variable zam.zamdata.Logger=zam.zamdata-module.html#Logger,Variable zam.zamrex.Logger=zam.zamrex-module.html#Logger,Variable zam.zamrun.Logger=zam.zamrun-module.html#Logger"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-2', 'Logger', 'link-2');">Logger</a></tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name"><a title="zam" class="py-name" href="#" onclick="return doclink('link-3', 'zam', 'link-0');">zam</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="zam.utility" class="py-name" href="#" onclick="return doclink('link-4', 'utility', 'link-1');">utility</a></tt><tt class="py-op">.</tt><tt class="py-name">SetupLogging</tt><tt class="py-op">(</tt><tt class="py-name">__name__</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">numpy</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation"></a><div id="LPDDeviation-def"><a name="L19"></a><tt class="py-lineno"> 19</tt> <a class="py-toggle" href="#" id="LPDDeviation-toggle" onclick="return toggle('LPDDeviation');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html">LPDDeviation</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="LPDDeviation-expanded"><a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">        This class calculates the spatially local pairwise distance deviation</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">        between two structures.</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">         </tt>
+<a name="LPDDeviation.__init__"></a><div id="LPDDeviation.__init__-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="LPDDeviation.__init__-toggle" onclick="return toggle('LPDDeviation.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">reference_structure</tt><tt class="py-op">,</tt> <tt class="py-param">sample_structure</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation.__init__-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">                <tt class="py-docstring">"""</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">                Initialization function</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">                </tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">                @param reference_structure: the reference structure for the calculation</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">                @type  reference_structure: ProteinClass</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">                </tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">                @param sample_structure: the sample structure for the calculation</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">                @type  sample_structure: ProteinClass</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">                """</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">                <tt class="py-name">temp_structure</tt><tt class="py-op">,</tt> <tt class="py-name">n_points_ref</tt> <tt class="py-op">=</tt> <tt id="link-5" class="py-name" targets="Function zam.LocalPairDistanceDeviation.SubsetStrucutre()=zam.LocalPairDistanceDeviation-module.html#SubsetStrucutre"><a title="zam.LocalPairDistanceDeviation.SubsetStrucutre" class="py-name" href="#" onclick="return doclink('link-5', 'SubsetStrucutre', 'link-5');">SubsetStrucutre</a></tt><tt class="py-op">(</tt><tt class="py-name">reference_structure</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">                <tt class="py-name">temp_structure</tt><tt class="py-op">,</tt> <tt class="py-name">n_points_sample</tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="zam.LocalPairDistanceDeviation.SubsetStrucutre" class="py-name" href="#" onclick="return doclink('link-6', 'SubsetStrucutre', 'link-5');">SubsetStrucutre</a></tt><tt class="py-op">(</tt><tt class="py-name">sample_structure</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">                 </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">n_points_sample</tt> <tt class="py-op">==</tt> <tt class="py-name">n_points_ref</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt> <tt class="py-op">=</tt> <tt class="py-name">n_points_ref</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_residues</tt> <tt class="py-op">=</tt> <tt class="py-name">n_points_ref</tt> <tt class="py-op">//</tt> <tt class="py-number">2</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_dist</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-number">2</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_ref_dist_matrix</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">zeros</tt><tt class="py-op">(</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_dist</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sample_dist_matrix</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">zeros</tt><tt class="py-op">(</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_dist</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method zam.LocalPairDistanceDeviation.LPDDeviation.SetReferenceStructure()=zam.LocalPairDistanceDeviation.LPDDeviation-class.html#SetReferenceStructure"><a title="zam.LocalPairDistanceDeviation.LPDDeviation.SetReferenceStructure" class="py-name" href="#" onclick="return doclink('link-7', 'SetReferenceStructure', 'link-7');">SetReferenceStructure</a></tt><tt class="py-op">(</tt><tt class="py-name">reference_structure</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method zam.LocalPairDistanceDeviation.LPDDeviation.SetSampleStructure()=zam.LocalPairDistanceDeviation.LPDDeviation-class.html#SetSampleStructure"><a title="zam.LocalPairDistanceDeviation.LPDDeviation.SetSampleStructure" class="py-name" href="#" onclick="return doclink('link-8', 'SetSampleStructure', 'link-8');">SetSampleStructure</a></tt><tt class="py-op">(</tt><tt class="py-name">sample_structure</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation.SetReferenceStructure"></a><div id="LPDDeviation.SetReferenceStructure-def"><a name="L49"></a><tt class="py-lineno"> 49</tt> <a class="py-toggle" href="#" id="LPDDeviation.SetReferenceStructure-toggle" onclick="return toggle('LPDDeviation.SetReferenceStructure');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#SetReferenceStructure">SetReferenceStructure</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">reference_structure</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation.SetReferenceStructure-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation.SetReferenceStructure-expanded"><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">                <tt class="py-docstring">"""</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">                Set the reference structure and re-calculate the pair distance matrix.</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">                </tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">                @param reference_structure: the reference structure</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">                @type  reference_structure: ProteinClass</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">                """</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">                <tt id="link-9" class="py-name" targets="Variable zam.gromacs.Simulation.structure=zam.gromacs.Simulation-class.html#structure"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-9', 'structure', 'link-9');">structure</a></tt><tt class="py-op">,</tt> <tt class="py-name">n_points</tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="zam.LocalPairDistanceDeviation.SubsetStrucutre" class="py-name" href="#" onclick="return doclink('link-10', 'SubsetStrucutre', 'link-5');">SubsetStrucutre</a></tt><tt class="py-op">(</tt><tt class="py-name">reference_structure</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">n_points</tt> <tt class="py-op">==</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_reference_structure</tt> <tt class="py-op">=</tt> <tt id="link-11" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-11', 'structure', 'link-9');">structure</a></tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method zam.LocalPairDistanceDeviation.LPDDeviation._CalcRefPairDistMatrix()=zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcRefPairDistMatrix"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcRefPairDistMatrix" class="py-name" href="#" onclick="return doclink('link-12', '_CalcRefPairDistMatrix', 'link-12');">_CalcRefPairDistMatrix</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation.SetSampleStructure"></a><div id="LPDDeviation.SetSampleStructure-def"><a name="L61"></a><tt class="py-lineno"> 61</tt> <a class="py-toggle" href="#" id="LPDDeviation.SetSampleStructure-toggle" onclick="return toggle('LPDDeviation.SetSampleStructure');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#SetSampleStructure">SetSampleStructure</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">sample_structure</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation.SetSampleStructure-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation.SetSampleStructure-expanded"><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">                <tt class="py-docstring">"""</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">                Set the sample structure and recalculate the pair distance matrix.</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">                </tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">                @param sample_structure: the sample structure</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">                @type  sample_structure: ProteinClass</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">                """</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">                <tt id="link-13" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-13', 'structure', 'link-9');">structure</a></tt><tt class="py-op">,</tt> <tt class="py-name">n_points</tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="zam.LocalPairDistanceDeviation.SubsetStrucutre" class="py-name" href="#" onclick="return doclink('link-14', 'SubsetStrucutre', 'link-5');">SubsetStrucutre</a></tt><tt class="py-op">(</tt><tt class="py-name">sample_structure</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">n_points</tt> <tt class="py-op">==</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sample_structure</tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-15', 'structure', 'link-9');">structure</a></tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method zam.LocalPairDistanceDeviation.LPDDeviation._CalcSamplePairDistMatrix()=zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcSamplePairDistMatrix"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcSamplePairDistMatrix" class="py-name" href="#" onclick="return doclink('link-16', '_CalcSamplePairDistMatrix', 'link-16');">_CalcSamplePairDistMatrix</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation.CalcNumNativeContacts"></a><div id="LPDDeviation.CalcNumNativeContacts-def"><a name="L73"></a><tt class="py-lineno"> 73</tt> <a class="py-toggle" href="#" id="LPDDeviation.CalcNumNativeContacts-toggle" onclick="return toggle('LPDDeviation.CalcNumNativeContacts');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#CalcNumNativeContacts">CalcNumNativeContacts</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">residue</tt><tt class="py-op">,</tt> <tt class="py-param">cutoff</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation.CalcNumNativeContacts-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation.CalcNumNativeContacts-expanded"><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                <tt class="py-docstring">"""</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">                """</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">residue</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">residue</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_residues</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">cutoff</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                 </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                <tt class="py-name">sample_weights</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method zam.LocalPairDistanceDeviation.LPDDeviation._CalcSampleWeights()=zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcSampleWeights"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcSampleWeights" class="py-name" href="#" onclick="return doclink('link-17', '_CalcSampleWeights', 'link-17');">_CalcSampleWeights</a></tt><tt class="py-op">(</tt><tt class="py-name">residue</tt><tt class="py-op">,</tt> <tt class="py-name">cutoff</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                <tt class="py-name">ref_weights</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method zam.LocalPairDistanceDeviation.LPDDeviation._CalcRefWeights()=zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcRefWeights"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcRefWeights" class="py-name" href="#" onclick="return doclink('link-18', '_CalcRefWeights', 'link-18');">_CalcRefWeights</a></tt><tt class="py-op">(</tt><tt class="py-name">residue</tt><tt class="py-op">,</tt> <tt class="py-name">cutoff</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">                 </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">                <tt class="py-name">total</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">ref_weights</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">                                <tt class="py-name">total</tt> <tt class="py-op">+=</tt> <tt class="py-name">sample_weights</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">                                 </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">total</tt> </tt>
+</div><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation.CalcNumContacts"></a><div id="LPDDeviation.CalcNumContacts-def"><a name="L90"></a><tt class="py-lineno"> 90</tt> <a class="py-toggle" href="#" id="LPDDeviation.CalcNumContacts-toggle" onclick="return toggle('LPDDeviation.CalcNumContacts');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#CalcNumContacts">CalcNumContacts</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">residue</tt><tt class="py-op">,</tt> <tt class="py-param">cutoff</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation.CalcNumContacts-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation.CalcNumContacts-expanded"><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                <tt class="py-docstring">"""</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">                """</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">residue</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">residue</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_residues</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">cutoff</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                <tt class="py-name">sample_weights</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcSampleWeights" class="py-name" href="#" onclick="return doclink('link-19', '_CalcSampleWeights', 'link-17');">_CalcSampleWeights</a></tt><tt class="py-op">(</tt><tt class="py-name">residue</tt><tt class="py-op">,</tt> <tt class="py-name">cutoff</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                <tt class="py-name">total</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                        <tt class="py-name">total</tt> <tt class="py-op">+=</tt> <tt class="py-name">sample_weights</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">total</tt> </tt>
+</div><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation.CalcDeviation"></a><div id="LPDDeviation.CalcDeviation-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="LPDDeviation.CalcDeviation-toggle" onclick="return toggle('LPDDeviation.CalcDeviation');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#CalcDeviation">CalcDeviation</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">residue</tt><tt class="py-op">,</tt> <tt class="py-param">cutoff</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation.CalcDeviation-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation.CalcDeviation-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                <tt class="py-docstring">"""</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">                Calculate the deviation between sample and reference structures within cutoff of residue.</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">                </tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">                @param residue: the residue centroid to use in the calculation</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">                @type  residue: int</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring">                </tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">                @param cutoff: all atoms within cutoff of the centroid of residue (in either the sample or ref structures) will</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">                be used in the calculation.</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-docstring">                @type  cutoff: float</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-docstring">                """</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">residue</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">residue</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_residues</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">cutoff</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">                 </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">                <tt class="py-comment"># The weight vectors will be n_atoms long and will contain the weight</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">                <tt class="py-comment"># for each atom for the calculations around residue. The weight will </tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                <tt class="py-comment"># be 1 if the atom is closer than cutoff and 0 otherwise.</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">                <tt class="py-name">sample_weights</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcSampleWeights" class="py-name" href="#" onclick="return doclink('link-20', '_CalcSampleWeights', 'link-17');">_CalcSampleWeights</a></tt><tt class="py-op">(</tt><tt class="py-name">residue</tt><tt class="py-op">,</tt> <tt class="py-name">cutoff</tt><tt class="py-op">)</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">                <tt class="py-name">ref_weights</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcRefWeights" class="py-name" href="#" onclick="return doclink('link-21', '_CalcRefWeights', 'link-18');">_CalcRefWeights</a></tt><tt class="py-op">(</tt><tt class="py-name">residue</tt><tt class="py-op">,</tt> <tt class="py-name">cutoff</tt><tt class="py-op">)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">                <tt class="py-comment"># weights = numpy.maximum(sample_weights, ref_weights)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">                <tt class="py-name">weights</tt> <tt class="py-op">=</tt> <tt class="py-name">ref_weights</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">                 </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">                <tt class="py-comment"># Calculate the weights for all pair distances.</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">                <tt class="py-comment"># This calculates the product of the weights for atoms i and j, so that</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">                <tt class="py-comment"># a given pair distance is included only if both atoms i and j are within</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">                <tt class="py-comment"># cutoff of residue in either the reference or sample structure.</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">                <tt class="py-name">weight_matrix</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">zeros</tt><tt class="py-op">(</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_dist</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">                <tt class="py-name">index</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">                <tt class="py-name">norm_constant</tt> <tt class="py-op">=</tt> <tt class="py-number">0.</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">                <tt class="py-comment"># for i in range(self._n_atoms):</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">                        <tt class="py-comment"># for j in range(i+1, self._n_atoms):</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">                        <tt class="py-keyword">for</tt> <tt class="py-name">j</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">                                <tt class="py-name">weight</tt> <tt class="py-op">=</tt> <tt class="py-name">weights</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> <tt class="py-op">*</tt> <tt class="py-name">weights</tt><tt class="py-op">[</tt><tt class="py-name">j</tt><tt class="py-op">]</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">                                <tt class="py-name">weight_matrix</tt><tt class="py-op">[</tt><tt class="py-name">index</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">weight</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">                                <tt class="py-name">norm_constant</tt> <tt class="py-op">=</tt> <tt class="py-name">norm_constant</tt> <tt class="py-op">+</tt> <tt class="py-name">weight</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                                <tt class="py-name">index</tt> <tt class="py-op">=</tt> <tt class="py-name">index</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">                                                 </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">sum</tt><tt class="py-op">(</tt> <tt class="py-name">weight_matrix</tt> <tt class="py-op">*</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">abs</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_ref_dist_matrix</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sample_dist_matrix</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-name">norm_constant</tt> </tt>
+</div><a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation._CalcRefPairDistMatrix"></a><div id="LPDDeviation._CalcRefPairDistMatrix-def"><a name="L146"></a><tt class="py-lineno">146</tt> <a class="py-toggle" href="#" id="LPDDeviation._CalcRefPairDistMatrix-toggle" onclick="return toggle('LPDDeviation._CalcRefPairDistMatrix');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcRefPairDistMatrix">_CalcRefPairDistMatrix</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation._CalcRefPairDistMatrix-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation._CalcRefPairDistMatrix-expanded"><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method zam.LocalPairDistanceDeviation.LPDDeviation._CalcPairDistMatrix()=zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcPairDistMatrix"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcPairDistMatrix" class="py-name" href="#" onclick="return doclink('link-22', '_CalcPairDistMatrix', 'link-22');">_CalcPairDistMatrix</a></tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation._CalcSamplePairDistMatrix"></a><div id="LPDDeviation._CalcSamplePairDistMatrix-def"><a name="L149"></a><tt class="py-lineno">149</tt> <a class="py-toggle" href="#" id="LPDDeviation._CalcSamplePairDistMatrix-toggle" onclick="return toggle('LPDDeviation._CalcSamplePairDistMatrix');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcSamplePairDistMatrix">_CalcSamplePairDistMatrix</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation._CalcSamplePairDistMatrix-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation._CalcSamplePairDistMatrix-expanded"><a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcPairDistMatrix" class="py-name" href="#" onclick="return doclink('link-23', '_CalcPairDistMatrix', 'link-22');">_CalcPairDistMatrix</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation._CalcPairDistMatrix"></a><div id="LPDDeviation._CalcPairDistMatrix-def"><a name="L152"></a><tt class="py-lineno">152</tt> <a class="py-toggle" href="#" id="LPDDeviation._CalcPairDistMatrix-toggle" onclick="return toggle('LPDDeviation._CalcPairDistMatrix');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcPairDistMatrix">_CalcPairDistMatrix</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">ref_or_sample</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation._CalcPairDistMatrix-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation._CalcPairDistMatrix-expanded"><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">ref_or_sample</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt> <tt class="py-keyword">or</tt> <tt class="py-name">ref_or_sample</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">                 </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">                <tt class="py-comment"># Reference</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">ref_or_sample</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">                        <tt id="link-24" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-24', 'structure', 'link-9');">structure</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_reference_structure</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">                        <tt class="py-name">dist_matrix</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_ref_dist_matrix</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">                <tt class="py-comment"># Sample</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">                        <tt id="link-25" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-25', 'structure', 'link-9');">structure</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sample_structure</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">                        <tt class="py-name">dist_matrix</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sample_dist_matrix</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">                 </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">                <tt class="py-comment"># n_atoms = structure.Pos.shape[0]</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">                <tt class="py-comment"># assert n_atoms == self._n_atoms</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">                <tt class="py-name">n_points</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">                <tt class="py-name">n_dist</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_dist</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">                 </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">                <tt class="py-name">index</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">n_points</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">                        <tt class="py-name">pos1</tt> <tt class="py-op">=</tt> <tt id="link-26" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-26', 'structure', 'link-9');">structure</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">,</tt><tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">                        <tt class="py-keyword">for</tt> <tt class="py-name">j</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">n_points</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">                                <tt class="py-name">pos2</tt> <tt class="py-op">=</tt> <tt id="link-27" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-27', 'structure', 'link-9');">structure</a></tt><tt class="py-op">[</tt><tt class="py-name">j</tt><tt class="py-op">,</tt><tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">                                <tt class="py-name">dist_matrix</tt><tt class="py-op">[</tt><tt class="py-name">index</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">linalg</tt><tt class="py-op">.</tt><tt class="py-name">norm</tt><tt class="py-op">(</tt> <tt class="py-name">pos1</tt> <tt class="py-op">-</tt> <tt class="py-name">pos2</tt> <tt class="py-op">)</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">                                <tt class="py-name">index</tt> <tt class="py-op">=</tt> <tt class="py-name">index</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+</div><a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation._CalcSampleWeights"></a><div id="LPDDeviation._CalcSampleWeights-def"><a name="L177"></a><tt class="py-lineno">177</tt> <a class="py-toggle" href="#" id="LPDDeviation._CalcSampleWeights-toggle" onclick="return toggle('LPDDeviation._CalcSampleWeights');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcSampleWeights">_CalcSampleWeights</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">residue</tt><tt class="py-op">,</tt> <tt class="py-param">cutoff</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation._CalcSampleWeights-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation._CalcSampleWeights-expanded"><a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method zam.LocalPairDistanceDeviation.LPDDeviation._CalcWeights()=zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcWeights"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcWeights" class="py-name" href="#" onclick="return doclink('link-28', '_CalcWeights', 'link-28');">_CalcWeights</a></tt><tt class="py-op">(</tt><tt class="py-name">residue</tt><tt class="py-op">,</tt> <tt class="py-name">cutoff</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation._CalcRefWeights"></a><div id="LPDDeviation._CalcRefWeights-def"><a name="L180"></a><tt class="py-lineno">180</tt> <a class="py-toggle" href="#" id="LPDDeviation._CalcRefWeights-toggle" onclick="return toggle('LPDDeviation._CalcRefWeights');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcRefWeights">_CalcRefWeights</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">residue</tt><tt class="py-op">,</tt> <tt class="py-param">cutoff</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation._CalcRefWeights-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation._CalcRefWeights-expanded"><a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="zam.LocalPairDistanceDeviation.LPDDeviation._CalcWeights" class="py-name" href="#" onclick="return doclink('link-29', '_CalcWeights', 'link-28');">_CalcWeights</a></tt><tt class="py-op">(</tt><tt class="py-name">residue</tt><tt class="py-op">,</tt> <tt class="py-name">cutoff</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"> </tt>
+<a name="LPDDeviation._CalcWeights"></a><div id="LPDDeviation._CalcWeights-def"><a name="L183"></a><tt class="py-lineno">183</tt> <a class="py-toggle" href="#" id="LPDDeviation._CalcWeights-toggle" onclick="return toggle('LPDDeviation._CalcWeights');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation.LPDDeviation-class.html#_CalcWeights">_CalcWeights</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">residue</tt><tt class="py-op">,</tt> <tt class="py-param">cutoff</tt><tt class="py-op">,</tt> <tt class="py-param">ref_or_sample</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LPDDeviation._CalcWeights-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="LPDDeviation._CalcWeights-expanded"><a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt> <tt class="py-name">ref_or_sample</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt> <tt class="py-keyword">or</tt> <tt class="py-name">ref_or_sample</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">                 </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">ref_or_sample</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">                        <tt id="link-30" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-30', 'structure', 'link-9');">structure</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_reference_structure</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">                        <tt id="link-31" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-31', 'structure', 'link-9');">structure</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sample_structure</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">                 </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">                <tt class="py-name">pos1</tt> <tt class="py-op">=</tt> <tt id="link-32" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-32', 'structure', 'link-9');">structure</a></tt><tt class="py-op">[</tt><tt class="py-number">2</tt> <tt class="py-op">*</tt> <tt class="py-name">residue</tt><tt class="py-op">,</tt> <tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">                 </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">                <tt class="py-name">weights</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">zeros</tt><tt class="py-op">(</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">                 </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_n_points</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">                        <tt class="py-name">pos2</tt> <tt class="py-op">=</tt> <tt id="link-33" class="py-name"><a title="zam.gromacs.Simulation.structure" class="py-name" href="#" onclick="return doclink('link-33', 'structure', 'link-9');">structure</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">,</tt><tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">                        <tt class="py-name">dist</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">linalg</tt><tt class="py-op">.</tt><tt class="py-name">norm</tt><tt class="py-op">(</tt><tt class="py-name">pos1</tt> <tt class="py-op">-</tt> <tt class="py-name">pos2</tt><tt class="py-op">,</tt> <tt class="py-name">ord</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">dist</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">cutoff</tt><tt class="py-op">:</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">                                <tt class="py-name">weights</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-number">1.</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">                        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">                                <tt class="py-name">weights</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-number">0.</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">                         </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">weights</tt> </tt>
+</div></div><a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">                 </tt>
+<a name="SubsetStrucutre"></a><div id="SubsetStrucutre-def"><a name="L205"></a><tt class="py-lineno">205</tt> <a class="py-toggle" href="#" id="SubsetStrucutre-toggle" onclick="return toggle('SubsetStrucutre');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.LocalPairDistanceDeviation-module.html#SubsetStrucutre">SubsetStrucutre</a><tt class="py-op">(</tt><tt class="py-param">the_structure</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SubsetStrucutre-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SubsetStrucutre-expanded"><a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">         </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">        <tt class="py-name">the_structure</tt> <tt class="py-op">=</tt> <tt class="py-name">the_structure</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Method zam.protein.ProteinClass.Copy()=zam.protein.ProteinClass-class.html#Copy,Method zam.sequence.AminoAcidClass.Copy()=zam.sequence.AminoAcidClass-class.html#Copy"><a title="zam.protein.ProteinClass.Copy
+zam.sequence.AminoAcidClass.Copy" class="py-name" href="#" onclick="return doclink('link-34', 'Copy', 'link-34');">Copy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">        <tt class="py-name">the_structure</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Function zam.pdbtools.Dehydrogen()=zam.pdbtools-module.html#Dehydrogen,Method zam.protein.ProteinClass.Dehydrogen()=zam.protein.ProteinClass-class.html#Dehydrogen"><a title="zam.pdbtools.Dehydrogen
+zam.protein.ProteinClass.Dehydrogen" class="py-name" href="#" onclick="return doclink('link-35', 'Dehydrogen', 'link-35');">Dehydrogen</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">         </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">        <tt class="py-name">n_residues</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">the_structure</tt><tt class="py-op">)</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-name">n_points</tt> <tt class="py-op">=</tt> <tt class="py-number">2</tt> <tt class="py-op">*</tt> <tt class="py-name">n_residues</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">         </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">        <tt id="link-36" class="py-name" targets="Module zam.coords=zam.coords-module.html"><a title="zam.coords" class="py-name" href="#" onclick="return doclink('link-36', 'coords', 'link-36');">coords</a></tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">zeros</tt><tt class="py-op">(</tt> <tt class="py-op">(</tt><tt class="py-name">n_points</tt><tt class="py-op">,</tt> <tt class="py-number">3</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">         </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">res</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">n_residues</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">                <tt class="py-name">ca_pos</tt> <tt class="py-op">=</tt> <tt class="py-name">the_structure</tt><tt class="py-op">.</tt><tt class="py-name">Pos</tt><tt class="py-op">[</tt> <tt class="py-name">the_structure</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Function zam.pdbtools.AtomNum()=zam.pdbtools-module.html#AtomNum,Method zam.protein.ProteinClass.AtomNum()=zam.protein.ProteinClass-class.html#AtomNum,Method zam.protein.ResClass.AtomNum()=zam.protein.ResClass-class.html#AtomNum"><a title="zam.pdbtools.AtomNum
+zam.protein.ProteinClass.AtomNum
+zam.protein.ResClass.AtomNum" class="py-name" href="#" onclick="return doclink('link-37', 'AtomNum', 'link-37');">AtomNum</a></tt><tt class="py-op">(</tt><tt id="link-38" class="py-name" targets="Method zam.protein.ProteinClass.ResNum()=zam.protein.ProteinClass-class.html#ResNum"><a title="zam.protein.ProteinClass.ResNum" class="py-name" href="#" onclick="return doclink('link-38', 'ResNum', 'link-38');">ResNum</a></tt><tt class="py-op">=</tt><tt class="py-name">res</tt><tt class="py-op">,</tt> <tt class="py-name">AtomName</tt><tt class="py-op">=</tt><tt class="py-string">"CA"</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-op">:</tt> <tt class="py-op">]</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">                <tt class="py-name">centroid_pos</tt> <tt class="py-op">=</tt> <tt class="py-name">the_structure</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Method zam.protein.ProteinClass.Centroid()=zam.protein.ProteinClass-class.html#Centroid"><a title="zam.protein.ProteinClass.Centroid" class="py-name" href="#" onclick="return doclink('link-39', 'Centroid', 'link-39');">Centroid</a></tt><tt class="py-op">(</tt><tt id="link-40" class="py-name"><a title="zam.protein.ProteinClass.ResNum" class="py-name" href="#" onclick="return doclink('link-40', 'ResNum', 'link-38');">ResNum</a></tt><tt class="py-op">=</tt><tt class="py-name">res</tt><tt class="py-op">)</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">                 </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">                <tt id="link-41" class="py-name"><a title="zam.coords" class="py-name" href="#" onclick="return doclink('link-41', 'coords', 'link-36');">coords</a></tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">*</tt><tt class="py-name">res</tt><tt class="py-op">,</tt> <tt class="py-op">:</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">ca_pos</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">                <tt id="link-42" class="py-name"><a title="zam.coords" class="py-name" href="#" onclick="return doclink('link-42', 'coords', 'link-36');">coords</a></tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">*</tt><tt class="py-name">res</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-op">:</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">centroid_pos</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">                 </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-43" class="py-name"><a title="zam.coords" class="py-name" href="#" onclick="return doclink('link-43', 'coords', 'link-36');">coords</a></tt><tt class="py-op">,</tt> <tt class="py-name">n_points</tt> </tt>
+</div><a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:25 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.loop_closure.bridge_loop</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        <a href="zam.loop_closure-module.html">Package&nbsp;loop_closure</a> ::
+        Module&nbsp;bridge_loop
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.loop_closure.bridge_loop-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="zam.loop_closure.bridge_loop-module.html">Module zam.loop_closure.bridge_loop</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">This module implements loop closure using the SPLAT algorithm.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># setup logging</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package zam=zam-module.html"><a title="zam" class="py-name" href="#" onclick="return doclink('link-0', 'zam', 'link-0');">zam</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module zam.utility=zam.utility-module.html"><a title="zam.utility" class="py-name" href="#" onclick="return doclink('link-1', 'utility', 'link-1');">utility</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable zam.LocalPairDistanceDeviation.Logger=zam.LocalPairDistanceDeviation-module.html#Logger,Variable zam.assemble.Logger=zam.assemble-module.html#Logger,Variable zam.assemblechains.Logger=zam.assemblechains-module.html#Logger,Variable zam.backup.Logger=zam.backup-module.html#Logger,Variable zam.cluster.Logger=zam.cluster-module.html#Logger,Variable zam.coords.Logger=zam.coords-module.html#Logger,Variable zam.dssp.Logger=zam.dssp-module.html#Logger,Variable zam.geometry.Logger=zam.geometry-module.html#Logger,Variable zam.gromacs.Logger=zam.gromacs-module.html#Logger,Variable zam.imageconf.Logger=zam.imageconf-module.html#Logger,Variable zam.loop_closure.Logger=zam.loop_closure-module.html#Logger,Variable zam.loop_closure.bridge_loop.Logger=zam.loop_closure.bridge_loop-module.html#Logger,Variable zam.loop_closure.rama.Logger=zam.loop_closure.rama-module.html#Logger,Variable zam.makeconf.Logger=zam.makeconf-module.html#Logger,Variable zam.mdsim.Logger=zam.mdsim-module.html#Logger,Variable zam.mdtrj.Logger=zam.mdtrj-module.html#Logger,Variable zam.mesoanalysis.Logger=zam.mesoanalysis-module.html#Logger,Variable zam.myrex.Logger=zam.myrex-module.html#Logger,Variable zam.pca.Logger=zam.pca-module.html#Logger,Variable zam.pdbtools.Logger=zam.pdbtools-module.html#Logger,Variable zam.protein.Logger=zam.protein-module.html#Logger,Variable zam.proteinalg.Logger=zam.proteinalg-module.html#Logger,Variable zam.proteinconst.Logger=zam.proteinconst-module.html#Logger,Variable zam.proteinfunc.Logger=zam.proteinfunc-module.html#Logger,Variable zam.punchanalysis.Logger=zam.punchanalysis-module.html#Logger,Variable zam.rexanalysis.Logger=zam.rexanalysis-module.html#Logger,Variable zam.rexsock.Logger=zam.rexsock-module.html#Logger,Variable zam.rigidbody.Logger=zam.rigidbody-module.html#Logger,Variable zam.rmsd.Logger=zam.rmsd-module.html#Logger,Variable zam.scripttools.Logger=zam.scripttools-module.html#Logger,Variable zam.sequence.Logger=zam.sequence-module.html#Logger,Variable zam.socketring.Logger=zam.socketring-module.html#Logger,Variable zam.zamanal.Logger=zam.zamanal-module.html#Logger,Variable zam.zamchoice.Logger=zam.zamchoice-module.html#Logger,Variable zam.zamcontact.Logger=zam.zamcontact-module.html#Logger,Variable zam.zamdata.Logger=zam.zamdata-module.html#Logger,Variable zam.zamrex.Logger=zam.zamrex-module.html#Logger,Variable zam.zamrun.Logger=zam.zamrun-module.html#Logger"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-2', 'Logger', 'link-2');">Logger</a></tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name"><a title="zam" class="py-name" href="#" onclick="return doclink('link-3', 'zam', 'link-0');">zam</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="zam.utility" class="py-name" href="#" onclick="return doclink('link-4', 'utility', 'link-1');">utility</a></tt><tt class="py-op">.</tt><tt class="py-name">SetupLogging</tt><tt class="py-op">(</tt><tt class="py-name">__name__</tt><tt class="py-op">)</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"># load fortran module</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt id="link-5" class="py-name"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-5', 'Logger', 'link-2');">Logger</a></tt><tt class="py-op">.</tt><tt class="py-name">debug</tt><tt class="py-op">(</tt><tt class="py-string">"Attempting to load bridge_objects from splatlib"</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-6" class="py-name" targets="Module zam.loop_closure.splatlib=zam.loop_closure.splatlib-module.html"><a title="zam.loop_closure.splatlib" class="py-name" href="#" onclick="return doclink('link-6', 'splatlib', 'link-6');">splatlib</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Variable zam.loop_closure.splatlib.bridge_objects=zam.loop_closure.splatlib-module.html#bridge_objects"><a title="zam.loop_closure.splatlib.bridge_objects" class="py-name" href="#" onclick="return doclink('link-7', 'bridge_objects', 'link-7');">bridge_objects</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">bridge</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt id="link-8" class="py-name"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-8', 'Logger', 'link-2');">Logger</a></tt><tt class="py-op">.</tt><tt class="py-name">debug</tt><tt class="py-op">(</tt><tt class="py-string">"Successfully loaded bridge_objects"</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">numpy</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">random</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-9" class="py-name"><a title="zam" class="py-name" href="#" onclick="return doclink('link-9', 'zam', 'link-0');">zam</a></tt> <tt class="py-keyword">import</tt> <tt id="link-10" class="py-name" targets="Module zam.proteinconst=zam.proteinconst-module.html"><a title="zam.proteinconst" class="py-name" href="#" onclick="return doclink('link-10', 'proteinconst', 'link-10');">proteinconst</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">pconst</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-11" class="py-name"><a title="zam" class="py-name" href="#" onclick="return doclink('link-11', 'zam', 'link-0');">zam</a></tt> <tt class="py-keyword">import</tt> <tt id="link-12" class="py-name" targets="Module zam.sequence=zam.sequence-module.html"><a title="zam.sequence" class="py-name" href="#" onclick="return doclink('link-12', 'sequence', 'link-12');">sequence</a></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-13" class="py-name"><a title="zam" class="py-name" href="#" onclick="return doclink('link-13', 'zam', 'link-0');">zam</a></tt> <tt class="py-keyword">import</tt> <tt id="link-14" class="py-name" targets="Module zam.protein=zam.protein-module.html"><a title="zam.protein" class="py-name" href="#" onclick="return doclink('link-14', 'protein', 'link-14');">protein</a></tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-15" class="py-name" targets="Module zam.loop_closure.rama=zam.loop_closure.rama-module.html"><a title="zam.loop_closure.rama" class="py-name" href="#" onclick="return doclink('link-15', 'rama', 'link-15');">rama</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="LoopClosureException"></a><div id="LoopClosureException-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="LoopClosureException-toggle" onclick="return toggle('LoopClosureException');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="zam.loop_closure.bridge_loop.LoopClosureException-class.html">LoopClosureException</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LoopClosureException-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="LoopClosureException-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">    <tt class="py-docstring">"""Unable to perform loop closure"""</tt> </tt>
+</div><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">     </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">     </tt>
+<a name="CloseLoop"></a><div id="CloseLoop-def"><a name="L29"></a><tt class="py-lineno"> 29</tt> <a class="py-toggle" href="#" id="CloseLoop-toggle" onclick="return toggle('CloseLoop');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="zam.loop_closure.bridge_loop.CloseLoop-class.html">CloseLoop</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CloseLoop-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="CloseLoop-expanded"><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">    <tt id="link-16" class="py-name" targets="Variable zam.loop_closure.bridge_loop.CloseLoop.MaximumTries=zam.loop_closure.bridge_loop.CloseLoop-class.html#MaximumTries"><a title="zam.loop_closure.bridge_loop.CloseLoop.MaximumTries" class="py-name" href="#" onclick="return doclink('link-16', 'MaximumTries', 'link-16');">MaximumTries</a></tt> <tt class="py-op">=</tt> <tt class="py-number">100</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">     </tt>
+<a name="CloseLoop.__init__"></a><div id="CloseLoop.__init__-def"><a name="L32"></a><tt class="py-lineno"> 32</tt> <a class="py-toggle" href="#" id="CloseLoop.__init__-toggle" onclick="return toggle('CloseLoop.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.loop_closure.bridge_loop.CloseLoop-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">Structure</tt><tt class="py-op">,</tt> <tt class="py-param">LoopStart</tt><tt class="py-op">,</tt> <tt class="py-param">LoopEnd</tt><tt class="py-op">,</tt> <tt class="py-param">Hinge1</tt><tt class="py-op">,</tt> <tt class="py-param">Hinge3</tt><tt class="py-op">,</tt> <tt class="py-param">Phi1</tt><tt class="py-op">,</tt> <tt class="py-param">Psi3</tt><tt class="py-op">,</tt> <tt class="py-param">CheckRama</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CloseLoop.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CloseLoop.__init__-expanded"><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Structure</tt> <tt class="py-op">=</tt> <tt class="py-name">Structure</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopStart</tt> <tt class="py-op">=</tt> <tt class="py-name">LoopStart</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopEnd</tt> <tt class="py-op">=</tt> <tt class="py-name">LoopEnd</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sequence</tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name"><a title="zam.sequence" class="py-name" href="#" onclick="return doclink('link-17', 'sequence', 'link-12');">sequence</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Function zam.sequence.SeqToList()=zam.sequence-module.html#SeqToList"><a title="zam.sequence.SeqToList" class="py-name" href="#" onclick="return doclink('link-18', 'SeqToList', 'link-18');">SeqToList</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Structure</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopStart</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopEnd</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Variable zam.myrex.Seq=zam.myrex-module.html#Seq,Function zam.pdbtools.Seq()=zam.pdbtools-module.html#Seq,Method zam.protein.ProteinClass.Seq()=zam.protein.ProteinClass-class.html#Seq"><a title="zam.myrex.Seq
+zam.pdbtools.Seq
+zam.protein.ProteinClass.Seq" class="py-name" href="#" onclick="return doclink('link-19', 'Seq', 'link-19');">Seq</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Hinge1</tt> <tt class="py-op">=</tt> <tt class="py-name">Hinge1</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Hinge3</tt> <tt class="py-op">=</tt> <tt class="py-name">Hinge3</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">         </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sample</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Pivots</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_CheckRama</tt> <tt class="py-op">=</tt> <tt class="py-name">CheckRama</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">         </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sequence</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">5</tt><tt class="py-op">:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">            <tt class="py-comment"># loop is too short</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">            <tt id="link-20" class="py-name"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-20', 'Logger', 'link-2');">Logger</a></tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-string">"Loop must be at least five residues long"</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt id="link-21" class="py-name"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-21', 'Logger', 'link-2');">Logger</a></tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-string">"%s   %s   %s"</tt><tt class="py-op">,</tt> <tt class="py-name">Protein1</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="zam.myrex.Seq
+zam.pdbtools.Seq
+zam.protein.ProteinClass.Seq" class="py-name" href="#" onclick="return doclink('link-22', 'Seq', 'link-19');">Seq</a></tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">2</tt><tt class="py-op">:</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sequence</tt><tt class="py-op">,</tt> <tt class="py-name">Protein2</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="zam.myrex.Seq
+zam.pdbtools.Seq
+zam.protein.ProteinClass.Seq" class="py-name" href="#" onclick="return doclink('link-23', 'Seq', 'link-19');">Seq</a></tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">,</tt> <tt class="py-string">"Loop must be at least 5 residues long"</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">         </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-comment">#elif len(self._Sequence) == 5:</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">            <tt class="py-comment">## loop is exactly 5 residues long; we don't need pivots or sampling</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">            <tt class="py-comment">#self._Pivots = None</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-comment">#self._Sample = False</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">            <tt class="py-comment"># loop is more than 5 residues long; we need pivots and sampling</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Pivots</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Method zam.loop_closure.bridge_loop.CloseLoop._InitPivots()=zam.loop_closure.bridge_loop.CloseLoop-class.html#_InitPivots"><a title="zam.loop_closure.bridge_loop.CloseLoop._InitPivots" class="py-name" href="#" onclick="return doclink('link-24', '_InitPivots', 'link-24');">_InitPivots</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sample</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">         </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Phi1</tt> <tt class="py-op">=</tt> <tt class="py-name">Phi1</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Psi3</tt> <tt class="py-op">=</tt> <tt class="py-name">Psi3</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">         </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-comment">#self._Phi1 = self._Loop.PhiPsi(0)[0]</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-comment">#self._Psi3 = self._Loop.PhiPsi( len(self._Loop)-1 ) [1]</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">         </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sample</tt><tt class="py-op">:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sampler</tt> <tt class="py-op">=</tt> <tt id="link-25" class="py-name"><a title="zam.loop_closure.rama" class="py-name" href="#" onclick="return doclink('link-25', 'rama', 'link-15');">rama</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Class zam.loop_closure.rama.SampleRama=zam.loop_closure.rama.SampleRama-class.html"><a title="zam.loop_closure.rama.SampleRama" class="py-name" href="#" onclick="return doclink('link-26', 'SampleRama', 'link-26');">SampleRama</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sequence</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Phi1</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Psi3</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Pivots</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">            <tt class="py-comment">#self._Sampler = rama.SampleRama2()</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">                 </tt>
+<a name="CloseLoop._InitPivots"></a><div id="CloseLoop._InitPivots-def"><a name="L70"></a><tt class="py-lineno"> 70</tt> <a class="py-toggle" href="#" id="CloseLoop._InitPivots-toggle" onclick="return toggle('CloseLoop._InitPivots');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.loop_closure.bridge_loop.CloseLoop-class.html#_InitPivots">_InitPivots</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CloseLoop._InitPivots-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CloseLoop._InitPivots-expanded"><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-name">PossiblePivots</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> <tt class="py-name">i</tt> <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sequence</tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sequence</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">'PRO'</tt><tt class="py-op">]</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-name">Pivot1</tt> <tt class="py-op">=</tt> <tt class="py-name">PossiblePivots</tt><tt class="py-op">.</tt><tt class="py-name">pop</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-name">Pivot3</tt> <tt class="py-op">=</tt> <tt class="py-name">PossiblePivots</tt><tt class="py-op">.</tt><tt class="py-name">pop</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-name">Pivot2</tt> <tt class="py-op">=</tt> <tt class="py-name">PossiblePivots</tt><tt class="py-op">[</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">PossiblePivots</tt><tt class="py-op">)</tt> <tt class="py-op">//</tt> <tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">     </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Pivots</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">Pivot1</tt><tt class="py-op">,</tt> <tt class="py-name">Pivot2</tt><tt class="py-op">,</tt> <tt class="py-name">Pivot3</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">         </tt>
+<a name="CloseLoop.__iter__"></a><div id="CloseLoop.__iter__-def"><a name="L78"></a><tt class="py-lineno"> 78</tt> <a class="py-toggle" href="#" id="CloseLoop.__iter__-toggle" onclick="return toggle('CloseLoop.__iter__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.loop_closure.bridge_loop.CloseLoop-class.html#__iter__">__iter__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CloseLoop.__iter__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CloseLoop.__iter__-expanded"><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method zam.coords.PdbListClass.next()=zam.coords.PdbListClass-class.html#next,Method zam.coords.TrjClass.next()=zam.coords.TrjClass-class.html#next,Method zam.loop_closure.bridge_loop.CloseLoop.next()=zam.loop_closure.bridge_loop.CloseLoop-class.html#next,Function zam.quasi_random.niederreiter.next()=zam.quasi_random.niederreiter-module.html#next,Function zam.quasi_random.sobol.next()=zam.quasi_random.sobol-module.html#next"><a title="zam.coords.PdbListClass.next
+zam.coords.TrjClass.next
+zam.loop_closure.bridge_loop.CloseLoop.next
+zam.quasi_random.niederreiter.next
+zam.quasi_random.sobol.next" class="py-name" href="#" onclick="return doclink('link-27', 'next', 'link-27');">next</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">     </tt>
+<a name="CloseLoop.next"></a><div id="CloseLoop.next-def"><a name="L81"></a><tt class="py-lineno"> 81</tt> <a class="py-toggle" href="#" id="CloseLoop.next-toggle" onclick="return toggle('CloseLoop.next');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="zam.loop_closure.bridge_loop.CloseLoop-class.html#next">next</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CloseLoop.next-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CloseLoop.next-expanded"><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sample</tt><tt class="py-op">:</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">Try</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt id="link-28" class="py-name" targets="Class zam.loop_closure.bridge_loop.CloseLoop=zam.loop_closure.bridge_loop.CloseLoop-class.html"><a title="zam.loop_closure.bridge_loop.CloseLoop" class="py-name" href="#" onclick="return doclink('link-28', 'CloseLoop', 'link-28');">CloseLoop</a></tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="zam.loop_closure.bridge_loop.CloseLoop.MaximumTries" class="py-name" href="#" onclick="return doclink('link-29', 'MaximumTries', 'link-16');">MaximumTries</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">                <tt class="py-comment"># position of backbone atoms</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">                <tt id="link-30" class="py-name" targets="Function zam.pdbtools.Atoms()=zam.pdbtools-module.html#Atoms"><a title="zam.pdbtools.Atoms" class="py-name" href="#" onclick="return doclink('link-30', 'Atoms', 'link-30');">Atoms</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Structure</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopStart</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopEnd</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method zam.protein.ProteinClass.GetBBPos()=zam.protein.ProteinClass-class.html#GetBBPos"><a title="zam.protein.ProteinClass.GetBBPos" class="py-name" href="#" onclick="return doclink('link-31', 'GetBBPos', 'link-31');">GetBBPos</a></tt><tt class="py-op">(</tt><tt class="py-name">AtomSet</tt><tt class="py-op">=</tt><tt class="py-name">pconst</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Variable zam.proteinconst.BBAlignAtoms=zam.proteinconst-module.html#BBAlignAtoms"><a title="zam.proteinconst.BBAlignAtoms" class="py-name" href="#" onclick="return doclink('link-32', 'BBAlignAtoms', 'link-32');">BBAlignAtoms</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">                <tt id="link-33" class="py-name"><a title="zam.pdbtools.Atoms" class="py-name" href="#" onclick="return doclink('link-33', 'Atoms', 'link-30');">Atoms</a></tt> <tt class="py-op">=</tt> <tt id="link-34" class="py-name"><a title="zam.pdbtools.Atoms" class="py-name" href="#" onclick="return doclink('link-34', 'Atoms', 'link-30');">Atoms</a></tt><tt class="py-op">.</tt><tt class="py-name">transpose</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">                <tt class="py-name">N_Atoms</tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="zam.pdbtools.Atoms" class="py-name" href="#" onclick="return doclink('link-35', 'Atoms', 'link-30');">Atoms</a></tt><tt class="py-op">.</tt><tt class="py-name">shape</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                <tt class="py-comment"># dummy angles; these aren't used but must be passed</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                <tt class="py-name">DesignAngles</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">zeros</tt><tt class="py-op">(</tt><tt class="py-name">N_Atoms</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                <tt class="py-comment"># design torsions</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                <tt class="py-name">DesignTorsions</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sampler</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Function zam.loop_closure.rama.GetTorsions()=zam.loop_closure.rama-module.html#GetTorsions,Method zam.loop_closure.rama.SampleRama.GetTorsions()=zam.loop_closure.rama.SampleRama-class.html#GetTorsions,Method zam.loop_closure.rama.SampleRama2.GetTorsions()=zam.loop_closure.rama.SampleRama2-class.html#GetTorsions"><a title="zam.loop_closure.rama.GetTorsions
+zam.loop_closure.rama.SampleRama.GetTorsions
+zam.loop_closure.rama.SampleRama2.GetTorsions" class="py-name" href="#" onclick="return doclink('link-36', 'GetTorsions', 'link-36');">GetTorsions</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                <tt class="py-comment">#DesignTorsions = numpy.array( self._Sampler.GetTorsions(self._Structure[self._LoopStart - 1:self._LoopEnd + 1]) )</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                <tt class="py-name">DesignTorsions</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Phi1</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                <tt class="py-name">DesignTorsions</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Psi3</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                <tt class="py-name">DesignTorsions</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-number">180.</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                 </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-op">(</tt><tt class="py-name">index</tt><tt class="py-op">,</tt> <tt class="py-name">res</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-name">enumerate</tt><tt class="py-op">(</tt><tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopStart</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopEnd</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                    <tt id="link-37" class="py-name" targets="Method zam.protein.ProteinClass.Omega()=zam.protein.ProteinClass-class.html#Omega"><a title="zam.protein.ProteinClass.Omega" class="py-name" href="#" onclick="return doclink('link-37', 'Omega', 'link-37');">Omega</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Structure</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="zam.protein.ProteinClass.Omega" class="py-name" href="#" onclick="return doclink('link-38', 'Omega', 'link-37');">Omega</a></tt><tt class="py-op">(</tt><tt class="py-name">res</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                    <tt class="py-name">DesignTorsions</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">*</tt><tt class="py-name">index</tt> <tt class="py-op">+</tt> <tt class="py-number">2</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-39" class="py-name"><a title="zam.protein.ProteinClass.Omega" class="py-name" href="#" onclick="return doclink('link-39', 'Omega', 'link-37');">Omega</a></tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">                     </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">                <tt class="py-comment"># we don't want to do this</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">                <tt class="py-name">Perturb</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                <tt class="py-comment"># backbone coordinates of hinges</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                <tt class="py-comment">#Hinge1 = self._Structure.GetBBPos( [self._LoopStart - 1], AtomSet=pconst.BBAlignAtoms).transpose()</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                <tt class="py-comment">#Hinge3 = self._Structure.GetBBPos( [self._LoopEnd], AtomSet=pconst.BBAlignAtoms).transpose()</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                                 </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                <tt class="py-comment"># check the distance between the hinges</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                <tt class="py-name">Centroid1</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">mean</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Hinge1</tt><tt class="py-op">,</tt> <tt class="py-name">axis</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                <tt class="py-name">Centroid2</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">mean</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Hinge3</tt><tt class="py-op">,</tt> <tt class="py-name">axis</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                <tt class="py-name">Vec</tt> <tt class="py-op">=</tt> <tt class="py-name">Centroid2</tt> <tt class="py-op">-</tt> <tt class="py-name">Centroid1</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                <tt class="py-name">VecSquared</tt> <tt class="py-op">=</tt> <tt class="py-name">Vec</tt> <tt class="py-op">*</tt> <tt class="py-name">Vec</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">                <tt id="link-40" class="py-name" targets="Function zam.geometry.Length()=zam.geometry-module.html#Length"><a title="zam.geometry.Length" class="py-name" href="#" onclick="return doclink('link-40', 'Length', 'link-40');">Length</a></tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">sqrt</tt><tt class="py-op">(</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">sum</tt><tt class="py-op">(</tt><tt class="py-name">VecSquared</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                <tt class="py-name">MaxLength</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopEnd</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopStart</tt> <tt class="py-op">)</tt> <tt class="py-op">*</tt> <tt class="py-number">3.5</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt id="link-41" class="py-name"><a title="zam.geometry.Length" class="py-name" href="#" onclick="return doclink('link-41', 'Length', 'link-40');">Length</a></tt> <tt class="py-op">&gt;</tt> <tt class="py-name">MaxLength</tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                    <tt id="link-42" class="py-name"><a title="zam.LocalPairDistanceDeviation.Logger
+zam.assemble.Logger
+zam.assemblechains.Logger
+zam.backup.Logger
+zam.cluster.Logger
+zam.coords.Logger
+zam.dssp.Logger
+zam.geometry.Logger
+zam.gromacs.Logger
+zam.imageconf.Logger
+zam.loop_closure.Logger
+zam.loop_closure.bridge_loop.Logger
+zam.loop_closure.rama.Logger
+zam.makeconf.Logger
+zam.mdsim.Logger
+zam.mdtrj.Logger
+zam.mesoanalysis.Logger
+zam.myrex.Logger
+zam.pca.Logger
+zam.pdbtools.Logger
+zam.protein.Logger
+zam.proteinalg.Logger
+zam.proteinconst.Logger
+zam.proteinfunc.Logger
+zam.punchanalysis.Logger
+zam.rexanalysis.Logger
+zam.rexsock.Logger
+zam.rigidbody.Logger
+zam.rmsd.Logger
+zam.scripttools.Logger
+zam.sequence.Logger
+zam.socketring.Logger
+zam.zamanal.Logger
+zam.zamchoice.Logger
+zam.zamcontact.Logger
+zam.zamdata.Logger
+zam.zamrex.Logger
+zam.zamrun.Logger" class="py-name" href="#" onclick="return doclink('link-42', 'Logger', 'link-2');">Logger</a></tt><tt class="py-op">.</tt><tt class="py-name">debug</tt><tt class="py-op">(</tt><tt class="py-string">"Loop longer than maximum possible length; Ignoring"</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">                    <tt class="py-keyword">raise</tt> <tt class="py-name">StopIteration</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">                 </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">                <tt class="py-comment"># list of pivots</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                <tt class="py-name">Pivots</tt> <tt class="py-op">=</tt> <tt class="py-name">numpy</tt><tt class="py-op">.</tt><tt class="py-name">array</tt><tt class="py-op">(</tt> <tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">*</tt><tt id="link-43" class="py-name" targets="Variable zam.loop_closure.driver.x=zam.loop_closure.driver-module.html#x"><a title="zam.loop_closure.driver.x" class="py-name" href="#" onclick="return doclink('link-43', 'x', 'link-43');">x</a></tt> <tt class="py-op">+</tt> <tt class="py-number">2</tt> <tt class="py-keyword">for</tt> <tt id="link-44" class="py-name"><a title="zam.loop_closure.driver.x" class="py-name" href="#" onclick="return doclink('link-44', 'x', 'link-43');">x</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Pivots</tt><tt class="py-op">]</tt> <tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">                <tt class="py-comment"># get solutions</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-name">n_soln</tt><tt class="py-op">,</tt> <tt class="py-name">loop_atoms</tt><tt class="py-op">,</tt> <tt class="py-name">bonds</tt><tt class="py-op">,</tt>  </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">                 <tt class="py-name">angles</tt><tt class="py-op">,</tt> <tt class="py-name">torsions</tt><tt class="py-op">,</tt> <tt class="py-name">jacobian</tt><tt class="py-op">)</tt> <tt class="py-op">=</tt> <tt class="py-name">bridge</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Module zam.loop_closure.bridge_loop=zam.loop_closure.bridge_loop-module.html"><a title="zam.loop_closure.bridge_loop" class="py-name" href="#" onclick="return doclink('link-45', 'bridge_loop', 'link-45');">bridge_loop</a></tt><tt class="py-op">(</tt><tt id="link-46" class="py-name"><a title="zam.pdbtools.Atoms" class="py-name" href="#" onclick="return doclink('link-46', 'Atoms', 'link-30');">Atoms</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Hinge1</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Hinge3</tt><tt class="py-op">,</tt> <tt class="py-name">Pivots</tt><tt class="py-op">,</tt>  </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">                                                                  <tt class="py-name">DesignAngles</tt><tt class="py-op">,</tt> <tt class="py-name">DesignTorsions</tt><tt class="py-op">,</tt> <tt class="py-name">Perturb</tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">Solution</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">n_soln</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">                    <tt class="py-name">NewTorsions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> <tt class="py-op">[</tt><tt class="py-name">torsions</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">,</tt><tt class="py-name">Solution</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">torsions</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-name">Solution</tt><tt class="py-op">]</tt><tt class="py-op">]</tt> <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">torsions</tt><tt class="py-op">.</tt><tt class="py-name">shape</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-number">3</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">                    <tt class="py-name">NewTorsions</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Phi1</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">                    <tt class="py-name">NewTorsions</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Psi3</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">                    <tt class="py-name">OldTorsions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> <tt class="py-op">[</tt> <tt class="py-name">DesignTorsions</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">DesignTorsions</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">]</tt> <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">DesignTorsions</tt><tt class="py-op">.</tt><tt class="py-name">shape</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-number">3</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">                    <tt class="py-name">OrigTorsions</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Structure</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Method zam.protein.ProteinClass.PhiPsi()=zam.protein.ProteinClass-class.html#PhiPsi"><a title="zam.protein.ProteinClass.PhiPsi" class="py-name" href="#" onclick="return doclink('link-47', 'PhiPsi', 'link-47');">PhiPsi</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopStart</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopEnd</tt> <tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">                     </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">                    <tt class="py-name">Flag</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">                     </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">                    <tt class="py-keyword">for</tt> <tt class="py-name">Pivot</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Pivots</tt><tt class="py-op">:</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt id="link-48" class="py-name"><a title="zam.loop_closure.rama" class="py-name" href="#" onclick="return doclink('link-48', 'rama', 'link-15');">rama</a></tt><tt class="py-op">.</tt><tt id="link-49" class="py-name" targets="Function zam.loop_closure.rama.AllowableRama()=zam.loop_closure.rama-module.html#AllowableRama"><a title="zam.loop_closure.rama.AllowableRama" class="py-name" href="#" onclick="return doclink('link-49', 'AllowableRama', 'link-49');">AllowableRama</a></tt><tt class="py-op">(</tt><tt class="py-name">NewTorsions</tt><tt class="py-op">[</tt><tt class="py-name">Pivot</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">NewTorsions</tt><tt class="py-op">[</tt><tt class="py-name">Pivot</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">                                                  <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Sequence</tt><tt class="py-op">[</tt><tt class="py-name">Pivot</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                            <tt class="py-name">Flag</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> <tt class="py-keyword">or</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_CheckRama</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-name">Flag</tt><tt class="py-op">:</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">                        <tt id="link-50" class="py-name" targets="Variable zam.loop_closure.driver.Out=zam.loop_closure.driver-module.html#Out"><a title="zam.loop_closure.driver.Out" class="py-name" href="#" onclick="return doclink('link-50', 'Out', 'link-50');">Out</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_Structure</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name" targets="Method zam.protein.ProteinClass.Copy()=zam.protein.ProteinClass-class.html#Copy,Method zam.sequence.AminoAcidClass.Copy()=zam.sequence.AminoAcidClass-class.html#Copy"><a title="zam.protein.ProteinClass.Copy
+zam.sequence.AminoAcidClass.Copy" class="py-name" href="#" onclick="return doclink('link-51', 'Copy', 'link-51');">Copy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">                         </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                        <tt class="py-keyword">for</tt> <tt class="py-op">(</tt><tt class="py-name">Index</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">Phi</tt><tt class="py-op">,</tt> <tt class="py-name">Psi</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-name">enumerate</tt><tt class="py-op">(</tt><tt class="py-name">NewTorsions</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">                            <tt id="link-52" class="py-name"><a title="zam.loop_closure.driver.Out" class="py-name" href="#" onclick="return doclink('link-52', 'Out', 'link-50');">Out</a></tt><tt class="py-op">.</tt><tt id="link-53" class="py-name" targets="Method zam.protein.ProteinClass.RotateToPhiPsi()=zam.protein.ProteinClass-class.html#RotateToPhiPsi"><a title="zam.protein.ProteinClass.RotateToPhiPsi" class="py-name" href="#" onclick="return doclink('link-53', 'RotateToPhiPsi', 'link-53');">RotateToPhiPsi</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_LoopStart</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt> <tt class="py-op">+</tt> <tt class="py-name">Index</tt><tt class="py-op">,</tt> <tt class="py-name">Phi</tt><tt class="py-op">,</tt> <tt class="py-name">Psi</tt><tt class="py-op">)</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">                             </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">                        <tt class="py-keyword">yield</tt> <tt id="link-54" class="py-name"><a title="zam.loop_closure.driver.Out" class="py-name" href="#" onclick="return doclink('link-54', 'Out', 'link-50');">Out</a></tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">            <tt class="py-comment"># haven't implemented this yet</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt> </tt>
+</div></div><a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:23 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

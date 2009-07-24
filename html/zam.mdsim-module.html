@@ -1,0 +1,1817 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.mdsim</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;mdsim
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.mdsim-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module mdsim</h1><p class="nomargin-top"><span class="codelink"><a href="zam.mdsim-pysrc.html">source&nbsp;code</a></span></p>
+<pre class="literalblock">
+
+Package-independent tools to perform md simulations.
+
+ALL public routines of this class are designed to be package-independent,
+i.e., not specific to AMBER.  Specific routines are made private.
+
+CONVENTION: all calls specifying atom number or residue number start
+            at zero and not one as in the pdb file
+
+</pre>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim.SimError-class.html" class="summary-name">SimError</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim.myFile-class.html" class="summary-name">myFile</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim.SimClass-class.html" class="summary-name">SimClass</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.mdsim-module.html#ReplaceD" class="summary-sig-name">ReplaceD</a>(<span class="summary-sig-arg">s</span>,
+        <span class="summary-sig-arg">d</span>,
+        <span class="summary-sig-arg">Bracket</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Replaces tokens in a string using a dictionary.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#ReplaceD">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="CleanAmberPdb"></a><span class="summary-sig-name">CleanAmberPdb</span>(<span class="summary-sig-arg">PdbFile</span>)</span><br />
+      Formats an Amber-produced pdb to standard residue names, etc.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#CleanAmberPdb">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="IsAtom"></a><span class="summary-sig-name">IsAtom</span>(<span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">Atom</span>)</span><br />
+      Indicates whether or not an atom name matches Atom, after removing 
+      numbers.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#IsAtom">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.mdsim-module.html#GetConcatData" class="summary-sig-name">GetConcatData</a>(<span class="summary-sig-arg">Prefix</span>,
+        <span class="summary-sig-arg">DataPath</span>,
+        <span class="summary-sig-arg">Vars</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">EKIN</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ETOT</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EEL</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EBOND</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">TEMP</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EPOT</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EREST</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EAN</code><code class="variable-ellipsis">...</code></span>)</span><br />
+      Returns a dictionary with variable name, array pairs of data from 
+      concatenated files.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#GetConcatData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.mdsim-module.html#GetConcatNFrames" class="summary-sig-name">GetConcatNFrames</a>(<span class="summary-sig-arg">Prefix</span>,
+        <span class="summary-sig-arg">DataPath</span>)</span><br />
+      Returns the number of frames in concatenated data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#GetConcatNFrames">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.mdsim-module.html#PrepPdb" class="summary-sig-name">PrepPdb</a>(<span class="summary-sig-arg">InPdb</span>,
+        <span class="summary-sig-arg">OutPdb</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Seq</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Cap</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">CapN</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">CapC</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Reads InPdb and produces OutPdb, which is prepared for input.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#PrepPdb">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="IsPosRest"></a><span class="summary-sig-name">IsPosRest</span>(<span class="summary-sig-arg">Rest</span>)</span><br />
+      Returns true if a restraint is a positional restraint.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#IsPosRest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="IsSameRest"></a><span class="summary-sig-name">IsSameRest</span>(<span class="summary-sig-arg">Rest1</span>,
+        <span class="summary-sig-arg">Rest2</span>)</span><br />
+      Returns true if two restraints are the same.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#IsSameRest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="RestCompare"></a><span class="summary-sig-name">RestCompare</span>(<span class="summary-sig-arg">Rest1</span>,
+        <span class="summary-sig-arg">Rest2</span>)</span><br />
+      Returns the ratio of Rest2 / Rest1, or zero if they are not 
+      multiplicative of each other.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#RestCompare">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="CalcRestEnergy"></a><span class="summary-sig-name">CalcRestEnergy</span>(<span class="summary-sig-arg">r</span>,
+        <span class="summary-sig-arg">Rest</span>)</span><br />
+      Returns the value of a restraint energy, given a distance and 
+      parameters.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#CalcRestEnergy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="CalcRestDist"></a><span class="summary-sig-name">CalcRestDist</span>(<span class="summary-sig-arg">Pos</span>,
+        <span class="summary-sig-arg">Rest</span>)</span><br />
+      Returns the distance of a restraint, given a position matrix; for 
+      Cartesian anchoring restraints, returns the sum of distances squared.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#CalcRestDist">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="RestEnergyList"></a><span class="summary-sig-name">RestEnergyList</span>(<span class="summary-sig-arg">Pos</span>,
+        <span class="summary-sig-arg">RestList</span>)</span><br />
+      Returns all the restraint energy for a restraint list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#RestEnergyList">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="RestEnergy"></a><span class="summary-sig-name">RestEnergy</span>(<span class="summary-sig-arg">Pos</span>,
+        <span class="summary-sig-arg">RestList</span>)</span><br />
+      Returns the total restraint energies for a restraint list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#RestEnergy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.mdsim-module.html#SwapData" class="summary-sig-name">SwapData</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Swaps class data in two sim classes.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#SwapData">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.mdsim-module.html#SwapConfig" class="summary-sig-name">SwapConfig</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>,
+        <span class="summary-sig-arg">Mode</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Swaps the current configuration and related data of two sim classes</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#SwapConfig">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="zam.mdsim-module.html#SwapRest" class="summary-sig-name">SwapRest</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Swaps the restraints of two sim classes</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#SwapRest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="SameRest"></a><span class="summary-sig-name">SameRest</span>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Returns true if a and b have the same restraints.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="zam.mdsim-pysrc.html#SameRest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Logger"></a><span class="summary-name">Logger</span> = <code title="zam.utility.SetupLogging(__name__)">zam.utility.SetupLogging(__name__)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#Paths" class="summary-name">Paths</a> = <code title="['/opt/local/bin',
+ '/opt/local/sbin',
+ '/Users/jlmaccal/src/amber9/exe',
+ '/usr/bin',
+ '/bin',
+ '/usr/sbin',
+ '/sbin',
+ '/usr/local/bin',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">/opt/local/bin</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">/opt/local/sbin</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">/Users/jlmaccal</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TLeapTmpl"></a><span class="summary-name">TLeapTmpl</span> = <code title="'''[PARAMS]
+[PRE]
+[CMDS]
+[POST]
+[SAVE]
+'''"><code class="variable-quote">'</code><code class="variable-string">[PARAMS]\n[PRE]\n[CMDS]\n[POST]\n[SAVE]\n</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#TLeapDflts" class="summary-name">TLeapDflts</a> = <code title="{'CMDS': '',
+ 'PARAMS': '''source leaprc.ff96
+set default PBradii mbondi2''',
+ 'POST': '',
+ 'PRE': '',
+ 'SAVE': '''check sys
+saveAmberParm sys prmtop.parm7 tleapout.crd
+savepdb sys tleapout.pdb
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">CMDS</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">PARAMS</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">source leaprc.ff96\nset d</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#RunTmplMD" class="summary-name">RunTmplMD</a> = <code title="'''trajectory segment
+ &amp;cntrl
+  imin = 0, nstlim = [STEPSMD], ntwr = [STEPSMD],
+  igb = 5, gbsa = 1,
+  cut = 16.0, surften = [SURFACETENSION],
+  tempi = [TEMPSET], ntt = [TEMPMODE], temp0 = [TEMPSET],
+  tautp = [BERENDSENTAU], vrand = [STEPSTEMP],
+  gamma_ln = [LANGEVINGAMMA], vlimit = [VELOCITYLIMIT],
+..."><code class="variable-quote">'</code><code class="variable-string">trajectory segment\n &amp;cntrl\n  imin = 0, nstlim =</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#RunTmplMin" class="summary-name">RunTmplMin</a> = <code title="'''Minimization - steepest descent followed by conj grad
+ &amp;cntrl 
+  imin = 1, maxcyc = [STEPSMINTOT], ncyc = [STEPSMINSD], 
+  igb = 5, gbsa = 1,
+  cut = 16.0, surften = [SURFACETENSION],
+  ntc = 1, ntf = 1, tol = 1.0d-8,
+  ntb = 0, iwrap = 0,
+  ntpr=100, ntwr=1000,
+..."><code class="variable-quote">'</code><code class="variable-string">Minimization - steepest descent followed by conj</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#TempWeightTmpl" class="summary-name">TempWeightTmpl</a> = <code title="''' &amp;wt type=\'TEMP0\', istep1=[STEPSWEIGHT1], istep2=[STEPSWEIGHT2],
+     value1=[TEMPSET1], value2=[TEMPSET2],  &amp;end'''"><code class="variable-quote">'</code><code class="variable-string"> &amp;wt type=\'TEMP0\', istep1=[STEPSWEIGHT1], </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#WeightTmpl" class="summary-name">WeightTmpl</a> = <code title="{'ELECSCALE': ''' &amp;wt type=\'ELEC\', istep1=[STEPSWEIGHT1], istep2=[ST\
+EPSWEIGHT2],
+     value1=[ELECSCALE1], value2=[ELECSCALE2],  &amp;end''',
+ 'NONBONDSCALE': ''' &amp;wt type=\'NB\', istep1=[STEPSWEIGHT1], istep2=[S\
+TEPSWEIGHT2],
+     value1=[NONBONDSCALE1], value2=[NONBONDSCALE2],  &amp;end''',
+ 'NONRESTSCALE': ''' &amp;wt type=\'ALL\', istep1=[STEPSWEIGHT1], istep2=[\
+STEPSWEIGHT2],
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">ELECSCALE</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"> &amp;wt type=\'ELEC\', istep1=[STEPSW</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#RunDflts" class="summary-name">RunDflts</a> = <code title="{'BERENDSENTAU': 1.0,
+ 'ELECSCALE1': 1.0,
+ 'ELECSCALE2': 1.0,
+ 'LANGEVINGAMMA': 0.0,
+ 'NONBONDSCALE1': 1.0,
+ 'NONBONDSCALE2': 1.0,
+ 'NONRESTSCALE1': 1.0,
+ 'NONRESTSCALE2': 1.0,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">BERENDSENTAU</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ELECSCALE1</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ELECSCALE</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#RestTmplAtom" class="summary-name">RestTmplAtom</a> = <code title="'''#[RESTLABEL]
+ &amp;rst
+  iat=  [ATOM1], [ATOM2], [ATOM3], [ATOM4],
+  r1=[DIST1], r2=[DIST2], r3=[DIST3], r4=[DIST4],
+  rk2=[FCONST2], rk3=[FCONST3], ialtd=[RESTTYPE],
+ &amp;end'''"><code class="variable-quote">'</code><code class="variable-string">#[RESTLABEL]\n &amp;rst\n  iat=  [ATOM1], [ATOM2],</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#RestTmplGroup" class="summary-name">RestTmplGroup</a> = <code title="'''#[RESTLABEL]
+ &amp;rst
+  iat=  -1,  -1,
+  r1= [DIST1], r2= [DIST2], r3=[DIST3], r4=[DIST4],
+  rk2=[FCONST2], rk3=[FCONST3], ir6=0, ialtd=[RESTTYPE],
+  igr1=  [ATOM1],
+  igr2=  [ATOM2],
+ &amp;end'''"><code class="variable-quote">'</code><code class="variable-string">#[RESTLABEL]\n &amp;rst\n  iat=  -1,  -1,\n  r1= </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#RestDflts" class="summary-name">RestDflts</a> = <code title="{'ATOM1': 0,
+ 'ATOM2': 0,
+ 'ATOM3': -1,
+ 'ATOM4': -1,
+ 'DIST1': 1.3,
+ 'DIST2': 1.8,
+ 'DIST3': 6.5,
+ 'DIST4': 7.0,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">ATOM1</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ATOM2</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ATOM3</code><code class="variable-quote">'</code><code class="variable-op">: </code>-1<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ATOM4</code><code class="variable-quote">'</code><code class="variable-op">: </code>-1<code class="variable-op">,</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#RestIonVars" class="summary-name">RestIonVars</a> = <code title="{'DIST1': 4.0,
+ 'DIST2': 6.0,
+ 'DIST3': 10.0,
+ 'DIST4': 10.0,
+ 'FCONST2': 0.5,
+ 'FCONST3': 0.0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">DIST1</code><code class="variable-quote">'</code><code class="variable-op">: </code>4.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">DIST2</code><code class="variable-quote">'</code><code class="variable-op">: </code>6.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">DIST3</code><code class="variable-quote">'</code><code class="variable-op">: </code>10.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">DIS</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#PosRestTmpl" class="summary-name">PosRestTmpl</a> = <code title="'''  restraint_wt=[FCONST],
+            restraintmask=\'[GROUP]\','''"><code class="variable-quote">'</code><code class="variable-string">  restraint_wt=[FCONST],\n            restraint</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#PosRestDflts" class="summary-name">PosRestDflts</a> = <code title="{'ATOMS': [],
+ 'FCONST': 0.01,
+ 'GROUP': '[@*]',
+ 'POSREST': True,
+ 'REFPOS': array([], shape=(0, 3), dtype=float64)}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">ATOMS</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">[</code><code class="variable-group">]</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">FCONST</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.01<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">GROUP</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">[@*]</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#DataDflts" class="summary-name">DataDflts</a> = <code title="{'EANG1': 0.0,
+ 'EANG2': 0.0,
+ 'EANGAVG': 0.0,
+ 'EBOND1': 0.0,
+ 'EBOND2': 0.0,
+ 'EBONDAVG': 0.0,
+ 'EDIH1': 0.0,
+ 'EDIH2': 0.0,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">EANG1</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EANG2</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EANGAVG</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EBON</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PBRadiiFixHRad"></a><span class="summary-name">PBRadiiFixHRad</span> = <code title="1.1">1.1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="kB"></a><span class="summary-name">kB</span> = <code title="0.00198770921128">0.00198770921128</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TLeapCmd"></a><span class="summary-name">TLeapCmd</span> = <code title="'tleap -f tleapin.txt &gt; tleapout.txt'"><code class="variable-quote">'</code><code class="variable-string">tleap -f tleapin.txt &gt; tleapout.txt</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#AmbPdbCmd" class="summary-name">AmbPdbCmd</a> = <code title="'(ambpdb -p prmtop.parm7 &lt; current.crd &gt; current.pdb) &gt;&amp; /dev/null'"><code class="variable-quote">'</code><code class="variable-string">(ambpdb -p prmtop.parm7 &lt; current.crd &gt; current.p</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#SanderMinCmd" class="summary-name">SanderMinCmd</a> = <code title="'sander -O -i minin.txt -o minout.txt -p prmtop.parm7 -c minin.crd -r \
+minout.crd -e minene.txt -inf mininfo.txt'"><code class="variable-quote">'</code><code class="variable-string">sander -O -i minin.txt -o minout.txt -p prmtop</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#SanderMDCmd" class="summary-name">SanderMDCmd</a> = <code title="'sander -O -i mdin.txt -o mdout.txt -p prmtop.parm7 -c mdin.crd -r mdo\
+ut.crd -x mdtrj.crd -e mdene.txt -inf mdinfo.txt'"><code class="variable-quote">'</code><code class="variable-string">sander -O -i mdin.txt -o mdout.txt -p prmtop.pa</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SanderRefCmdOpt"></a><span class="summary-name">SanderRefCmdOpt</span> = <code title="' -ref ref.crd'"><code class="variable-quote">'</code><code class="variable-string"> -ref ref.crd</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#MDOutBlockStart" class="summary-name">MDOutBlockStart</a> = <code title="[('NSTEP=0', '1'),
+ ('NSTEP=[STEPSMD]', '2'),
+ ('NSTEP=[STEPSMD]', 'AVG'),
+ ('NSTEP=[STEPSMD]', 'RMS')]"><code class="variable-group">[</code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">NSTEP=0</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">1</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">, </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">NSTEP=[STEPSMD]</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">2</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MDOutBlockStop"></a><span class="summary-name">MDOutBlockStop</span> = <code title="'===================='"><code class="variable-quote">'</code><code class="variable-string">====================</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#MDOutParseData" class="summary-name">MDOutParseData</a> = <code title="{'EANG': ('angle'),
+ 'EBOND': ('bond'),
+ 'EDIH': ('dihed'),
+ 'EEL': ('eelec', '1-4eel', 'egb'),
+ 'EKIN': ('ektot'),
+ 'EPOT': ('eptot'),
+ 'EREST': ('restraint'),
+ 'ERESTANG': ('angle-2'),
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">EANG</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">angle</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EBOND</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">bond</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EDIH</code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#EneParseData" class="summary-name">EneParseData</a> = <code title="{'EANG': (38),
+ 'EBOND': (37),
+ 'EDIH': (39),
+ 'EEL': (34, 36, 42),
+ 'EKIN': (4),
+ 'EPOT': (32),
+ 'EREST': (43),
+ 'ESURF': (32, -43, -33, -41, -37, -38, -39, -34, -36, -42),
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">EANG</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>38<code class="variable-group">)</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EBOND</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>37<code class="variable-group">)</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EDIH</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>39<code class="variable-group">)</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EE</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="EneHeadLen"></a><span class="summary-name">EneHeadLen</span> = <code title="737">737</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="EneBlockLen"></a><span class="summary-name">EneBlockLen</span> = <code title="750">750</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="EneHeadLines"></a><span class="summary-name">EneHeadLines</span> = <code title="10">10</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="EneBlockLines"></a><span class="summary-name">EneBlockLines</span> = <code title="10">10</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TrjHeadLines"></a><span class="summary-name">TrjHeadLines</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#DataFiles" class="summary-name">DataFiles</a> = <code title="['mdout.txt', 'mdout.crd', 'mdtrj.crd', 'mdene.txt', 'current.crd']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">mdout.txt</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mdout.crd</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mdtrj.crd</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mdene.txt</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PrepFiles"></a><span class="summary-name">PrepFiles</span> = <code title="['prmtop.parm7', 'current.crd', 'ref.crd']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">prmtop.parm7</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">current.crd</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ref.crd</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CurrentFiles"></a><span class="summary-name">CurrentFiles</span> = <code title="['current.crd']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">current.crd</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MinFiles"></a><span class="summary-name">MinFiles</span> = <code title="['minout.crd', 'minout.txt', 'mininfo.txt']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">minout.crd</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">minout.txt</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mininfo.txt</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#MDFiles" class="summary-name">MDFiles</a> = <code title="['mdout.crd',
+ 'mdout.txt',
+ 'mdinfo.txt',
+ 'sanderout.txt',
+ 'mdene.txt',
+ 'mdtrj.crd']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">mdout.crd</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mdout.txt</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mdinfo.txt</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">sanderout.</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#TLeapFiles" class="summary-name">TLeapFiles</a> = <code title="['tleapout.pdb', 'tleapout.txt', 'tleapout.crd', 'leap.log']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">tleapout.pdb</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">tleapout.txt</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">tleapout.crd</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#AllFiles" class="summary-name">AllFiles</a> = <code title="['tleapout.pdb',
+ 'tleapout.txt',
+ 'tleapout.crd',
+ 'leap.log',
+ 'minout.crd',
+ 'minout.txt',
+ 'mininfo.txt',
+ 'mdout.crd',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">tleapout.pdb</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">tleapout.txt</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">tleapout.crd</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">l</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#ClassData" class="summary-name">ClassData</a> = <code title="['TLeapVars',
+ 'RunVars',
+ 'RestVars',
+ 'RestList',
+ 'TimeStart',
+ 'TimeStop',
+ 'Data',
+ 'UndoData',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">TLeapVars</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">RunVars</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">RestVars</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">RestList</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="zam.mdsim-module.html#ConfigData" class="summary-name">ConfigData</a> = <code title="['Data', 'UndoData', 'Pos', 'Vel', 'Seq', 'Atoms', 'AtomRes']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">Data</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">UndoData</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Pos</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Vel</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Seq</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Atoms</code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="NCap"></a><span class="summary-name">NCap</span> = <code title="'ACE'"><code class="variable-quote">'</code><code class="variable-string">ACE</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CCap"></a><span class="summary-name">CCap</span> = <code title="'NME'"><code class="variable-quote">'</code><code class="variable-string">NME</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ChargedTermini"></a><span class="summary-name">ChargedTermini</span> = <code title="True">True</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MaxSanderSeed"></a><span class="summary-name">MaxSanderSeed</span> = <code title="71276">71276</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="UseFullPath"></a><span class="summary-name">UseFullPath</span> = <code title="True">True</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="StopOnError"></a><span class="summary-name">StopOnError</span> = <code title="True">True</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PrintOnError"></a><span class="summary-name">PrintOnError</span> = <code title="True">True</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="FoundSander"></a><span class="summary-name">FoundSander</span> = <code title="True">True</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="FoundTLeap"></a><span class="summary-name">FoundTLeap</span> = <code title="True">True</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'zam'"><code class="variable-quote">'</code><code class="variable-string">zam</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="p"></a><span class="summary-name">p</span> = <code title="'/Users/jlmaccal/src/amber9/exe'"><code class="variable-quote">'</code><code class="variable-string">/Users/jlmaccal/src/amber9/exe</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="v"></a><span class="summary-name">v</span> = <code title="'PRES'"><code class="variable-quote">'</code><code class="variable-string">PRES</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="ReplaceD"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ReplaceD</span>(<span class="sig-arg">s</span>,
+        <span class="sig-arg">d</span>,
+        <span class="sig-arg">Bracket</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.mdsim-pysrc.html#ReplaceD">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Replaces tokens in a string using a dictionary.  By default, this 
+  function will convert floats to %.3f format for Amber.</p>
+  <p>* s: string whose tokens will be replaced</p>
+  <p>* d: dictionary of tokens (string keys) and their replacements 
+  (values, may be of any type)</p>
+  <p>* MaxLen: maximum length (in characters) of replacement values.</p>
+  <p>* Bracket: tokens are bracketed in string ala '[TOKEN]'</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetConcatData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetConcatData</span>(<span class="sig-arg">Prefix</span>,
+        <span class="sig-arg">DataPath</span>,
+        <span class="sig-arg">Vars</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">EKIN</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ETOT</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EEL</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EBOND</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">TEMP</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EPOT</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EREST</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">EAN</code><code class="variable-ellipsis">...</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.mdsim-pysrc.html#GetConcatData">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a dictionary with variable name, array pairs of data from 
+  concatenated files.</p>
+  <p>* Prefix: string with the prefix to add to each file it updates</p>
+  <p>* DataPath: string specifying path location of the master files</p>
+  <p>* Vars: a list of strings specifying the variable names whose history 
+  will be returned (default is all)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="GetConcatNFrames"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">GetConcatNFrames</span>(<span class="sig-arg">Prefix</span>,
+        <span class="sig-arg">DataPath</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.mdsim-pysrc.html#GetConcatNFrames">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the number of frames in concatenated data.</p>
+  <p>* Prefix: string with the prefix to add to each file it updates</p>
+  <p>* DataPath: string specifying path location of the master files</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="PrepPdb"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">PrepPdb</span>(<span class="sig-arg">InPdb</span>,
+        <span class="sig-arg">OutPdb</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Seq</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Cap</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">CapN</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">CapC</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.mdsim-pysrc.html#PrepPdb">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Reads InPdb and produces OutPdb, which is prepared for input.</p>
+  <p>* InPdb, OutPdb: string name of the pdb file names to import/create; 
+  OutPdb defaults to InPdb</p>
+  <p>* Seq: optional sequence string</p>
+  <p>* Cap: True or False for whether to add caps to the sequence</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="SwapData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">SwapData</span>(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.mdsim-pysrc.html#SwapData">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Swaps class data in two sim classes.</p>
+  <p>* a, b: instances of SimClass</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="SwapConfig"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">SwapConfig</span>(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>,
+        <span class="sig-arg">Mode</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.mdsim-pysrc.html#SwapConfig">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Swaps the current configuration and related data of two sim 
+  classes</p>
+  <p>* a, b: instances of SimClass</p>
+  <p>* Mode: 0 will perform the swap on disk; 1 will perform in memory 
+  using the a.Pos and b.Pos variables.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="SwapRest"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">SwapRest</span>(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="zam.mdsim-pysrc.html#SwapRest">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Swaps the restraints of two sim classes</p>
+  <p>* a, b: instances of SimClass</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="Paths"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Paths</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">/opt/local/bin</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">/opt/local/sbin</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">/Users/jlmaccal/src/amber9/exe</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">/usr/bin</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">/bin</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">/usr/sbin</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">/sbin</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">/usr/local/bin</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="TLeapDflts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TLeapDflts</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">CMDS</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">PARAMS</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'''</code><code class="variable-string">source leaprc.ff96</code>
+<code class="variable-string">set default PBradii mbondi2</code><code class="variable-quote">'''</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">POST</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">PRE</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">SAVE</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'''</code><code class="variable-string">check sys</code>
+<code class="variable-string">saveAmberParm sys prmtop.parm7 tleapout.crd</code>
+<code class="variable-string">savepdb sys tleapout.pdb</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RunTmplMD"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RunTmplMD</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">trajectory segment</code>
+<code class="variable-string"> &amp;cntrl</code>
+<code class="variable-string">  imin = 0, nstlim = [STEPSMD], ntwr = [STEPSMD],</code>
+<code class="variable-string">  igb = 5, gbsa = 1,</code>
+<code class="variable-string">  cut = 16.0, surften = [SURFACETENSION],</code>
+<code class="variable-string">  tempi = [TEMPSET], ntt = [TEMPMODE], temp0 = [TEMPSET],</code>
+<code class="variable-string">  tautp = [BERENDSENTAU], vrand = [STEPSTEMP],</code>
+<code class="variable-string">  gamma_ln = [LANGEVINGAMMA], vlimit = [VELOCITYLIMIT],</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RunTmplMin"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RunTmplMin</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">Minimization - steepest descent followed by conj grad</code>
+<code class="variable-string"> &amp;cntrl </code>
+<code class="variable-string">  imin = 1, maxcyc = [STEPSMINTOT], ncyc = [STEPSMINSD], </code>
+<code class="variable-string">  igb = 5, gbsa = 1,</code>
+<code class="variable-string">  cut = 16.0, surften = [SURFACETENSION],</code>
+<code class="variable-string">  ntc = 1, ntf = 1, tol = 1.0d-8,</code>
+<code class="variable-string">  ntb = 0, iwrap = 0,</code>
+<code class="variable-string">  ntpr=100, ntwr=1000,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="TempWeightTmpl"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TempWeightTmpl</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"> &amp;wt type=\'TEMP0\', istep1=[STEPSWEIGHT1], istep2=[STEPSWEIGHT2],</code>
+<code class="variable-string">     value1=[TEMPSET1], value2=[TEMPSET2],  &amp;end</code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="WeightTmpl"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">WeightTmpl</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">ELECSCALE</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'''</code><code class="variable-string"> &amp;wt type=\'ELEC\', istep1=[STEPSWEIGHT1], istep2=[ST</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">EPSWEIGHT2],</code>
+<code class="variable-string">     value1=[ELECSCALE1], value2=[ELECSCALE2],  &amp;end</code><code class="variable-quote">'''</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">NONBONDSCALE</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'''</code><code class="variable-string"> &amp;wt type=\'NB\', istep1=[STEPSWEIGHT1], istep2=[S</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">TEPSWEIGHT2],</code>
+<code class="variable-string">     value1=[NONBONDSCALE1], value2=[NONBONDSCALE2],  &amp;end</code><code class="variable-quote">'''</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">NONRESTSCALE</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'''</code><code class="variable-string"> &amp;wt type=\'ALL\', istep1=[STEPSWEIGHT1], istep2=[</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">STEPSWEIGHT2],</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RunDflts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RunDflts</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">BERENDSENTAU</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ELECSCALE1</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ELECSCALE2</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">LANGEVINGAMMA</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">NONBONDSCALE1</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">NONBONDSCALE2</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">NONRESTSCALE1</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">NONRESTSCALE2</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.0<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RestTmplAtom"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RestTmplAtom</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">#[RESTLABEL]</code>
+<code class="variable-string"> &amp;rst</code>
+<code class="variable-string">  iat=  [ATOM1], [ATOM2], [ATOM3], [ATOM4],</code>
+<code class="variable-string">  r1=[DIST1], r2=[DIST2], r3=[DIST3], r4=[DIST4],</code>
+<code class="variable-string">  rk2=[FCONST2], rk3=[FCONST3], ialtd=[RESTTYPE],</code>
+<code class="variable-string"> &amp;end</code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RestTmplGroup"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RestTmplGroup</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">#[RESTLABEL]</code>
+<code class="variable-string"> &amp;rst</code>
+<code class="variable-string">  iat=  -1,  -1,</code>
+<code class="variable-string">  r1= [DIST1], r2= [DIST2], r3=[DIST3], r4=[DIST4],</code>
+<code class="variable-string">  rk2=[FCONST2], rk3=[FCONST3], ir6=0, ialtd=[RESTTYPE],</code>
+<code class="variable-string">  igr1=  [ATOM1],</code>
+<code class="variable-string">  igr2=  [ATOM2],</code>
+<code class="variable-string"> &amp;end</code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RestDflts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RestDflts</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">ATOM1</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ATOM2</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ATOM3</code><code class="variable-quote">'</code><code class="variable-op">: </code>-1<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ATOM4</code><code class="variable-quote">'</code><code class="variable-op">: </code>-1<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">DIST1</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.3<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">DIST2</code><code class="variable-quote">'</code><code class="variable-op">: </code>1.8<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">DIST3</code><code class="variable-quote">'</code><code class="variable-op">: </code>6.5<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">DIST4</code><code class="variable-quote">'</code><code class="variable-op">: </code>7.0<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RestIonVars"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RestIonVars</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">DIST1</code><code class="variable-quote">'</code><code class="variable-op">: </code>4.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">DIST2</code><code class="variable-quote">'</code><code class="variable-op">: </code>6.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">DIST3</code><code class="variable-quote">'</code><code class="variable-op">: </code>10.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">DIST4</code><code class="variable-quote">'</code><code class="variable-op">: </code>10.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">FCONST2</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.5<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">FCONST3</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PosRestTmpl"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PosRestTmpl</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">  restraint_wt=[FCONST],</code>
+<code class="variable-string">            restraintmask=\'[GROUP]\',</code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PosRestDflts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PosRestDflts</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">ATOMS</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">[</code><code class="variable-group">]</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">FCONST</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.01<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">GROUP</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">[@*]</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">POSREST</code><code class="variable-quote">'</code><code class="variable-op">: </code>True<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">REFPOS</code><code class="variable-quote">'</code><code class="variable-op">: </code>array([], shape=(0, 3), dtype=float64)<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="DataDflts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">DataDflts</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">EANG1</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EANG2</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EANGAVG</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EBOND1</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EBOND2</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EBONDAVG</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EDIH1</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EDIH2</code><code class="variable-quote">'</code><code class="variable-op">: </code>0.0<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="AmbPdbCmd"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">AmbPdbCmd</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'</code><code class="variable-string">(ambpdb -p prmtop.parm7 &lt; current.crd &gt; current.pdb) &gt;&amp; /dev/null</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SanderMinCmd"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SanderMinCmd</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'</code><code class="variable-string">sander -O -i minin.txt -o minout.txt -p prmtop.parm7 -c minin.crd -r </code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">minout.crd -e minene.txt -inf mininfo.txt</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="SanderMDCmd"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">SanderMDCmd</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'</code><code class="variable-string">sander -O -i mdin.txt -o mdout.txt -p prmtop.parm7 -c mdin.crd -r mdo</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">ut.crd -x mdtrj.crd -e mdene.txt -inf mdinfo.txt</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="MDOutBlockStart"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">MDOutBlockStart</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">NSTEP=0</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">1</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">NSTEP=[STEPSMD]</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">2</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">NSTEP=[STEPSMD]</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">AVG</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">NSTEP=[STEPSMD]</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">RMS</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="MDOutParseData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">MDOutParseData</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">EANG</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">angle</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EBOND</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">bond</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EDIH</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">dihed</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EEL</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">eelec</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">1-4eel</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">egb</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EKIN</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">ektot</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EPOT</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">eptot</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EREST</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">restraint</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ERESTANG</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-quote">'</code><code class="variable-string">angle-2</code><code class="variable-quote">'</code><code class="variable-group">)</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="EneParseData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">EneParseData</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">EANG</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>38<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EBOND</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>37<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EDIH</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>39<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EEL</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>34<code class="variable-op">, </code>36<code class="variable-op">, </code>42<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EKIN</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>4<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EPOT</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>32<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">EREST</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>43<code class="variable-group">)</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ESURF</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-group">(</code>32<code class="variable-op">, </code>-43<code class="variable-op">, </code>-33<code class="variable-op">, </code>-41<code class="variable-op">, </code>-37<code class="variable-op">, </code>-38<code class="variable-op">, </code>-39<code class="variable-op">, </code>-34<code class="variable-op">, </code>-36<code class="variable-op">, </code>-42<code class="variable-group">)</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="DataFiles"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">DataFiles</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">mdout.txt</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mdout.crd</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mdtrj.crd</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mdene.txt</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">current.crd</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="MDFiles"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">MDFiles</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">mdout.crd</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mdout.txt</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mdinfo.txt</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">sanderout.txt</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mdene.txt</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mdtrj.crd</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="TLeapFiles"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TLeapFiles</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">tleapout.pdb</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">tleapout.txt</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">tleapout.crd</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">leap.log</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="AllFiles"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">AllFiles</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">tleapout.pdb</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">tleapout.txt</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">tleapout.crd</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">leap.log</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">minout.crd</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">minout.txt</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mininfo.txt</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mdout.crd</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ClassData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ClassData</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">TLeapVars</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">RunVars</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">RestVars</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">RestList</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">TimeStart</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">TimeStop</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Data</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">UndoData</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ConfigData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ConfigData</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">Data</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">UndoData</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Pos</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Vel</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Seq</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Atoms</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">AtomRes</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:21 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.geometrylib</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;geometrylib
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.geometrylib-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module geometrylib</h1><p class="nomargin-top"></p>
+<pre class="literalblock">
+This module 'geometrylib' is auto-generated with f2py (version:2_5972).
+Functions:
+  cliptrig = cliptrig(x)
+  normrad = normrad(rad)
+  normdeg = normdeg(deg)
+  ret = centroid(pos,n=shape(pos,0),dim=shape(pos,1))
+  ret = centroidind(pos,atomind,n=shape(pos,0),dim=shape(pos,1),natomind=len(atomind))
+  length = length(vec,dim=len(vec))
+  ret = unitvec(vec,dim=len(vec))
+  ret = crossprod3(r1,r2)
+  radfromtrig = radfromtrig(sinval,cosval)
+  degfromtrig = degfromtrig(sinval,cosval)
+  angle3rad = angle3rad(pos1,pos2,pos3)
+  angle3deg = angle3deg(pos1,pos2,pos3)
+  dihedral3rad = dihedral3rad(pos1,pos2,pos3,pos4)
+  dihedral3deg = dihedral3deg(pos1,pos2,pos3,pos4)
+  vec,ang = getvecmappingrad(vec1,vec2,dim=len(vec1))
+  vec,ang = getvecmappingdeg(vec1,vec2,dim=len(vec1))
+  ret = rotatearrayaboutpoint(pos,rotmat,point,n=shape(pos,0),dim=shape(pos,1))
+  ret = rotatepointaboutpoint(pos,rotmat,point,dim=len(pos))
+  ret = rotmat3rad(vec,ang)
+  ret = rotmat3deg(vec,ang)
+  ret = rotmat3eulerrad(phi,theta,psi)
+  ret = rotmat3eulerdeg(phi,theta,psi)
+  ret = rotmat3q(q0,q1,q2,q3)
+  phi,theta,psi = eulerfromrotmat3rad(rotmat)
+  phi,theta,psi = eulerfromrotmat3deg(rotmat)
+.
+
+</pre>
+
+<hr />
+<div class="fields">      <p><strong>Version:</strong>
+        $Revision: $
+      </p>
+</div><!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="angle3deg"></a><span class="summary-name">angle3deg</span> = <code title="&lt;fortran object at 0x1530d40&gt;">&lt;fortran object at 0x1530d40&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="angle3rad"></a><span class="summary-name">angle3rad</span> = <code title="&lt;fortran object at 0x1530d28&gt;">&lt;fortran object at 0x1530d28&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="centroid"></a><span class="summary-name">centroid</span> = <code title="&lt;fortran object at 0x1530c80&gt;">&lt;fortran object at 0x1530c80&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="centroidind"></a><span class="summary-name">centroidind</span> = <code title="&lt;fortran object at 0x1530c98&gt;">&lt;fortran object at 0x1530c98&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="cliptrig"></a><span class="summary-name">cliptrig</span> = <code title="&lt;fortran object at 0x1530a58&gt;">&lt;fortran object at 0x1530a58&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="crossprod3"></a><span class="summary-name">crossprod3</span> = <code title="&lt;fortran object at 0x1530ce0&gt;">&lt;fortran object at 0x1530ce0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="degfromtrig"></a><span class="summary-name">degfromtrig</span> = <code title="&lt;fortran object at 0x1530d10&gt;">&lt;fortran object at 0x1530d10&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="dihedral3deg"></a><span class="summary-name">dihedral3deg</span> = <code title="&lt;fortran object at 0x1530d70&gt;">&lt;fortran object at 0x1530d70&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="dihedral3rad"></a><span class="summary-name">dihedral3rad</span> = <code title="&lt;fortran object at 0x1530d58&gt;">&lt;fortran object at 0x1530d58&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="eulerfromrotmat3deg"></a><span class="summary-name">eulerfromrotmat3deg</span> = <code title="&lt;fortran object at 0x1530c50&gt;">&lt;fortran object at 0x1530c50&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="eulerfromrotmat3rad"></a><span class="summary-name">eulerfromrotmat3rad</span> = <code title="&lt;fortran object at 0x1530e30&gt;">&lt;fortran object at 0x1530e30&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="getvecmappingdeg"></a><span class="summary-name">getvecmappingdeg</span> = <code title="&lt;fortran object at 0x1530da0&gt;">&lt;fortran object at 0x1530da0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="getvecmappingrad"></a><span class="summary-name">getvecmappingrad</span> = <code title="&lt;fortran object at 0x1530d88&gt;">&lt;fortran object at 0x1530d88&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="length"></a><span class="summary-name">length</span> = <code title="&lt;fortran object at 0x1530cb0&gt;">&lt;fortran object at 0x1530cb0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="normdeg"></a><span class="summary-name">normdeg</span> = <code title="&lt;fortran object at 0x1530c68&gt;">&lt;fortran object at 0x1530c68&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="normrad"></a><span class="summary-name">normrad</span> = <code title="&lt;fortran object at 0x1530b00&gt;">&lt;fortran object at 0x1530b00&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="radfromtrig"></a><span class="summary-name">radfromtrig</span> = <code title="&lt;fortran object at 0x1530cf8&gt;">&lt;fortran object at 0x1530cf8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rotatearrayaboutpoint"></a><span class="summary-name">rotatearrayaboutpoint</span> = <code title="&lt;fortran object at 0x1530bf0&gt;">&lt;fortran object at 0x1530bf0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rotatepointaboutpoint"></a><span class="summary-name">rotatepointaboutpoint</span> = <code title="&lt;fortran object at 0x1530db8&gt;">&lt;fortran object at 0x1530db8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rotmat3deg"></a><span class="summary-name">rotmat3deg</span> = <code title="&lt;fortran object at 0x1530c38&gt;">&lt;fortran object at 0x1530c38&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rotmat3eulerdeg"></a><span class="summary-name">rotmat3eulerdeg</span> = <code title="&lt;fortran object at 0x1530e00&gt;">&lt;fortran object at 0x1530e00&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rotmat3eulerrad"></a><span class="summary-name">rotmat3eulerrad</span> = <code title="&lt;fortran object at 0x1530de8&gt;">&lt;fortran object at 0x1530de8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rotmat3q"></a><span class="summary-name">rotmat3q</span> = <code title="&lt;fortran object at 0x1530c20&gt;">&lt;fortran object at 0x1530c20&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="rotmat3rad"></a><span class="summary-name">rotmat3rad</span> = <code title="&lt;fortran object at 0x1530dd0&gt;">&lt;fortran object at 0x1530dd0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="unitvec"></a><span class="summary-name">unitvec</span> = <code title="&lt;fortran object at 0x1530cc8&gt;">&lt;fortran object at 0x1530cc8&gt;</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:21 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

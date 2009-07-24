@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>zam.whamlib</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="zam-module.html">Package&nbsp;zam</a> ::
+        Module&nbsp;whamlib
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="zam.whamlib-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module whamlib</h1><p class="nomargin-top"></p>
+<pre class="literalblock">
+This module 'whamlib' is auto-generated with f2py (version:2_5972).
+Functions:
+  fk = free_energy(ekn,betak,nbin,niterbin,niterall,ntemp=shape(ekn,0),nframe=shape(ekn,1))
+  logwkn = log_weight(ekn,betak,targetbeta,fk,ntemp=shape(ekn,0),nframe=shape(ekn,1))
+  logwkn = log_weight_scaleterm(etotkn,ecompkn,scale,betak,targetbeta,fk,ntemp=shape(etotkn,0),nframe=shape(etotkn,1))
+  logwkn = log_weight_restraint(etotkn,erestkn,betak,targetbeta,fk,ntemp=shape(etotkn,0),nframe=shape(etotkn,1))
+  fk = free_energy_2(ekn1,ekn2,weightk1,weightk2,betak,nbin,niterbin,niterall,ntemp=shape(ekn1,0),nframe=shape(ekn1,1))
+  logwkn = log_weight_2(ekn1,ekn2,weightk1,weightk2,betak,targetweight1,targetweight2,targetbeta,fk,ntemp=shape(ekn1,0),nframe=shape(ekn1,1))
+  fk = free_energy_3(ekn1,ekn2,ekn3,weightk1,weightk2,weightk3,betak,nbin,niterbin,niterall,ntemp=shape(ekn1,0),nframe=shape(ekn1,1))
+  logwkn = log_weight_3(ekn1,ekn2,ekn3,weightk1,weightk2,weightk3,betak,targetweight1,targetweight2,targetweight3,targetbeta,fk,ntemp=shape(ekn1,0),nframe=shape(ekn1,1))
+  fk,niter = free_energy_multi(eikn,weightik,betak,maxiter,reltol,nterm=shape(eikn,0),ntemp=shape(eikn,1),nframe=shape(eikn,2))
+  logwkn = log_weight_multi(eikn,weightik,betak,targetweighti,targetbeta,fk,nterm=shape(eikn,0),ntemp=shape(eikn,1),nframe=shape(eikn,2))
+.
+
+</pre>
+
+<hr />
+<div class="fields">      <p><strong>Version:</strong>
+        $Revision: $
+      </p>
+</div><!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="free_energy"></a><span class="summary-name">free_energy</span> = <code title="&lt;fortran object at 0x15f5f08&gt;">&lt;fortran object at 0x15f5f08&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="free_energy_2"></a><span class="summary-name">free_energy_2</span> = <code title="&lt;fortran object at 0x18500e0&gt;">&lt;fortran object at 0x18500e0&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="free_energy_3"></a><span class="summary-name">free_energy_3</span> = <code title="&lt;fortran object at 0x1850110&gt;">&lt;fortran object at 0x1850110&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="free_energy_multi"></a><span class="summary-name">free_energy_multi</span> = <code title="&lt;fortran object at 0x1850140&gt;">&lt;fortran object at 0x1850140&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="log_weight"></a><span class="summary-name">log_weight</span> = <code title="&lt;fortran object at 0x1850080&gt;">&lt;fortran object at 0x1850080&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="log_weight_2"></a><span class="summary-name">log_weight_2</span> = <code title="&lt;fortran object at 0x18500f8&gt;">&lt;fortran object at 0x18500f8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="log_weight_3"></a><span class="summary-name">log_weight_3</span> = <code title="&lt;fortran object at 0x1850128&gt;">&lt;fortran object at 0x1850128&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="log_weight_multi"></a><span class="summary-name">log_weight_multi</span> = <code title="&lt;fortran object at 0x1850158&gt;">&lt;fortran object at 0x1850158&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="log_weight_restraint"></a><span class="summary-name">log_weight_restraint</span> = <code title="&lt;fortran object at 0x18500c8&gt;">&lt;fortran object at 0x18500c8&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="log_weight_scaleterm"></a><span class="summary-name">log_weight_scaleterm</span> = <code title="&lt;fortran object at 0x18500b0&gt;">&lt;fortran object at 0x18500b0&gt;</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="zam-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:22 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
