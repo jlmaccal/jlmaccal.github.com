@@ -232,9 +232,9 @@ object --+
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#GetPairList" class="summary-sig-name">GetPairList</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">MinCO</span>=<span class="summary-sig-default">PairMinCO</span>,
-        <span class="summary-sig-arg">MaxCO</span>=<span class="summary-sig-default">PairMaxCO</span>,
-        <span class="summary-sig-arg">MinECO</span>=<span class="summary-sig-default">PairMinECO</span>)</span><br />
+        <span class="summary-sig-arg">MinCO</span>=<span class="summary-sig-default">3</span>,
+        <span class="summary-sig-arg">MaxCO</span>=<span class="summary-sig-default">1000</span>,
+        <span class="summary-sig-arg">MinECO</span>=<span class="summary-sig-default">3</span>)</span><br />
       Get a list of pairs.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.GetPairList">source&nbsp;code</a></span>
@@ -377,7 +377,7 @@ object --+
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="zam.zamdata.FragDataClass-class.html#MakePath" class="summary-sig-name">MakePath</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">MainPath</span>=<span class="summary-sig-default">&quot;.&quot;</span>,
+        <span class="summary-sig-arg">MainPath</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">.</code><code class="variable-quote">'</code></span>,
         <span class="summary-sig-arg">AllPaths</span>=<span class="summary-sig-default">False</span>)</span><br />
       Make the directory for this fragment.</td>
           <td align="right" valign="top">
@@ -576,7 +576,7 @@ object --+
         <span class="summary-sig-arg">a</span>,
         <span class="summary-sig-arg">b</span>,
         <span class="summary-sig-arg">OtherRest</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">MaxECO</span>=<span class="summary-sig-default">PairMinECO-1</span>,
+        <span class="summary-sig-arg">MaxECO</span>=<span class="summary-sig-default">2</span>,
         <span class="summary-sig-arg">MaxDepth</span>=<span class="summary-sig-default">1</span>)</span><br />
       Tells if a pair of residues is retrained within an ECO.</td>
           <td align="right" valign="top">
@@ -904,23 +904,29 @@ object --+
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="zam.zamdata.FragDataClass-class.html#AnalysisVars" class="summary-name">AnalysisVars</a> = <code title="[&quot;MesoEntropy&quot;, &quot;MesoGroundPop&quot;, &quot;PunchStabTot&quot;, &quot;PunchCoopTot&quot;, &quot;Pair\
-List&quot;, &quot;CutProb&quot;, &quot;Pmf&quot;, &quot;PmfDist&quot;, &quot;PmfScore&quot;, &quot;BestnCont&quot;, &quot;PunchSta\
-b&quot;, &quot;PunchCoop&quot;, &quot;ClustPop&quot;]">[&quot;MesoEntropy&quot;, &quot;MesoGroundPop&quot;, &quot;PunchStabTot&quot;<code class="variable-ellipsis">...</code></code>
+        <a href="zam.zamdata.FragDataClass-class.html#AnalysisVars" class="summary-name">AnalysisVars</a> = <code title="['MesoEntropy',
+ 'MesoGroundPop',
+ 'PunchStabTot',
+ 'PunchCoopTot',
+ 'PairList',
+ 'CutProb',
+ 'Pmf',
+ 'PmfDist',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">MesoEntropy</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">MesoGroundPop</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">PunchStabTot</code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="PickleExcludeVars"></a><span class="summary-name">PickleExcludeVars</span> = <code title="[&quot;rx&quot;, &quot;Task&quot;]">[&quot;rx&quot;, &quot;Task&quot;]</code>
+        <a name="PickleExcludeVars"></a><span class="summary-name">PickleExcludeVars</span> = <code title="['rx', 'Task']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">rx</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Task</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="DataExcludeVars"></a><span class="summary-name">DataExcludeVars</span> = <code title="[&quot;Parents&quot;, &quot;Children&quot;]">[&quot;Parents&quot;, &quot;Children&quot;]</code>
+        <a name="DataExcludeVars"></a><span class="summary-name">DataExcludeVars</span> = <code title="['Parents', 'Children']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">Parents</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Children</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
     </td>
   </tr>
 </table>
@@ -1146,7 +1152,7 @@ b&quot;, &quot;PunchCoop&quot;, &quot;ClustPop&quot;]">[&quot;MesoEntropy&quot;,
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">MakePath</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">MainPath</span>=<span class="sig-default">&quot;.&quot;</span>,
+        <span class="sig-arg">MainPath</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">.</code><code class="variable-quote">'</code></span>,
         <span class="sig-arg">AllPaths</span>=<span class="sig-default">False</span>)</span>
   </h3>
   </td><td align="right" valign="top"
@@ -1226,9 +1232,9 @@ b&quot;, &quot;PunchCoop&quot;, &quot;ClustPop&quot;]">[&quot;MesoEntropy&quot;,
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">GetPairList</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">MinCO</span>=<span class="sig-default">PairMinCO</span>,
-        <span class="sig-arg">MaxCO</span>=<span class="sig-default">PairMaxCO</span>,
-        <span class="sig-arg">MinECO</span>=<span class="sig-default">PairMinECO</span>)</span>
+        <span class="sig-arg">MinCO</span>=<span class="sig-default">3</span>,
+        <span class="sig-arg">MaxCO</span>=<span class="sig-default">1000</span>,
+        <span class="sig-arg">MinECO</span>=<span class="sig-default">3</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="zam.zamdata-pysrc.html#FragDataClass.GetPairList">source&nbsp;code</a></span>&nbsp;
@@ -1279,9 +1285,15 @@ b&quot;, &quot;PunchCoop&quot;, &quot;ClustPop&quot;]">[&quot;MesoEntropy&quot;,
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-[&quot;MesoEntropy&quot;, &quot;MesoGroundPop&quot;, &quot;PunchStabTot&quot;, &quot;PunchCoopTot&quot;, &quot;Pair<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-List&quot;, &quot;CutProb&quot;, &quot;Pmf&quot;, &quot;PmfDist&quot;, &quot;PmfScore&quot;, &quot;BestnCont&quot;, &quot;PunchSta<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-b&quot;, &quot;PunchCoop&quot;, &quot;ClustPop&quot;]
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">MesoEntropy</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">MesoGroundPop</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">PunchStabTot</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">PunchCoopTot</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">PairList</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">CutProb</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Pmf</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">PmfDist</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1314,7 +1326,7 @@ b&quot;, &quot;PunchCoop&quot;, &quot;ClustPop&quot;]
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu Jul 23 17:42:22 2009
+    Generated by Epydoc 3.0.1 on Thu Jul 23 17:49:55 2009
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
